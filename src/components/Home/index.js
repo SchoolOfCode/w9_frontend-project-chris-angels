@@ -4,6 +4,8 @@ import LogoutButton from '../Logout/index.js';
 import Profile from '../Profile/index.js';
 import { Link } from 'react-router-dom';
 import Resources from '../Resources';
+import PanicPicture from '../../Assets/PanicButton.png';
+import Button, { panic } from '../Button';
 function Home(props) {
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
@@ -20,6 +22,8 @@ function Home(props) {
           <img alt="emergency button"></img>
         </button>
       </Link>
+      <Button src={PanicPicture} onClick={panic}></Button>
+
       <Resources
         list={[
           {
