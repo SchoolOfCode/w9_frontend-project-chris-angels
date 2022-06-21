@@ -12,6 +12,8 @@ root.render(
       domain={process.env.REACT_APP_DOMAIN}
       clientId={process.env.REACT_APP_CLIENT}
       redirectUri={window.location.origin}
+      useRefreshTokens
+      cacheLocation="localstorage"
     >
       {' '}
       <App />
