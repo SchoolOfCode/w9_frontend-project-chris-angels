@@ -22,7 +22,7 @@ function App() {
         <Route
           path="/resources"
           element={
-            <Resources className="resourceContainer"
+            <Resources 
               list={[
                 {
                   picture:
