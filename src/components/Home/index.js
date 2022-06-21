@@ -29,12 +29,12 @@ function Home(props) {
           {
             picture:
               'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-            tags: ['diamond', 'night', 'stars'],
+            tags: ['diamond', 'night', 'stars', 'video'],
           },
           {
             picture:
               'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-            tags: ['diamond', 'night'],
+            tags: ['diamond', 'night', 'article'],
           },
           {
             picture:
