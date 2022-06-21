@@ -5,9 +5,11 @@ export function panic() {
 }
 
 
-function Button({onClick}) {
+function Button({onClick, src}) {
     return (
-        <button className="button" onClick={onClick}></button>
+        <div className='Panic'>
+            <img alt="PanicButton" onClick={onClick} src={src}></img>
+        </div>
     )
 }
 

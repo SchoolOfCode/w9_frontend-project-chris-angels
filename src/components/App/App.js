@@ -3,7 +3,7 @@ import LoginButton from '../Login/index.js';
 import LogoutButton from '../Logout/index.js';
 import Profile from '../Profile/index.js';
 import Button, { panic } from '../Button';
-
+import PanicButton from '../../Assets/PanicButton.png'
 
 function App() {
   return (
@@ -11,11 +11,9 @@ function App() {
       
     <div className="App">
       <LoginButton /> <LogoutButton /> <Profile></Profile>
-    </div>
-
-      <div className="Panic" >
-        <Button className="PanicButton" onClick={panic}><img src="/public/PanicButton.png" alt="Panic"></img></Button> 
       </div>
+      
+      <Button src={PanicButton} onClick={panic}></Button> 
       
     </main>
   );
