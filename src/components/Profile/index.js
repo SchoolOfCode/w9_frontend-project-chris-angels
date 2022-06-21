@@ -6,9 +6,9 @@ const Profile = (props) => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  // if (isAuthenticated) {
-  //   props.addUser(user);
-  // }
+  if (isAuthenticated) {
+    props.addUser(user);
+  }
   return (
     isAuthenticated && (
       <div>
