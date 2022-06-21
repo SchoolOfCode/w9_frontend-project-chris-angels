@@ -1,5 +1,10 @@
 import './App.css';
 
+import LoginButton from '../Login/index.js';
+import LogoutButton from '../Logout/index.js';
+import Profile from '../Profile/index.js'
+import Button, { panic } from '../Button';
+import PanicButton from '../../Assets/PanicButton.png'
 import Resources from '../Resources/index.js';
 import Settings from '../Settings/index.js';
 import PanicButton from '../PanicButton/index.js';
@@ -7,12 +12,20 @@ import Home from '../Home/index.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { useState } from 'react';
+
 function App() {
   const [user, setUser] = useState({});
   console.log(user);
 
   return (
+
+
     <Router>
+      <div className="App">
+        <LoginButton /> <LogoutButton /> <Profile addUser={setUser}></Profile>
+      </div>
+        <Button src={PanicButton} onClick={panic}></Button> 
+      <Header />
       <Routes>
         <Route
           path="/"
@@ -46,6 +59,7 @@ function App() {
         <Route path="/panic1" element={<PanicButton />}></Route>
       </Routes>
     </Router>
+
   );
 }
 
