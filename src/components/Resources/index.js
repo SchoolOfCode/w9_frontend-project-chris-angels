@@ -1,10 +1,25 @@
 // import Profile from '../Profile/index.js';
 
-function Resources(props) {
-  console.log('resour', props.user);
+//This will need a useEffect to fetch the API about the right type of data
+import ResourceCard from '../ResourceCard';
+function Resources({ list }) {
+  console.log(list);
   return (
-    <div>{/* Resources <Profile addUser={props.addUser}></Profile> */}</div>
+    <ol>
+      {' '}
+      {list.map((item, index) => {
+        return (
+          <ResourceCard
+            key={index}
+            logo={item.picture}
+            tags={item.tags}
+          ></ResourceCard>
+        );
+      })}
+    </ol>
   );
+
+  // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })
 }
 
 export default Resources;
