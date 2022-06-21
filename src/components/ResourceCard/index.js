@@ -1,7 +1,7 @@
 function ResourceCard(props) {
   return (
-    <div>
-      <div>
+    <div className="resourceCard">
+      <div >
         <img src={props.logo} alt="resource type logo"></img>{' '}
         <div>{props.title}</div>
       </div>

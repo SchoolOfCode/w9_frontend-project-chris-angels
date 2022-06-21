@@ -1,3 +1,4 @@
+
 import Header from '../Header';
 import LoginButton from '../Login/index.js';
 import LogoutButton from '../Logout/index.js';
@@ -24,7 +25,7 @@ function Home(props) {
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
 
-      <Resources
+      <Resources 
         list={[
           {
             picture:
