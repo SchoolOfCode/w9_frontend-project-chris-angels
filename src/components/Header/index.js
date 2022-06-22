@@ -1,26 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 function Header({ logged }) {
   // console.log('logged is:', logged);
   return (
     <nav className="navbar">
       {logged && (
-        <button
+        <Button
+          variant="contained"
           onClick={() => {
             document
-              .querySelector('.modalcontainer2')
-              .classList.remove('hidden');
+              .querySelector(".modalcontainer2")
+              .classList.remove("hidden");
           }}
         >
           New Entry
-        </button>
+        </Button>
       )}
       {!logged && (
         <button
           disabled
           onClick={() => {
             document
-              .querySelector('.modalcontainer2')
-              .classList.remove('hidden');
+              .querySelector(".modalcontainer2")
+              .classList.remove("hidden");
           }}
         >
           New Entry
@@ -36,7 +39,7 @@ function Header({ logged }) {
         Diary
       </Link>
       <Link to="/settings">
-        <button>Settings</button>
+        <Button variant="contained">Settings</Button>
       </Link>
     </nav>
   );

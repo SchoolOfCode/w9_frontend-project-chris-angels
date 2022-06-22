@@ -4,6 +4,7 @@
 
 import ResourceCard from "../ResourceCard";
 import { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
 
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
@@ -94,9 +95,13 @@ function Resources({ list }) {
               );
             })}
           </select>
-          <button id="topic-filter-butt" onClick={searchButtonHandler}>
+          <Button
+            variant="contained"
+            id="topic-filter-butt"
+            onClick={searchButtonHandler}
+          >
             Search
-          </button>
+          </Button>
         </label>
       </div>
       <div className="rectangleHeader">Resources</div>{" "}
