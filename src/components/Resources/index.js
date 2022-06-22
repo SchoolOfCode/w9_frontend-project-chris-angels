@@ -8,50 +8,47 @@ import { useState, useEffect } from 'react';
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
 
-  const [data, setData] = useState([{ resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 }]);
+  const [resourceIndex, setResourceIndex] = useState(
+    Math.floor(Math.random() * 2) + 1
+  );
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
     // function to fetch the data from the database
     async function Fetch() {
       let response = await fetch(
-        `http://localhost:3003/resource/${Math.floor(Math.random() * 2) + 1}`
+        `http://localhost:3001/resource/${resourceIndex}`
       );
       let json = await response.json();
       // console.log(json);
       let dataArr = json.data;
-
-      console.log('hello', dataArr);
-      setData([...dataArr])
-      
-
+      // console.log('hello', dataArr);
+      // let newResource = [
+      //   {
+      //     postedBy: userID,
+      //     id: topicID,
+      //     tags: [''],
+      //     resourceRating: rating,
+      //   },
+      // ];
     }
     Fetch();
-    console.log(data, "hello")
   }, []);
 
-
-console.log(data, "hi hi")
+  // console.log(list);
   return (
-    <dl className='resourcesContainer'>
-    <div className="rectangleHeader">Resources</div>
-      {' '}
-      {data.map((item, index) => {
-
-
+    <ol className="resourcesContainer">
+      <div className="rectangleHeader">Resources</div>{' '}
+      {list.map((item, index) => {
         return (
           <ResourceCard
             key={index}
             logo={item.picture}
-            userid={item.userid}
-            topicid={item.topicid}
-            link={item.link}
             tags={item.tags}
-            rating={item.rating}
           ></ResourceCard>
         );
       })}
-    </dl>
+    </ol>
   );
 
   // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })
