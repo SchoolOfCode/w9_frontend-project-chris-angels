@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
 
-  const [data, setData] = useState([{ logo: "", title: "", tags: ['diamond', 'night', 'stars'] }]);
+  const [data, setData] = useState([{ resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 }]);
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
@@ -37,9 +37,12 @@ console.log(data, "hi hi")
         return (
           <ResourceCard 
             key={index}
-            userId={item.userid}
             logo={item.picture}
+            userid={item.userid}
+            topicid={item.topicid}
+            link={item.link}
             tags={item.tags}
+            rating={item.rating}
           ></ResourceCard>
         );
       })}

@@ -5,7 +5,7 @@ function ResourceCard(props) {
     <div >
       <div className="resourceCard">
         <img className="resourceImage" src={props.logo} alt="resource type logo"></img>{' '}
-        <div className="title">{props.title}Title</div>
+        <div className="title">{props.link}Title</div>
 
       </div>
       <ol className="tags">
