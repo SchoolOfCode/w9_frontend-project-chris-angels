@@ -30,7 +30,7 @@ function Resources({ list }) {
 
 console.log(data, "hi hi")
   return (
-    <ol className='resourcesContainer'>
+    <dl className='resourcesContainer'>
     <div className="rectangleHeader">Resources</div>
       {' '}
       {data.map((item, index) => {
@@ -46,7 +46,7 @@ console.log(data, "hi hi")
           ></ResourceCard>
         );
       })}
-    </ol>
+    </dl>
   );
 
   // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })

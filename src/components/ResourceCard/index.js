@@ -8,11 +8,11 @@ function ResourceCard(props) {
         <div className="title">{props.link}Title</div>
 
       </div>
-      <ol className="tags">
+      <dl className="tags">
         {props.tags.map((tag, index) => {
           return <li key={index}>{tag}<img alt="tag" className="imageTag" src={Tag}></img></li>;
         })}
-      </ol>
+      </dl>
     </div>
   );
 }
