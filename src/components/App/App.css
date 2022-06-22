@@ -175,3 +175,8 @@ textarea {
 #settingsForm > div > * {
   font-size: 1.3rem;
 }
+
+.progressBox {
+  display: flex;
+  justify-content: center;
+}
