@@ -12,7 +12,6 @@ import Diary from '../Diary';
 
 function App() {
   const [user, setUser] = useState({});
-  // console.log('State called user', user);
 
   return (
     <Router>
@@ -33,7 +32,6 @@ function App() {
             <ProtectedRoute user={user} component={Diary}></ProtectedRoute>
           }
         ></Route>
-        {/* <Route path="/diary" element={<Diary user={user} />}></Route> */}
         <Route path="/resources" element={<Resources />}></Route>
         <Route path="/panic1" element={<PanicButton />}></Route>
       </Routes>

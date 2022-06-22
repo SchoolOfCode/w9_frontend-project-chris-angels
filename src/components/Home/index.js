@@ -62,7 +62,7 @@ function Home(props) {
         <Button src={PanicPicture}> </Button>
       </Link>
 
-      <NotesForm></NotesForm>
+      <NotesForm email={props.user.email}></NotesForm>
       <Resources />
     </div>
   );
