@@ -4,7 +4,7 @@ import React from 'react';
 // import Home from '../Home';
 
 export default function ProtectedRoute(props) {
-  console.log('made it to protected');
+  console.log('made it to protected', props);
   const Component = withAuthenticationRequired(props.component, {
     onRedirecting: () => <div>Redirected</div>,
   });

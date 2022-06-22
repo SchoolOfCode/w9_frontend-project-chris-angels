@@ -7,6 +7,7 @@ import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
 import Button, { panic } from '../Button';
 function Home(props) {
+  console.log('home', props.user);
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
     islogged = true;
@@ -21,6 +22,9 @@ function Home(props) {
         <button type="button">
           <img alt="emergency button"></img>
         </button>
+      </Link>
+      <Link to="/settings">
+        <button>Settings</button>
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
 
