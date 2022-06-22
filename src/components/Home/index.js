@@ -46,11 +46,8 @@ function Home(props) {
       <Profile addUser={props.setUser}></Profile>
       {newUser && <Prompt email={props.user.email} />}
       <Link to="/panic1">
-        <button type="button">
-          <img  alt="emergency button"></img>
-        </button>
+        <Button src={PanicPicture}> </Button>
       </Link>
-      <Button src={PanicPicture} onClick={panic}></Button>
       <NotesForm></NotesForm>
       <Resources
         list={[

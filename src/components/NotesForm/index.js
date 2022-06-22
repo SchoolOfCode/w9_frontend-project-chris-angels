@@ -64,6 +64,9 @@ export default function NotesForm(props) {
               Are you happy to be asked htmlFor help on this topic?
             </label>
             <input id="happy-to-help-input"></input>
+            <label htmlFor="notes">
+              <textarea id="noteArea" rows={10} cols={50}></textarea>
+            </label>
           </div>
           <button>Submit</button>
         </form>
