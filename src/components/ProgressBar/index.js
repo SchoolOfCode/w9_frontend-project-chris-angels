@@ -8,9 +8,7 @@ function ProgressBar({ email }) {
     //This needs to be changed to be what the current user note is based on their email, just place email into the fetch
     //There are 16 weeks with 5 work days so 80 total?
     async function Fetch() {
-      let res = await fetch(
-        'http://localhost:3001/recent?email=g.yankovic@hotmail.com'
-      );
+      let res = await fetch(`http://localhost:3001/recent?email=${email}`);
       let json = await res.json();
       // console.log(json);
       let dataArr = json.data[0];

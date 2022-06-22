@@ -43,7 +43,6 @@ export default function NotesForm(props) {
     if (document.getElementById('js-tag').checked) {
       postObj.tags = [...postObj.tags, document.getElementById('js-tag').name];
     }
-    //TODO::::::parse e.targetFor the values I want, put them in an obj, send in a post fetch to the server
 
     let res = await fetch(`http://localhost:3001/notes?email=${props.email}`, {
       method: 'POST',
@@ -52,12 +51,12 @@ export default function NotesForm(props) {
       },
       body: JSON.stringify(postObj),
     });
-    console.log(res);
     // user.current = json.data[0];
     // setPlaceHolder(json.data[0].slackusername);
     // console.log('ayo', user);
     //Resets form
     document.querySelector('#notes-input-field').reset();
+    window.location.reload();
   }
   function hideForm() {
     document.querySelector('.modalcontainer2').classList.add('hidden');
