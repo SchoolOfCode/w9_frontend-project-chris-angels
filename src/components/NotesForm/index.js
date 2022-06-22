@@ -23,11 +23,11 @@ export default function NotesForm(props) {
         >
           <div id="week-field">
             <label htmlFor="week-input">Week:</label>
-            <input id="week-input"></input>
+            <input id="week-input" required></input>
           </div>
           <div id="day-field">
             <label htmlFor="day-input">Day:</label>
-            <input id="day-input"></input>
+            <input id="day-input" required></input>
           </div>
           <div id="topic-field">
             <label htmlFor="topic-input">Topic:</label>
@@ -61,11 +61,11 @@ export default function NotesForm(props) {
           </div>
           <div id="happy-to-help-field">
             <label htmlFor="happy-to-help-input">
-              Are you happy to be asked htmlFor help on this topic?
+              Are you happy to be asked for help on this topic?
             </label>
-            <input id="happy-to-help-input"></input>
+            <input type="checkbox" id="happy-to-help-input" required></input>
             <label htmlFor="notes">
-              <textarea id="noteArea" rows={10} cols={50}></textarea>
+              <textarea id="noteArea" required rows={10} cols={50}></textarea>
             </label>
           </div>
           <button>Submit</button>
