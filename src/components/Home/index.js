@@ -46,7 +46,7 @@ function Home(props) {
       {newUser && <Prompt email={props.user.email} />}
       <Link to="/panic1">
         <button type="button">
-          <img  alt="emergency button"></img>
+          <img alt="emergency button"></img>
         </button>
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
