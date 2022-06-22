@@ -20,9 +20,9 @@ function Resources({ list }) {
         `http://localhost:3001/resource/${resourceIndex}`
       );
       let json = await response.json();
-      console.log(json);
+      // console.log(json);
       let dataArr = json.data;
-      console.log('hello', dataArr);
+      // console.log('hello', dataArr);
       // let newResource = [
       //   {
       //     postedBy: userID,
@@ -35,14 +35,13 @@ function Resources({ list }) {
     Fetch();
   }, []);
 
-  console.log(list);
+  // console.log(list);
   return (
-    <ol className='resourcesContainer'>
-    <div className="rectangleHeader">Resources</div>
-      {' '}
+    <ol className="resourcesContainer">
+      <div className="rectangleHeader">Resources</div>{' '}
       {list.map((item, index) => {
         return (
-          <ResourceCard 
+          <ResourceCard
             key={index}
             logo={item.picture}
             tags={item.tags}
