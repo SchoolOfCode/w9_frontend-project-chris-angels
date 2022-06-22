@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
 
 function Home(props) {
+  console.log('home', props.user);
   const [newUser, setNewUser] = useState(false);
   useEffect(() => {
     // console.log('help');
@@ -48,6 +49,11 @@ function Home(props) {
       <Link to="/panic1">
         <Button src={PanicPicture}> </Button>
       </Link>
+      <Link to="/settings">
+        <button>Settings</button>
+      </Link>
+      <Button src={PanicPicture} onClick={panic}></Button>
+
       <NotesForm></NotesForm>
       <Resources
         list={[
