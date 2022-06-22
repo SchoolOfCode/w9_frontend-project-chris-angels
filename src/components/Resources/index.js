@@ -19,7 +19,7 @@ function Resources({ list }) {
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
-    // function to fetch the data from the database
+    // function to fetch the data from the database initially
     async function Fetch() {
       let response = await fetch(
         `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
@@ -53,7 +53,7 @@ function Resources({ list }) {
     console.log(confirmedTopic, "hello");
   }, [confirmedTopic]);
 
-  //___________State and functions for dropdown Container!____________
+  //___________Functions and the list of options for dropdown Container! ADD OBJECT TO THE LIST TO ADD A NEW OPTION, DON'T MODIFY THE JSX____________
 
   //function changing the state
   function topicChangeHandler(event) {
@@ -76,22 +76,24 @@ function Resources({ list }) {
   console.log(data, "hi hi");
   return (
     <dl className="resourcesContainer">
-      {/*create a form for input box of topics (dropdown) and a submit (search) button*/}
-      <label>
-        Topic:
-        <select value={topicChoice} onChange={topicChangeHandler}>
-          {topicOptions.map((item, index) => {
-            return (
-              <option key={index} value={item.value}>
-                {item.label}
-              </option>
-            );
-          })}
-        </select>
-        <button id="topic-filter-butt" onClick={searchButtonHandler}>
-          Search
-        </button>
-      </label>
+      {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
+      <div id="dropdown-menu-cont">
+        <label>
+          Topic:
+          <select value={topicChoice} onChange={topicChangeHandler}>
+            {topicOptions.map((item, index) => {
+              return (
+                <option key={index} value={item.value}>
+                  {item.label}
+                </option>
+              );
+            })}
+          </select>
+          <button id="topic-filter-butt" onClick={searchButtonHandler}>
+            Search
+          </button>
+        </label>
+      </div>
       <div className="rectangleHeader">Resources</div>{" "}
       {data.map((item, index) => {
         return (
