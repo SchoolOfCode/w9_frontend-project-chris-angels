@@ -18,15 +18,18 @@ function Resources({ list }) {
         `http://localhost:3003/resource/${Math.floor(Math.random() * 2) + 1}`
       );
       let json = await response.json();
-      console.log(json);
+      // console.log(json);
       let dataArr = json.data;
+
       console.log('hello', dataArr);
       setData([...dataArr])
       
+
     }
     Fetch();
     console.log(data, "hello")
   }, []);
+
 
 console.log(data, "hi hi")
   return (
@@ -34,8 +37,10 @@ console.log(data, "hi hi")
     <div className="rectangleHeader">Resources</div>
       {' '}
       {data.map((item, index) => {
+
+
         return (
-          <ResourceCard 
+          <ResourceCard
             key={index}
             logo={item.picture}
             userid={item.userid}

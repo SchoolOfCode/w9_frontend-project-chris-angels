@@ -6,6 +6,7 @@ function LogoutButton(props) {
   console.log('log out button', props);
   function logoutUser() {
     props.setUser({});
+    props.setNewUser(false);
     logout({ returnTo: window.location.origin });
   }
   return <button onClick={() => logoutUser()}>Log Out</button>;

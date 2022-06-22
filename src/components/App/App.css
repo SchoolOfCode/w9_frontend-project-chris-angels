@@ -6,7 +6,6 @@
   background-color: #4a90e2;
 }
 
-
 /* --------------------------------header------------------------------------ */
 
 .navbar {
@@ -14,28 +13,26 @@
   height: 15vh;
   width: auto;
   background-color: #181e50;
-  align-items:center;
+  align-items: center;
   justify-content: flex-end;
 }
 
-.homeLink{
+.homeLink {
   color: #31986a;
 }
 
-.resourcesLink{
-    color: #31986a;
+.resourcesLink {
+  color: #31986a;
 }
 
 /* ---------------------------------PanicButton--------------------------------- */
 .Panic {
   position: sticky;
   bottom: 25vh;
-  padding-left: 70%
+  padding-left: 70%;
 }
 
-
 /* -------------------------------------resources------------------------------- */
-
 
 .resourcesContainer {
   display: grid;
@@ -74,15 +71,15 @@
   height: 10vh;
   width: 10vw;
   margin: 10px;
-  border: solid 10px #181e50
+  border: solid 10px #181e50;
 }
 
-.title{
+.title {
   align-self: center;
   justify-self: flex-start;
 }
 
-.tags{
+.tags {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-self: flex-start;
@@ -90,8 +87,20 @@
   padding-right: 50vw;
 }
 
-.imageTag{
+.imageTag {
   width: 2vw;
   height: 2vh;
 }
 
+.modalcontainer {
+  position: absolute;
+  top: 0;
+  height: 400vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: rgba(128, 128, 128, 0.5); /* color */
+}
+
+.hidden {
+  display: none; /* making it hidden by default */
+}
