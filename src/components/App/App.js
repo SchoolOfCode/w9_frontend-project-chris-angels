@@ -27,7 +27,13 @@ function App() {
             <ProtectedRoute user={user} component={Settings}></ProtectedRoute>
           }
         ></Route>
-        <Route path="/diary" element={<Diary user={user} />}></Route>
+        <Route
+          path="/diary"
+          element={
+            <ProtectedRoute user={user} component={Diary}></ProtectedRoute>
+          }
+        ></Route>
+        {/* <Route path="/diary" element={<Diary user={user} />}></Route> */}
         <Route path="/resources" element={<Resources />}></Route>
         <Route path="/panic1" element={<PanicButton />}></Route>
       </Routes>

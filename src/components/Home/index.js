@@ -56,7 +56,6 @@ function Home(props) {
         <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
       )}
       <Profile slackusername={slack} addUser={props.setUser}></Profile>
-      {/* <div>{slack.current}</div> */}
       {newUser && <Prompt email={props.user.email} />}
       <Link className="panicBox" to="/panic1">
         <Button src={PanicPicture}> </Button>
