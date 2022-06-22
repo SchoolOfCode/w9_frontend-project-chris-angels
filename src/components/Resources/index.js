@@ -35,10 +35,6 @@ function Resources({ list }) {
     // console.log(data, 'hello'); []);
 
     // console.log(data, 'hi hi');
-
-    console.log("hello", dataArr);
-    setData([...dataArr]);
-
     Fetch();
     console.log(data, "hello");
   }, []);
