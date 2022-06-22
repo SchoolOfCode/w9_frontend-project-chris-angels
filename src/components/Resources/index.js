@@ -11,13 +11,18 @@ function Resources({ list }) {
   const [data, setData] = useState([
     { resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 },
   ]);
+  //state for the topic dropdown
+  const [topicChoice, setTopicChoice] = useState(0);
+  //state changing to the topicChoice after being clicked
+  const [confirmedTopic, setConfirmedTopic] = useState(0);
+
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
     // function to fetch the data from the database
     async function Fetch() {
       let response = await fetch(
-        `http://localhost:3003/resource/${Math.floor(Math.random() * 2) + 1}`
+        `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
       );
       let json = await response.json();
       // console.log(json);
@@ -29,10 +34,44 @@ function Resources({ list }) {
     Fetch();
     console.log(data, "hello");
   }, []);
+
+  //use effect that fetches a fresh batch of resources by topic when topic is selected and confirmed
+  useEffect(() => {
+    // function to fetch the data from the database
+    async function Fetch() {
+      let response = await fetch(
+        `http://localhost:3001/resource/${confirmedTopic}`
+      );
+      let json = await response.json();
+      // console.log(json);
+      let dataArr = json.data;
+
+      console.log("hello", dataArr);
+      setData([...dataArr]);
+    }
+    Fetch();
+    console.log(confirmedTopic, "hello");
+  }, [confirmedTopic]);
+
   //___________State and functions for dropdown Container!____________
-  //state for the topic dropdown
-  const [topicChoice, setTopicChoice] = useState("");
-  //function changing the state on change
+
+  //function changing the state
+  function topicChangeHandler(event) {
+    setTopicChoice(event.target.value);
+  }
+
+  //list of topic options
+  const topicOptions = [
+    { label: "HTML", value: 1 },
+    { label: "CSS", value: 2 },
+    { label: "JAVASCRIPT", value: 3 },
+    { label: "EXPRESS", value: 4 },
+  ];
+
+  //___________Function serving the search button for topics__________
+  function searchButtonHandler() {
+    setConfirmedTopic(topicChoice);
+  }
 
   console.log(data, "hi hi");
   return (
@@ -40,12 +79,18 @@ function Resources({ list }) {
       {/*create a form for input box of topics (dropdown) and a submit (search) button*/}
       <label>
         Topic:
-        <select>
-          <option value="HTML">HTML</option>
-          <option value="CSS">CSS</option>
-          <option value="JS">JS</option>
-          <option value="Express">EXPRESS</option>
+        <select value={topicChoice} onChange={topicChangeHandler}>
+          {topicOptions.map((item, index) => {
+            return (
+              <option key={index} value={item.value}>
+                {item.label}
+              </option>
+            );
+          })}
         </select>
+        <button id="topic-filter-butt" onClick={searchButtonHandler}>
+          Search
+        </button>
       </label>
       <div className="rectangleHeader">Resources</div>{" "}
       {data.map((item, index) => {
@@ -61,6 +106,7 @@ function Resources({ list }) {
           ></ResourceCard>
         );
       })}
+      {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
     </dl>
   );
 
