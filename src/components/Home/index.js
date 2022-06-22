@@ -6,37 +6,48 @@ import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
 import NotesForm from '../NotesForm/index.js';
-import Button, { panic } from '../Button';
+import Button from '../Button';
 import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
 
 function Home(props) {
-  console.log('home', props.user);
+  // console.log('home', props.user);
   const [newUser, setNewUser] = useState(false);
+  const [slack, setSlackName] = useState('');
   useEffect(() => {
-    // console.log('help');
+    console.log('user changed so fetch is being ran');
     async function Fetch() {
       let email = props.user.email;
       let response = await fetch(`http://localhost:3001/users?email=${email}`);
       let json = await response.json();
-      console.log(json);
+      // console.log(json);
       let dataArr = json.data;
-      //If the length === 0, then the user has succesfully logged in and we need to add them to the database
+      console.log('123456');
+
+      // slack.current = dataArr[0].slackusername;
+      if (slack !== dataArr[0].slackusername) {
+        setSlackName(dataArr[0].slackusername);
+      }
       if (dataArr.length === 0) {
+        // console.log('dataArr', dataArr[0].slackusername);
+        //If the length === 0, then the user has succesfully logged in and we need to add them to the database
         setNewUser(true);
+        // slack.current = dataArr[0].slackusername;
       }
       //Check if slackUsername is empty or not, if it is, set a boolean state so a component can be rednered below like login/logout buttons are
     }
-    console.log('fetch called in Home', props.user);
+    // console.log('fetch called in Home', props.user);
     if (Object.keys(props.user).length !== 0) {
       Fetch();
     }
-  }, [props.user]);
+  }, [props.user, slack]);
 
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
     islogged = true;
   }
+  console.log('before return', new Date(), slack.current);
+
   return (
     <div className="App">
       <Header logged={islogged} />
@@ -44,36 +55,15 @@ function Home(props) {
       {islogged && (
         <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
       )}
-      <Profile addUser={props.setUser}></Profile>
+      <Profile slackusername={slack} addUser={props.setUser}></Profile>
+      {/* <div>{slack.current}</div> */}
       {newUser && <Prompt email={props.user.email} />}
-      <Link to="/panic1">
+      <Link className="panicBox" to="/panic1">
         <Button src={PanicPicture}> </Button>
       </Link>
-      <Link to="/settings">
-        <button>Settings</button>
-      </Link>
-      <Button src={PanicPicture} onClick={panic}></Button>
 
       <NotesForm></NotesForm>
-      <Resources
-        list={[
-          {
-            picture:
-              'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-            tags: ['diamond', 'night', 'stars', 'video'],
-          },
-          {
-            picture:
-              'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-            tags: ['diamond', 'night', 'article'],
-          },
-          {
-            picture:
-              'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-            tags: ['diamond', 'stars'],
-          },
-        ]}
-      />
+      <Resources />
     </div>
   );
 }

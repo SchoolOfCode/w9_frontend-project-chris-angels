@@ -36,9 +36,21 @@
 .Panic {
   position: sticky;
   bottom: 25vh;
-  padding-left: 70%;
+  /* margin-left: 70%; */
+  width: fit-content;
+  height: fit-content;
+  right: 100%;
 }
 
+.panicBox {
+  position: fixed;
+  z-index: 10;
+  right: 0%;
+  bottom: 0;
+  display: block;
+  max-width: max-content;
+  height: max-content;
+}
 /* -------------------------------------resources------------------------------- */
 
 .resourcesContainer {
@@ -136,4 +148,30 @@ textarea {
 .navbar {
   display: flex;
   justify-content: space-around;
+}
+
+#settingsMain {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+#settingsForm {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 20%;
+  border-radius: 50px;
+  background: #181e50;
+  box-shadow: 20px 20px 60px #141a44, -20px -20px 60px #1c235c;
+  color: var(--socwhite);
+}
+#settingsForm > * {
+  font-size: 1.3rem;
+}
+#settingsForm > div > * {
+  font-size: 1.3rem;
 }

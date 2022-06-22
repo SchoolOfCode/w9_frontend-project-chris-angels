@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 function Header({ logged }) {
-  console.log('logged is:', logged);
+  // console.log('logged is:', logged);
   return (
     <nav className="navbar">
       {logged && (
@@ -34,6 +34,9 @@ function Header({ logged }) {
       </Link>
       <Link className="diaryLink" to="/diary">
         Diary
+      </Link>
+      <Link to="/settings">
+        <button>Settings</button>
       </Link>
     </nav>
   );
