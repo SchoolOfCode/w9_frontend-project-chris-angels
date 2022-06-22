@@ -5,29 +5,56 @@ import Profile from '../Profile/index.js';
 import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
+import NotesForm from '../NotesForm/index.js';
 import Button, { panic } from '../Button';
+import { useEffect, useState } from 'react';
+import Prompt from '../Prompt';
+
 function Home(props) {
   console.log('home', props.user);
+  const [newUser, setNewUser] = useState(false);
+  useEffect(() => {
+    // console.log('help');
+    async function Fetch() {
+      let email = props.user.email;
+      let response = await fetch(`http://localhost:3001/users?email=${email}`);
+      let json = await response.json();
+      console.log(json);
+      let dataArr = json.data;
+      //If the length === 0, then the user has succesfully logged in and we need to add them to the database
+      if (dataArr.length === 0) {
+        setNewUser(true);
+      }
+      //Check if slackUsername is empty or not, if it is, set a boolean state so a component can be rednered below like login/logout buttons are
+    }
+    console.log('fetch called in Home', props.user);
+    if (Object.keys(props.user).length !== 0) {
+      Fetch();
+    }
+  }, [props.user]);
+
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
     islogged = true;
   }
   return (
     <div className="App">
-      <Header />
+      <Header logged={islogged} />
       {!islogged && <LoginButton />}
-      {islogged && <LogoutButton />}
+      {islogged && (
+        <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
+      )}
       <Profile addUser={props.setUser}></Profile>
+      {newUser && <Prompt email={props.user.email} />}
       <Link to="/panic1">
-        <button type="button">
-          <img alt="emergency button"></img>
-        </button>
+        <Button src={PanicPicture}> </Button>
       </Link>
       <Link to="/settings">
         <button>Settings</button>
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
 
+      <NotesForm></NotesForm>
       <Resources
         list={[
           {

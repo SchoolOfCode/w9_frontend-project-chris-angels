@@ -3,12 +3,16 @@ import React from 'react';
 
 const Profile = (props) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log('profile', user);
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   if (isAuthenticated) {
     props.addUser(user);
   }
+  // else if (user === undefined) {
+  //   props.addUser({});
+  // }
   return (
     isAuthenticated && (
       <div>

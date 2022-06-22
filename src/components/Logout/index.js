@@ -1,14 +1,15 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 
-const LogoutButton = () => {
+function LogoutButton(props) {
   const { logout } = useAuth0();
-
-  return (
-    <button onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
-    </button>
-  );
-};
+  console.log('log out button', props);
+  function logoutUser() {
+    props.setUser({});
+    props.setNewUser(false);
+    logout({ returnTo: window.location.origin });
+  }
+  return <button onClick={() => logoutUser()}>Log Out</button>;
+}
 
 export default LogoutButton;
