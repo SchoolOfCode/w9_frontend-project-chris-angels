@@ -5,7 +5,7 @@ import App from './components/App/App.js';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log('hi', process.env.REACT_APP_DOMAIN, process.env);
+// console.log('hi', process.env.REACT_APP_DOMAIN, process.env);
 root.render(
   <React.StrictMode>
     <Auth0Provider

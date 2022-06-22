@@ -1,10 +1,10 @@
 // import { useEffect } from 'react';
 import LogoutButton from '../Logout';
-function Settings({ user }) {
-  console.log('settings page');
+function Settings(props) {
+  console.log('settings page', props.user);
   //This code will probably be removed once protected routes are a thing
   let islogged = false;
-  if (Object.keys(user).length !== 0) {
+  if (Object.keys(props.user).length !== 0) {
     islogged = true;
   }
 
