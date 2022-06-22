@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 function Timer(props) {
   const [counter, setCounter] = useState(4);
@@ -18,7 +18,7 @@ function Timer(props) {
   return (
     <div className="App">
       <div>
-        Countdown: {Math.floor(counter / 60)}:{' '}
+        Countdown: {Math.floor(counter / 60)}:{" "}
         {counter - Math.floor(counter / 60) * 60}
       </div>
       {btn && <button>Lets move</button>}

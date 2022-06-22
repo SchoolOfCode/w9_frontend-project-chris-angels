@@ -9,7 +9,6 @@ function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
 
   const [data, setData] = useState([
-
     { resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 },
   ]);
   //state for the topic dropdown
@@ -18,7 +17,7 @@ function Resources({ list }) {
   const [confirmedTopic, setConfirmedTopic] = useState(0);
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
-  
+
   useEffect(() => {
     // function to fetch the data from the database initially
     async function Fetch() {
@@ -29,19 +28,17 @@ function Resources({ list }) {
       // console.log(json);
       let dataArr = json.data;
 
-
       // console.log('hello', dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    // console.log(data, 'hello');
-  }, []);
+    // console.log(data, 'hello'); []);
 
-  // console.log(data, 'hi hi');
+    // console.log(data, 'hi hi');
 
-      console.log("hello", dataArr);
-      setData([...dataArr]);
-    }
+    console.log("hello", dataArr);
+    setData([...dataArr]);
+
     Fetch();
     console.log(data, "hello");
   }, []);
