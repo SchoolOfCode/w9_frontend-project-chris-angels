@@ -2,13 +2,15 @@
 
 //This will need a useEffect to fetch the API about the right type of data
 
-import ResourceCard from '../ResourceCard';
-import { useState, useEffect } from 'react';
+import ResourceCard from "../ResourceCard";
+import { useState, useEffect } from "react";
 
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
 
-  const [data, setData] = useState([{ resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 }]);
+  const [data, setData] = useState([
+    { resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 },
+  ]);
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
@@ -21,24 +23,32 @@ function Resources({ list }) {
       // console.log(json);
       let dataArr = json.data;
 
-      console.log('hello', dataArr);
-      setData([...dataArr])
-      
-
+      console.log("hello", dataArr);
+      setData([...dataArr]);
     }
     Fetch();
-    console.log(data, "hello")
+    console.log(data, "hello");
   }, []);
+  //___________State and functions for dropdown Container!____________
+  //state for the topic dropdown
+  const [topicChoice, setTopicChoice] = useState("");
+  //function changing the state on change
 
-
-console.log(data, "hi hi")
+  console.log(data, "hi hi");
   return (
-    <dl className='resourcesContainer'>
-    <div className="rectangleHeader">Resources</div>
-      {' '}
+    <dl className="resourcesContainer">
+      {/*create a form for input box of topics (dropdown) and a submit (search) button*/}
+      <label>
+        Topic:
+        <select>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JS">JS</option>
+          <option value="Express">EXPRESS</option>
+        </select>
+      </label>
+      <div className="rectangleHeader">Resources</div>{" "}
       {data.map((item, index) => {
-
-
         return (
           <ResourceCard
             key={index}
