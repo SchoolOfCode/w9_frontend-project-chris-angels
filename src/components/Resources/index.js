@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
+
   const [resourceIndex, setResourceIndex] = useState(
     Math.floor(Math.random() * 2) + 1
   );
