@@ -29,6 +29,16 @@ function Resources({ list }) {
       // console.log(json);
       let dataArr = json.data;
 
+
+      // console.log('hello', dataArr);
+      setData([...dataArr]);
+    }
+    Fetch();
+    // console.log(data, 'hello');
+  }, []);
+
+  // console.log(data, 'hi hi');
+
       console.log("hello", dataArr);
       setData([...dataArr]);
     }
@@ -75,6 +85,7 @@ function Resources({ list }) {
   }
 
   console.log(data, "hi hi");
+
   return (
     <dl className="resourcesContainer">
       {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}

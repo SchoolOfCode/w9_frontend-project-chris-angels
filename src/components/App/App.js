@@ -12,7 +12,7 @@ import Diary from '../Diary';
 
 function App() {
   const [user, setUser] = useState({});
-  console.log('State called user', user);
+  // console.log('State called user', user);
 
   return (
     <Router>
@@ -27,31 +27,14 @@ function App() {
             <ProtectedRoute user={user} component={Settings}></ProtectedRoute>
           }
         ></Route>
-        <Route path="/diary" element={<Diary user={user} />}></Route>
         <Route
-          path="/resources"
+          path="/diary"
           element={
-            <Resources
-              list={[
-                {
-                  picture:
-                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-                  tags: ['diamond', 'night', 'stars'],
-                },
-                {
-                  picture:
-                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-                  tags: ['diamond', 'night'],
-                },
-                {
-                  picture:
-                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-                  tags: ['diamond', 'stars'],
-                },
-              ]}
-            />
+            <ProtectedRoute user={user} component={Diary}></ProtectedRoute>
           }
         ></Route>
+        {/* <Route path="/diary" element={<Diary user={user} />}></Route> */}
+        <Route path="/resources" element={<Resources />}></Route>
         <Route path="/panic1" element={<PanicButton />}></Route>
       </Routes>
     </Router>
