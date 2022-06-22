@@ -8,37 +8,33 @@ import { useState, useEffect } from 'react';
 function Resources({ list }) {
   // Used to get a randomised resource from database (needs adding to)
 
-  const [data, setData] = useState([{ resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 }]);
+  const [data, setData] = useState([
+    { resourceid: 0, userid: 0, topicid: 0, link: '', tags: [], rating: 0 },
+  ]);
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
   useEffect(() => {
     // function to fetch the data from the database
     async function Fetch() {
       let response = await fetch(
-        `http://localhost:3003/resource/${Math.floor(Math.random() * 2) + 1}`
+        `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
       );
       let json = await response.json();
       // console.log(json);
       let dataArr = json.data;
 
       console.log('hello', dataArr);
-      setData([...dataArr])
-      
-
+      setData([...dataArr]);
     }
     Fetch();
-    console.log(data, "hello")
+    console.log(data, 'hello');
   }, []);
 
-
-console.log(data, "hi hi")
+  console.log(data, 'hi hi');
   return (
-    <dl className='resourcesContainer'>
-    <div className="rectangleHeader">Resources</div>
-      {' '}
+    <dl className="resourcesContainer">
+      <div className="rectangleHeader">Resources</div>{' '}
       {data.map((item, index) => {
-
-
         return (
           <ResourceCard
             key={index}
