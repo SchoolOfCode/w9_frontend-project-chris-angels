@@ -1,3 +1,10 @@
+:root {
+  --socblue: #181e50;
+  --socgreen: #31986a;
+  --soclightblue: #4a90e2;
+  --socwhite: #f7f7f7;
+}
+
 /* -----------------------------------App--------------------------------------- */
 
 .App {
@@ -100,7 +107,30 @@
   z-index: 2;
   background-color: rgba(128, 128, 128, 0.5); /* color */
 }
-
+.modalcontainer2 {
+  position: absolute;
+  top: 0;
+  height: 400vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: rgba(128, 128, 128, 0.7); /* color */
+  display: flex;
+  justify-content: center;
+}
+.formContainer {
+  margin-top: 20vh;
+  width: 70%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  background-color: var(--socgreen);
+}
 .hidden {
   display: none; /* making it hidden by default */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
 }

@@ -5,6 +5,7 @@ import Profile from '../Profile/index.js';
 import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
+import NotesForm from '../NotesForm/index.js';
 import Button, { panic } from '../Button';
 import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
@@ -37,7 +38,7 @@ function Home(props) {
   }
   return (
     <div className="App">
-      <Header />
+      <Header logged={islogged} />
       {!islogged && <LoginButton />}
       {islogged && (
         <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
@@ -50,7 +51,7 @@ function Home(props) {
         </button>
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
-
+      <NotesForm></NotesForm>
       <Resources
         list={[
           {
