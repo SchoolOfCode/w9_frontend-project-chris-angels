@@ -1,11 +1,12 @@
-import "./App.css";
-import PanicButton from "../PanicButton/index.js";
-import Resources from "../Resources/index.js";
-import Settings from "../Settings/index.js";
-import Home from "../Home/index.js";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import './App.css';
+import PanicButton from '../PanicButton/index.js';
+import Resources from '../Resources/index.js';
+import Settings from '../Settings/index.js';
+import ProtectedRoute from '../ProtectedRoute';
+import Home from '../Home/index.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 function App() {
   const [user, setUser] = useState({});
@@ -18,7 +19,12 @@ function App() {
           path="/"
           element={<Home user={user} setUser={setUser} />}
         ></Route>
-        <Route path="/settings" element={<Settings user={user} />}></Route>
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute user={user} component={Settings}></ProtectedRoute>
+          }
+        ></Route>
         <Route
           path="/resources"
           element={
@@ -26,18 +32,18 @@ function App() {
               list={[
                 {
                   picture:
-                    "https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-                  tags: ["diamond", "night", "stars"],
+                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                  tags: ['diamond', 'night', 'stars'],
                 },
                 {
                   picture:
-                    "https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-                  tags: ["diamond", "night"],
+                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                  tags: ['diamond', 'night'],
                 },
                 {
                   picture:
-                    "https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-                  tags: ["diamond", "stars"],
+                    'https://images.unsplash.com/photo-1655432961903-74302ae8041b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                  tags: ['diamond', 'stars'],
                 },
               ]}
             />
