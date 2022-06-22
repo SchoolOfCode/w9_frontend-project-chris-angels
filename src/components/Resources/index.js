@@ -1,6 +1,7 @@
 // import Profile from '../Profile/index.js';
 
 //This will need a useEffect to fetch the API about the right type of data
+
 import ResourceCard from '../ResourceCard';
 import { useState, useEffect } from 'react';
 
@@ -36,11 +37,12 @@ function Resources({ list }) {
 
   console.log(list);
   return (
-    <ol>
+    <ol className='resourcesContainer'>
+    <div className="rectangleHeader">Resources</div>
       {' '}
       {list.map((item, index) => {
         return (
-          <ResourceCard
+          <ResourceCard 
             key={index}
             logo={item.picture}
             tags={item.tags}

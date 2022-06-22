@@ -24,7 +24,7 @@ function Home(props) {
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
 
-      <Resources
+      <Resources 
         list={[
           {
             picture:
