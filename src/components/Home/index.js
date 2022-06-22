@@ -6,7 +6,23 @@ import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
 import Button, { panic } from '../Button';
+import { useEffect } from 'react';
+
 function Home(props) {
+  useEffect(() => {
+    console.log('help');
+    async function Fetch() {
+      let email = props.user.email;
+      let response = await fetch(`http://localhost:3001/users?email=${email}`);
+      let json = await response.json();
+      console.log(json);
+      let dataArr = json.data;
+      //Check if slackUsername is empty or not, if it is, set a boolean state so a component can be rednered below like login/logout buttons are
+    }
+    //If the length > 0, then the user has succesfully logged in and we can run our check for username
+    if (Object.keys(props.user).length !== 0) {
+    }
+  }, [props.user]);
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
     islogged = true;
@@ -15,7 +31,7 @@ function Home(props) {
     <div className="App">
       <Header />
       {!islogged && <LoginButton />}
-      {islogged && <LogoutButton />}
+      {islogged && <LogoutButton setUser={props.setUser} />}
       <Profile addUser={props.setUser}></Profile>
       <Link to="/panic1">
         <button type="button">
@@ -24,7 +40,7 @@ function Home(props) {
       </Link>
       <Button src={PanicPicture} onClick={panic}></Button>
 
-      <Resources 
+      <Resources
         list={[
           {
             picture:
