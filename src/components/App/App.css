@@ -319,7 +319,10 @@ a:hover {
   align-items: flex-start;
   justify-content: space-around;
 }
-
+.allCards {
+  max-height: 60rem;
+  overflow-y: scroll;
+}
 #topic-field {
   width: 100%;
 }
