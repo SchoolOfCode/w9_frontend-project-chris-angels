@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
+/* 
+  MUI component used to give a visual represnetaion of the current user's progress through to the last day of the bootcamp (80 total days)
+*/
 function LinearProgressWithLabel(props) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>

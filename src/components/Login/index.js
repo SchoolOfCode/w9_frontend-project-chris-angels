@@ -1,7 +1,7 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
-import Button from "@mui/material/Button";
-
+import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
+import Button from '@mui/material/Button';
+/*Login button component from auth0, used alongside the logout button component and the profile component*/
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
@@ -9,9 +9,9 @@ const LoginButton = () => {
     <Button
       variant="outlined"
       sx={{
-        color: "black",
-        backgroundColor: "#dcdde1",
-        borderColor: "#192a56",
+        color: 'black',
+        backgroundColor: '#dcdde1',
+        borderColor: '#192a56',
       }}
       onClick={() => loginWithRedirect()}
     >
@@ -21,5 +21,3 @@ const LoginButton = () => {
 };
 
 export default LoginButton;
-
-// test

@@ -1,13 +1,13 @@
+/**
+ *
+ * @param {*} Props: email of the current user.
+ * @returns
+ */
 export default function NotesForm(props) {
-  console.log('notes', props);
+  //Form submission function that reads each input type and adds it to the object to be sent to the server if needed.
   async function handleSubmission(e) {
     e.preventDefault();
-
-    console.log('form submission', e.target.elements);
     document.querySelector('.modalcontainer2').classList.add('hidden');
-    console.log(document.getElementById('article-tag').checked);
-    console.log(document.getElementById('article-tag').name);
-    console.log(document.getElementById('video-tag').checked);
     let postObj = {
       tags: [],
       week: document.getElementById('week-input').value,
@@ -45,23 +45,21 @@ export default function NotesForm(props) {
       postObj.tags = [...postObj.tags, document.getElementById('js-tag').name];
     }
 
-    let res = await fetch(`http://localhost:3001/notes?email=${props.email}`, {
+    //All elements have been searched, ready to post the data to the server and database.
+    await fetch(`http://localhost:3001/notes?email=${props.email}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(postObj),
     });
-    // user.current = json.data[0];
-    // setPlaceHolder(json.data[0].slackusername);
-    // console.log('ayo', user);
-    
-    //Resets form
+
+    //Resets form and then reloads page
     document.querySelector('#notes-input-field').reset();
     window.location.reload();
   }
   function hideForm() {
-    document.querySelector(".modalcontainer2").classList.add("hidden");
+    document.querySelector('.modalcontainer2').classList.add('hidden');
   }
   return (
     <div className="modalcontainer2 hidden">
