@@ -21,14 +21,13 @@ function Panic2() {
         <button type="button" onSubmit={(event) => handleSubmit(event)}></button>
       </form>
     
-
     <ol>
-        <li><a href={`http://www.google.com/`} target="_blank">Google</a></li>
-        <li><a href={`http://www.google.com/`} target="_blank">freeCodeCamp</a></li>
-        <li><a href={`http://www.google.com/`} target="_blank">Google</a></li>
-        <li><a href={`http://www.google.com/`} target="_blank">Google</a></li>
-        <li><a href={`http://www.google.com/`} target="_blank">Google</a></li>
-        <li><a href={`http://www.google.com/`} target="_blank">Google</a></li>
+        <li><a rel="noreferrer" href={`http://www.google.com/`} target="_blank">Google</a></li>
+        <li><a rel="noreferrer" href={`http://www.freecodecamp.org/`} target="_blank">freeCodeCamp</a></li>
+        <li><a rel="noreferrer" href={`https://www.w3schools.com/`} target="_blank">w3Schools</a></li>
+        <li><a rel="noreferrer" href={`https://stackoverflow.com/`} target="_blank">Stack Overflow</a></li>
+        <li><a rel="noreferrer" href={`https://developer.mozilla.org/en-US/`} target="_blank">MDN docs</a></li>
+        <li><a rel="noreferrer" href={`https://beta.reactjs.org/`} target="_blank">Beta React</a></li>
       </ol>
     </main>
   )
