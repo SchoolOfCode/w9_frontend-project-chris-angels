@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Timer from '../Timer';
 
 function PanicButton() {
   const [version, setVersion] = useState(1);
+  //example:
+  const answers = useRef({ id: 2 });
+  //answers.current.id
+  //answers.current.id = ...
   if (version === 1) {
     return (
       <>
