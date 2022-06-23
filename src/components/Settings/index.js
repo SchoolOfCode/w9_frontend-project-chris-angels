@@ -1,10 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import LogoutButton from '../Logout';
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import LogoutButton from "../Logout";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import Box from "@mui/material/Box";
+
 function Settings(props) {
   const [currName, setName] = useState(false);
-  const [placeholderName, setPlaceHolder] = useState('');
-  const user = useRef('');
+  const [placeholderName, setPlaceHolder] = useState("");
+  const user = useRef("");
   useEffect(() => {
     // function to fetch the data from the database
     async function Fetch() {
@@ -12,14 +17,14 @@ function Settings(props) {
         `http://localhost:3001/users?email=${props.user.email}`
       );
       let json = await response.json();
-      console.log('hi', json.data[0]);
+      console.log("hi", json.data[0]);
       user.current = json.data[0];
       setPlaceHolder(json.data[0].slackusername);
-      console.log('ayo', user);
+      console.log("ayo", user);
     }
     Fetch();
   });
-  console.log('settings page', props.user);
+  console.log("settings page", props.user);
   //This code will probably be removed once protected routes are a thing
   let islogged = false;
   if (Object.keys(props.user).length !== 0) {
@@ -32,9 +37,9 @@ function Settings(props) {
     let res = await fetch(
       `http://localhost:3001/users?email=${user.current.email}`,
       {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           slackUsername: e.target.elements[0].value,
@@ -59,15 +64,32 @@ function Settings(props) {
           }}
         >
           <div>
-            <label htmlFor="usernameInput">Slack Username: </label>
-            <input
-              type="text"
-              id="usernameInput"
-              placeholder={user.current.slackusername}
-              required
-            ></input>
+            {/*<label htmlFor="usernameInput">Slack Username: </label>*/}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "flex-end",
+              }}
+            >
+              <AccountCircle
+                sx={{ color: "#dcdde1", mr: 1, my: 0.5, mb: 1.5 }}
+                fontSize="large"
+              />
+              <TextField
+                sx={{
+                  color: "#dcdde1",
+                  border: "#dcdde1",
+                }}
+                variant="outlined"
+                label="Slack Username:"
+                type="text"
+                id="usernameInput"
+                placeholder={user.current.slackusername}
+                required
+              ></TextField>
+            </Box>
           </div>
-          <button>Update username</button>
+          <Button variant="outlined">Update username</Button>
         </form>
       </main>
     </div>
