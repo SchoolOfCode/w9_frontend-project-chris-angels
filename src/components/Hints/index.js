@@ -4,7 +4,7 @@ import hintList from './hintList';
 
 function Hints() {
     return (
-        <div classname="hints">
+        <div className="hints">
             <ol>
                 {hintList.map((hint, index) => {
                     return <Hint key={index} text={hint}></Hint>

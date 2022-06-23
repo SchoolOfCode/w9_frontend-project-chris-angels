@@ -30,7 +30,7 @@ function Timer(props) {
     return min + ':' + sec;
   }
   return (
-    <div className="App">
+    <div className="timer">
       <div>Countdown: {configureTimer(counter)}</div>
       {btn && (
         <button
