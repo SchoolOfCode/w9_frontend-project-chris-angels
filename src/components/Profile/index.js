@@ -17,10 +17,10 @@ const Profile = (props) => {
   return (
     isAuthenticated && (
       <div id="profile-container">
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <p>{props.slackusername}</p>
+        <img id="profile-picture" src={user.picture} alt={user.name} />
+        <h2 id="profile-name">{user.name}</h2>
+        <p id="profile-email">{user.email}</p>
+        <p id="profile-slackusername">{props.slackusername}</p>
       </div>
     )
   );
