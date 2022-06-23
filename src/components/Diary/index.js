@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
 import Header from '../Header';
+
+/*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary(props) {
   const [notes, setNotes] = useState([]);
+
+  /*
+  SideEffect that runs on load to display all of the notes of the current logged in user 
+  This component is protected from being loaded if there is no current user
+  */
   useEffect(() => {
     async function Fetch() {
       let res = await fetch(
@@ -13,29 +20,31 @@ function Diary(props) {
       setNotes(dataArr);
     }
     Fetch();
-  }, []);
-  console.log('props', props);
+  }, [props.user.email]);
+
   return (
-    <main>
+    <>
       <Header></Header>
-      <section className="notescontainer">
-        {notes.map((item, index) => {
-          return (
-            <div className="entryBox" key={index}>
-              <div>
-                W{item.week}D{item.day}
+      <main>
+        <section className="notescontainer">
+          {notes.map((item, index) => {
+            return (
+              <div className="entryBox" key={index}>
+                <h3>
+                  W{item.week}D{item.day}
+                </h3>
+                <ol className="tagList">
+                  {item.tags.map((item, index) => {
+                    return <li key={index}>{item}</li>;
+                  })}
+                </ol>
+                {item.note}
               </div>
-              <ol className="tagList">
-                {item.tags.map((item, index) => {
-                  return <li key={index}>{item}</li>;
-                })}
-              </ol>
-              {item.note}
-            </div>
-          );
-        })}
-      </section>
-    </main>
+            );
+          })}
+        </section>
+      </main>
+    </>
   );
 }
 

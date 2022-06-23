@@ -1,23 +1,22 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
-
+// import Avatar from "@mui/material/Avatar";
+/**
+ *
+ * @param {*} props: setUser state as addUser from App
+ * @returns
+ */
 const Profile = (props) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  // console.log('profile', user);
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   if (isAuthenticated) {
     props.addUser(user);
   }
-  // else if (user === undefined) {
-  //   props.addUser({});
-  // }
-  console.log('before profile return', new Date());
-
   return (
     isAuthenticated && (
-      <div>
+      <div id="profile-container">
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>

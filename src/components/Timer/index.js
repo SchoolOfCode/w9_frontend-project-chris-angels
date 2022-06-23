@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import Button from '@mui/material/Button';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import Box from '@mui/material/Box';
 
+/**
+ *
+ * @param {*} props:setVersion -> Given by PanicButton. The version updates when the button is clicked at the end of the timer
+ * @returns
+ */
 function Timer(props) {
   const [counter, setCounter] = useState(15);
   const [btn, setbtn] = useState(false);
@@ -8,12 +16,12 @@ function Timer(props) {
     if (counter > 0) {
       setTimeout(() => setCounter(counter - 1), 1000);
     } else {
-      //transition time
-      // props.setVersion(2);
       transitionBtn.current = true;
       setbtn(true);
     }
   }, [counter]);
+
+  //function that converts a timer into minutes and seconds with leading zeroes when needed
   function configureTimer(counter) {
     let min = Math.floor(counter / 60);
     let sec = counter - Math.floor(counter / 60) * 60;
@@ -29,17 +37,30 @@ function Timer(props) {
     }
     return min + ':' + sec;
   }
+
   return (
     <div className="timer">
-      <div>Countdown: {configureTimer(counter)}</div>
+
+      <section>Countdown: {configureTimer(counter)}</section>
+
       {btn && (
-        <button
-          onClick={() => {
-            props.setVersion(props.version + 1);
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          Lets move
-        </button>
+          <DirectionsRunIcon fontSize="large"></DirectionsRunIcon>
+          <Button
+            variant="contained"
+            onClick={() => {
+              props.setVersion(props.version + 1);
+            }}
+          >
+            Lets move
+          </Button>
+        </Box>
       )}
     </div>
   );

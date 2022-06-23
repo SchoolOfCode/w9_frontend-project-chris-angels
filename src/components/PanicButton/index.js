@@ -6,7 +6,7 @@ import Timer from '../Timer';
 function PanicButton() {
   const [version, setVersion] = useState(1);
   //example:
-  const answers = useRef({ id: 2 });
+  // const answers = useRef({ id: 2 });
   //answers.current.id
   //answers.current.id = ...
   if (version === 1) {
@@ -14,8 +14,10 @@ function PanicButton() {
       <>
         <Link to="/">Home</Link>
         <div>
+
           <Hints></Hints>
           version 1: <Timer version={version} setVersion={setVersion} />
+
         </div>
       </>
     );
@@ -24,7 +26,7 @@ function PanicButton() {
       <>
         <Link to="/">Home</Link>
         <div>
-          Version 2: <Timer version={version} setVersion={setVersion} />
+          Version 2: <Timer setVersion={setVersion} />
         </div>
       </>
     );
