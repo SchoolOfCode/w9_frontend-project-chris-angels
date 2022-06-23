@@ -18,8 +18,11 @@ function Header({ logged }) {
         </Button>
       )}
       {!logged && (
-        <button
+        <Button
           disabled
+          sx={{
+            backgroundColor: "#dcdde1",
+          }}
           onClick={() => {
             document
               .querySelector(".modalcontainer2")
@@ -27,16 +30,16 @@ function Header({ logged }) {
           }}
         >
           New Entry
-        </button>
+        </Button>
       )}
       <Link className="homeLink" to="/">
-        Home
+        <Button variant="contained">Home</Button>
       </Link>
       <Link className="resourcesLink" to="/resources">
-        Resources
+        <Button variant="contained">Resources</Button>
       </Link>
       <Link className="diaryLink" to="/diary">
-        Diary
+        <Button variant="contained">Diary</Button>
       </Link>
       <Link to="/settings">
         <Button variant="contained">Settings</Button>

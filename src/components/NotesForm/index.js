@@ -1,15 +1,15 @@
 export default function NotesForm(props) {
   function handleSubmission(e) {
     e.preventDefault();
-    console.log('form submission', e.target);
-    document.querySelector('.modalcontainer2').classList.add('hidden');
+    console.log("form submission", e.target);
+    document.querySelector(".modalcontainer2").classList.add("hidden");
     //TODO::::::parse e.target htmlFor the values I want, put them in an obj, send in a post fetch to the server
 
     //Resets form
-    document.querySelector('#notes-input-field').reset();
+    document.querySelector("#notes-input-field").reset();
   }
   function hideForm() {
-    document.querySelector('.modalcontainer2').classList.add('hidden');
+    document.querySelector(".modalcontainer2").classList.add("hidden");
   }
   return (
     <div className="modalcontainer2 hidden">
