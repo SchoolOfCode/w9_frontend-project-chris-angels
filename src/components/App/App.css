@@ -170,6 +170,10 @@ textarea {
   color: white;
   font-size: 2rem;
 }
+.centerMe {
+  justify-self: center;
+  text-decoration: underline;
+}
 #profile-name {
   display: flex;
   justify-content: center;

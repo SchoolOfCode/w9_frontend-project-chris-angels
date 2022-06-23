@@ -46,6 +46,7 @@ function Home(props) {
   return (
     <div className="App">
       <Header logged={islogged} />
+      {islogged && <p className="centerMe">Progress Bar</p>}
       {islogged && <ProgressBar email={props.user.email} />}
       {!islogged && <LoginButton />}
       {islogged && (
