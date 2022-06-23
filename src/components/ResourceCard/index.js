@@ -9,18 +9,17 @@ function ResourceCard(props) {
   if (props.tags.includes("video")) {
     console.log("jimmy")
     images = video
-  } else if (props.tags.includes("image")){
+  } else if (props.tags.includes("image")) {
     images = image
-} else if (props.tags.includes("article")) {
+  } else if (props.tags.includes("article")) {
     images = notes
   }
 
   return (
-    <div >
+    <div className='allCards'>
       <div className="resourceCard">
         <img className="resourceImage" src={images} alt="resource type logo"></img>{' '}
         <div className="title">{props.link}Title</div>
-
       </div>
       <dl className="tags">
         {props.tags.map((tag, index) => {

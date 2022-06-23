@@ -105,15 +105,17 @@ function Resources({ list, header }) {
         <div className="rectangleHeader">Resources</div>{' '}
         {data.map((item, index) => {
           return (
-            <ResourceCard
-              key={index}
-              logo={item.picture}
-              userid={item.userid}
-              topicid={item.topicid}
-              link={item.link}
-              tags={item.tags}
-              rating={item.rating}
-            ></ResourceCard>
+            <div className='allCardsContainer'>
+              <ResourceCard
+                key={index}
+                logo={item.picture}
+                userid={item.userid}
+                topicid={item.topicid}
+                link={item.link}
+                tags={item.tags}
+                rating={item.rating}
+              ></ResourceCard>
+            </div>
           );
         })}
         {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
