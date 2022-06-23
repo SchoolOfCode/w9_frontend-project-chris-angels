@@ -158,6 +158,10 @@ textarea {
   justify-content: center;
   place-items: center;
 }
+#root {
+  height: 100vh;
+  background-size: cover;
+}
 #settingsForm {
   font-size: 1.5rem;
   display: flex;
