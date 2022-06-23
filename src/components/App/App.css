@@ -196,7 +196,7 @@ textarea {
   display: flex;
   background-repeat: no-repeat;
   height: 100%;
-  background-position: -10% 40%;
+  background-size: cover;
 }
 .panic1left {
   flex: 1;
