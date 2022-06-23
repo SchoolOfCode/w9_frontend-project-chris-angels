@@ -13,7 +13,7 @@ function PanicButton() {
       <>
         <Link to="/">Home</Link>
         <div>
-          version 1: <Timer version={version} setVersion={setVersion} />
+          version 1: <Timer setVersion={setVersion} />
         </div>
       </>
     );
@@ -22,7 +22,7 @@ function PanicButton() {
       <>
         <Link to="/">Home</Link>
         <div>
-          Version 2: <Timer version={version} setVersion={setVersion} />
+          Version 2: <Timer setVersion={setVersion} />
         </div>
       </>
     );
