@@ -63,8 +63,13 @@ export default function NotesForm(props) {
   }
   return (
     <div className="modalcontainer2 hidden">
-      <div className="formContainer">
-        <button onClick={hideForm}>X</button>
+      <section className="formContainer">
+        <button
+          aria-label="Cancel and hide current notes submission form"
+          onClick={hideForm}
+        >
+          X
+        </button>
         <form
           id="notes-input-field"
           onSubmit={(e) => {
@@ -139,7 +144,7 @@ export default function NotesForm(props) {
           </div>
           <button>Submit</button>
         </form>
-      </div>
+      </section>
     </div>
   );
 }

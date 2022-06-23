@@ -76,8 +76,9 @@
 }
 
 .resourceCard {
-  display: grid;
-  height: 120px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
   border: solid #181e50;
   grid-template-columns: 1fr 1fr;
   background-color: #4a90e2;
@@ -85,7 +86,10 @@
   margin-left: 30px;
   margin-right: 30px;
 }
-
+.topCard {
+  display: flex;
+  gap: 2rem;
+}
 .resourceImage {
   height: 10vh;
   width: 10vw;
@@ -99,11 +103,9 @@
 }
 
 .tags {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-self: flex-start;
-  justify-self: flex-start;
-  padding-right: 50vw;
+  display: flex;
+  gap: 3rem;
+  margin-left: 1.5rem;
 }
 
 .imageTag {
