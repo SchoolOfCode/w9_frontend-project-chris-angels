@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import LinearWithValueLabel from '../LinearProgress';
+
+/**
+ *
+ * @param {*} email -> the email of the current user provided by Home
+ * @returns
+ */
 function ProgressBar({ email }) {
-  // const progress = useRef(0);
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     //fetch based on most recent note (highest week) and get corresponding day
@@ -16,13 +21,16 @@ function ProgressBar({ email }) {
       setProgress((dataArr.week * 5 + dataArr.day) * 1.25);
     }
     Fetch();
-  }, []);
+  }, [email]);
   return (
-    <div>
-      <div className="progressBox">
+    <>
+      <figure
+        className="progressBox"
+        title={`Progress bar of School of Code completion percentage. You are ${progress}% done with the bootcamp`}
+      >
         <LinearWithValueLabel progress={progress}></LinearWithValueLabel>
-      </div>
-    </div>
+      </figure>
+    </>
   );
 }
 

@@ -1,20 +1,15 @@
-// import Profile from '../Profile/index.js';
 
-//This will need a useEffect to fetch the API about the right type of data
-
-import ResourceCard from "../ResourceCard";
-import { useState, useEffect } from "react";
-import Button from "@mui/material/Button";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Header from "../Header";
+import ResourceCard from '../ResourceCard';
+import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Header from '../Header';
 import Box from "@mui/material/Box";
-
-function Resources({ list, header }) {
-  // Used to get a randomised resource from database (needs adding to)
-
+  
+function Resources({ header }) {
   const [data, setData] = useState([
     { resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 },
   ]);
@@ -32,18 +27,11 @@ function Resources({ list, header }) {
         `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
       );
       let json = await response.json();
-      // console.log(json);
       let dataArr = json.data;
 
-      // console.log('hello', dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    // console.log(data, 'hello'); []);
-
-    // console.log(data, 'hi hi');
-    Fetch();
-    console.log(data, "hello");
   }, []);
 
   //use effect that fetches a fresh batch of resources by topic when topic is selected and confirmed
@@ -54,14 +42,10 @@ function Resources({ list, header }) {
         `http://localhost:3001/resource/${confirmedTopic}`
       );
       let json = await response.json();
-      // console.log(json);
       let dataArr = json.data;
-
-      console.log("hello", dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    console.log(confirmedTopic, "hello");
   }, [confirmedTopic]);
 
   //___________Functions and the list of options for dropdown Container! ADD OBJECT TO THE LIST TO ADD A NEW OPTION, DON'T MODIFY THE JSX____________
@@ -84,13 +68,12 @@ function Resources({ list, header }) {
     setConfirmedTopic(topicChoice);
   }
 
-  console.log(data, "hi hi");
-
   return (
     <>
       {header && <Header></Header>}
       <dl className="resourcesContainer">
         {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
+
         <Box
           id="dropdown-menu-cont"
           sx={{
@@ -124,6 +107,7 @@ function Resources({ list, header }) {
           </Button>
         </Box>
         <div className="rectangleHeader">Resources</div>{" "}
+          <section className="allCards">
         {data.map((item, index) => {
           return (
             <ResourceCard
@@ -137,12 +121,11 @@ function Resources({ list, header }) {
             ></ResourceCard>
           );
         })}
-        {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
+        </section>
+
       </dl>
     </>
   );
-
-  // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })
 }
 
 export default Resources;

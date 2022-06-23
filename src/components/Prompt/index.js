@@ -1,6 +1,12 @@
+/**
+ *
+ * @param {*} props: email -> current user email given by Home
+ * @returns A form that requires the user to give a slackusername because their email is not currently associated with one in the database
+ */
 function Prompt(props) {
   return (
     <div className="modalcontainer">
+      {/* The div below needs to be deleted at some point when styling is complete */}
       <div
         onClick={() => {
           document.querySelector('.modalcontainer').classList.add('hidden');
@@ -11,17 +17,11 @@ function Prompt(props) {
       <input id="username" type="text" placeholder="username"></input>
       <button
         onClick={async () => {
-          //post with email and username
-
-          console.log(
-            'Submission button clicked',
-            props.email,
-            document.getElementById('username').value
-          );
+          //post to server/db with email and username and then hide the prompt form
           let username = document.getElementById('username').value;
           document.getElementById('username').value = '';
           document.querySelector('.modalcontainer').classList.add('hidden');
-          let res = await fetch('http://localhost:3001/users', {
+          await fetch('http://localhost:3001/users', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -31,8 +31,6 @@ function Prompt(props) {
               slackUsername: username,
             }),
           });
-          console.log(res);
-          console.log(await res.json());
           window.location.reload();
         }}
       >
