@@ -33,6 +33,7 @@ function Prompt(props) {
           });
           console.log(res);
           console.log(await res.json());
+          window.location.reload();
         }}
       >
         Submit
