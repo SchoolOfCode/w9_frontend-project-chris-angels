@@ -55,6 +55,7 @@ function Timer(props) {
           <Button
             variant="contained"
             onClick={() => {
+              
               props.setVersion(props.version + 1);
             }}
           >
