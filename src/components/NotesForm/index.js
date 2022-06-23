@@ -101,7 +101,7 @@ export default function NotesForm(props) {
       body: JSON.stringify(postObj),
     });
 
-    if (document.getElementById("resources-input").value != null) {
+    if (document.getElementById("resources-input").value !== "") {
       await fetch(`http://localhost:3001/resource`, {
         method: "POST",
         headers: {
