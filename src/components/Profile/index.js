@@ -1,21 +1,15 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import Avatar from "@mui/material/Avatar";
-import React from "react";
+import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
+// import Avatar from "@mui/material/Avatar";
 
 const Profile = (props) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  // console.log('profile', user);
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   if (isAuthenticated) {
     props.addUser(user);
   }
-  // else if (user === undefined) {
-  //   props.addUser({});
-  // }
-  console.log("before profile return", new Date());
-
   return (
     isAuthenticated && (
       <div id="profile-container">

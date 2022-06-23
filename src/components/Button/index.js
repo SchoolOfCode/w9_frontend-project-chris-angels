@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-export function panic() {
-    alert("Panic!!!!!!!!!")
+function Button({ onClick, src }) {
+  return (
+    <div className="Panic">
+      <img
+        title="Panic Button"
+        alt="Panic Button"
+        onClick={onClick}
+        src={src}
+      ></img>
+    </div>
+  );
 }
 
-
-function Button({onClick, src}) {
-    return (
-        <div className='Panic'>
-            <img alt="PanicButton" onClick={onClick} src={src}></img>
-        </div>
-    )
-}
-
-export default Button
+export default Button;
