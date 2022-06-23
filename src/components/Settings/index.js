@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Box from '@mui/material/Box';
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import Box from "@mui/material/Box";
 
 /**
  *
@@ -12,8 +12,8 @@ import Box from '@mui/material/Box';
  */
 function Settings(props) {
   const [currName, setName] = useState(false);
-  const [placeholderName, setPlaceHolder] = useState('');
-  const user = useRef('');
+  const [placeholderName, setPlaceHolder] = useState("");
+  const user = useRef("");
   useEffect(() => {
     async function Fetch() {
       let response = await fetch(
@@ -21,11 +21,11 @@ function Settings(props) {
       );
       let json = await response.json();
       if (json.data.length === 0) {
-        user.current = '';
+        user.current = "";
       } else {
         user.current = json.data[0];
       }
-      setPlaceHolder('');
+      setPlaceHolder("");
     }
     Fetch();
   }, [props.user.email]);
@@ -33,9 +33,9 @@ function Settings(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     await fetch(`http://localhost:3001/users?email=${user.current.email}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         slackUsername: e.target.elements[0].value,
@@ -60,18 +60,18 @@ function Settings(props) {
           <div>
             <Box
               sx={{
-                display: 'flex',
-                alignItems: 'flex-end',
+                display: "flex",
+                alignItems: "flex-end",
               }}
             >
               <AccountCircle
-                sx={{ color: '#4a90e2', mr: 1, my: 0.5, mb: 1.5 }}
+                sx={{ color: "var(--socblue)", mr: 1, my: 0.5, mb: 1.5 }}
                 fontSize="large"
               />
               <TextField
                 sx={{
-                  color: '#4a90e2',
-                  border: '#dcdde1',
+                  color: "#4a90e2",
+                  border: "#dcdde1",
                 }}
                 variant="outlined"
                 label="Slack Username:"
@@ -82,7 +82,7 @@ function Settings(props) {
               ></TextField>
             </Box>
           </div>
-          <Button type="submit" variant="outlined">
+          <Button type="submit" variant="contained">
             Update username
           </Button>
         </form>
