@@ -10,6 +10,7 @@
 .App {
   text-align: center;
   height: fit-content;
+  padding-bottom: 1.5rem;
   background-color: #4a90e2;
 }
 
@@ -128,13 +129,20 @@
   height: 2vh;
 }
 
+#welcomeText {
+  margin: 0 1rem;
+}
 .modalcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
   position: absolute;
   top: 0;
-  height: 400vh;
+  height: 100%;
   width: 100vw;
-  z-index: 10;
-  background-color: rgba(128, 128, 128, 0.5); /* color */
+  z-index: 11;
+  background-color: rgba(128, 128, 128, 0.8); /* color */
 }
 .modalcontainer2 {
   position: absolute;
