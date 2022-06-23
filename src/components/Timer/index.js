@@ -40,8 +40,7 @@ function Timer(props) {
 
   return (
     <div className="timer">
-
-      <section>Countdown: {configureTimer(counter)}</section>
+      <section>{configureTimer(counter)}</section>
 
       {btn && (
         <Box
@@ -55,7 +54,6 @@ function Timer(props) {
           <Button
             variant="contained"
             onClick={() => {
-              
               props.setVersion(props.version + 1);
             }}
           >

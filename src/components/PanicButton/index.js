@@ -14,14 +14,18 @@ function PanicButton() {
   //answers.current.id = ...
   if (version === 1) {
     return (
-      <>
-        <Link to="/">Home</Link>
-        <div>
+      <main class="panicMain1">
+        <div class="panic1left">
+          <Link to="/">Home</Link>
+          <p id="timerP">
+            <Timer version={version} setVersion={setVersion} />
+          </p>
+        </div>
+        <div class="panic1right">
           <Hints></Hints>
           {/* <img src={pic} alt="Don't Panic"></img> */}
-          version 1: <Timer version={version} setVersion={setVersion} />
         </div>
-      </>
+      </main>
     );
   } else if (version === 2) {
     return (
