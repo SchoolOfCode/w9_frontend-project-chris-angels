@@ -188,7 +188,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="video"
                   ></input>
-                  <label htmlFor="video-tag" class="check-label">
+                  <label htmlFor="video-tag" className="check-label">
                     Video
                   </label>
                 </div>
@@ -199,7 +199,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="article"
                   ></input>
-                  <label htmlFor="article-tag" class="check-label">
+                  <label htmlFor="article-tag" className="check-label">
                     Article
                   </label>
                 </div>
@@ -210,7 +210,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="image"
                   ></input>
-                  <label htmlFor="image-tag" class="check-label">
+                  <label htmlFor="image-tag" className="check-label">
                     Image
                   </label>
                 </div>
@@ -223,7 +223,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="html"
                   ></input>
-                  <label htmlFor="tag1-tag" class="check-label">
+                  <label htmlFor="tag1-tag" className="check-label">
                     HTML
                   </label>
                 </div>
@@ -234,7 +234,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="css"
                   ></input>
-                  <label htmlFor="tag2-tag" class="check-label">
+                  <label htmlFor="tag2-tag" className="check-label">
                     CSS
                   </label>
                 </div>
@@ -245,7 +245,7 @@ export default function NotesForm(props) {
                     className="tag-checkbox"
                     name="javascript"
                   ></input>
-                  <label htmlFor="tag3-tag" class="check-label">
+                  <label htmlFor="tag3-tag" className="check-label">
                     Javascript
                   </label>
                 </div>
