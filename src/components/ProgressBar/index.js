@@ -17,7 +17,6 @@ function ProgressBar({ email }) {
       let json = await res.json();
       // console.log(json);
       let dataArr = json.data[0];
-      console.log('ProgressBAR', dataArr);
       setProgress((dataArr.week * 5 + dataArr.day) * 1.25);
     }
     Fetch();
