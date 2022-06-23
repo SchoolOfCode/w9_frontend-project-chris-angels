@@ -1,24 +1,29 @@
 import React from 'react'
 
-function handleSubmit(event) {
-  let topic = event.target.value
-  console.log(topic)
+function handleSubmit(e) {
+  e.preventDefault()
+  let topic = e.target.problemTopic.value
+  let problem = e.target.problemProblem.value
+  let tried = e.target.problemTried.value
+  console.log(topic, problem, tried)
 }
 
 function Panic2() {
   return (
     <main>
-      <form className="problemForm" >
+      <form className="problemForm" onSubmit={(e) => {
+        handleSubmit(e);
+      }} >
       <div>
-          <input className='problemTopic' placeholder="What topic are you working on?"></input>
+          <input id='problemTopic' type="text" placeholder="What topic are you working on?"></input>
       </div>
       <div>
-          <input className="problemProblem" placeholder="What is the problem?"></input>
+          <input id="problemProblem" type="text" placeholder="What is the problem?"></input>
       </div>
       <div>
-        <input className="problemTried" placeholder="What have you tried so far?"></input>
+          <input id="problemTried" type="text" placeholder="What have you tried so far?"></input>
         </div>
-        <button type="button" onSubmit={(event) => handleSubmit(event)}></button>
+        <button ></button>
       </form>
     
     <ol>
