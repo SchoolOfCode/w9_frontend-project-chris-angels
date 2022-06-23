@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from 'react';
 
 function Timer(props) {
-  const [counter, setCounter] = useState(4);
+  const [counter, setCounter] = useState(15);
   const [btn, setbtn] = useState(false);
   const transitionBtn = useRef(false);
   useEffect(() => {
@@ -14,14 +14,33 @@ function Timer(props) {
       setbtn(true);
     }
   }, [counter]);
-
+  function configureTimer(counter) {
+    let min = Math.floor(counter / 60);
+    let sec = counter - Math.floor(counter / 60) * 60;
+    if (min < 10) {
+      min = '0' + String(min);
+    } else {
+      min = String(min);
+    }
+    if (sec < 10) {
+      sec = '0' + String(sec);
+    } else {
+      sec = String(sec);
+    }
+    return min + ':' + sec;
+  }
   return (
     <div className="App">
-      <div>
-        Countdown: {Math.floor(counter / 60)}:{" "}
-        {counter - Math.floor(counter / 60) * 60}
-      </div>
-      {btn && <button>Lets move</button>}
+      <div>Countdown: {configureTimer(counter)}</div>
+      {btn && (
+        <button
+          onClick={() => {
+            props.setVersion(props.version + 1);
+          }}
+        >
+          Lets move
+        </button>
+      )}
     </div>
   );
 }

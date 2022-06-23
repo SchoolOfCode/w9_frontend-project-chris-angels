@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
 import NotesForm from '../NotesForm/index.js';
+import ProgressBar from '../ProgressBar';
 import Button from '../Button';
 import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
@@ -22,7 +23,6 @@ function Home(props) {
       let json = await response.json();
       // console.log(json);
       let dataArr = json.data;
-      console.log('123456');
 
       // slack.current = dataArr[0].slackusername;
       if (slack !== dataArr[0].slackusername) {
@@ -51,6 +51,7 @@ function Home(props) {
   return (
     <div className="App">
       <Header logged={islogged} />
+      {islogged && <ProgressBar email={props.user.email} />}
       {!islogged && <LoginButton />}
       {islogged && (
         <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
@@ -61,7 +62,7 @@ function Home(props) {
         <Button src={PanicPicture}> </Button>
       </Link>
 
-      <NotesForm></NotesForm>
+      <NotesForm email={props.user.email}></NotesForm>
       <Resources />
     </div>
   );
