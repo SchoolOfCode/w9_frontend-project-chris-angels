@@ -22,8 +22,9 @@ function getClass(index) {
 function Hint({ index, text }) {
   return (
     <li className={getClass(index)} id={`checklist${index}`} key={index}>
-      {text.hint}
+      <label for={index}>{text.hint}</label>
       <input
+        name={index}
         type="checkbox"
         id={`checkbox${index}`}
         onClick={() => nextHint(index)}

@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import Hints from '../Hints';
 import Timer from '../Timer';
 import Panic2 from '../Panic2';
+import pic from '../../Assets/dont-panic-stars.png';
 
 function PanicButton() {
   const [version, setVersion] = useState(1);
+  document.getElementById('root').style.backgroundImage = `url(${pic})`;
   //example:
   // const answers = useRef({ id: 2 });
   //answers.current.id
@@ -16,6 +18,7 @@ function PanicButton() {
         <Link to="/">Home</Link>
         <div>
           <Hints></Hints>
+          {/* <img src={pic} alt="Don't Panic"></img> */}
           version 1: <Timer version={version} setVersion={setVersion} />
         </div>
       </>
