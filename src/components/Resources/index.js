@@ -7,9 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Header from '../Header';
 
-function Resources({ list, header }) {
-  // Used to get a randomised resource from database (needs adding to)
-
+function Resources({ header }) {
   const [data, setData] = useState([
     { resourceid: 0, userid: 0, topicid: 0, link: '', tags: [], rating: 0 },
   ]);
@@ -27,18 +25,11 @@ function Resources({ list, header }) {
         `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
       );
       let json = await response.json();
-      // console.log(json);
       let dataArr = json.data;
 
-      // console.log('hello', dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    // console.log(data, 'hello'); []);
-
-    // console.log(data, 'hi hi');
-    Fetch();
-    console.log(data, 'hello');
   }, []);
 
   //use effect that fetches a fresh batch of resources by topic when topic is selected and confirmed
@@ -49,14 +40,10 @@ function Resources({ list, header }) {
         `http://localhost:3001/resource/${confirmedTopic}`
       );
       let json = await response.json();
-      // console.log(json);
       let dataArr = json.data;
-
-      console.log('hello', dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    console.log(confirmedTopic, 'hello');
   }, [confirmedTopic]);
 
   //___________Functions and the list of options for dropdown Container! ADD OBJECT TO THE LIST TO ADD A NEW OPTION, DON'T MODIFY THE JSX____________
@@ -78,8 +65,6 @@ function Resources({ list, header }) {
   function searchButtonHandler() {
     setConfirmedTopic(topicChoice);
   }
-
-  console.log(data, 'hi hi');
 
   return (
     <>
@@ -108,25 +93,24 @@ function Resources({ list, header }) {
           </Button>
         </div>
         <div className="rectangleHeader">Resources</div>{' '}
-        {data.map((item, index) => {
-          return (
-            <ResourceCard
-              key={index}
-              logo={item.picture}
-              userid={item.userid}
-              topicid={item.topicid}
-              link={item.link}
-              tags={item.tags}
-              rating={item.rating}
-            ></ResourceCard>
-          );
-        })}
-        {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
+        <section className="allCards">
+          {data.map((item, index) => {
+            return (
+              <ResourceCard
+                key={index}
+                logo={item.picture}
+                userid={item.userid}
+                topicid={item.topicid}
+                link={item.link}
+                tags={item.tags}
+                rating={item.rating}
+              ></ResourceCard>
+            );
+          })}
+        </section>
       </dl>
     </>
   );
-
-  // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })
 }
 
 export default Resources;

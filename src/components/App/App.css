@@ -9,7 +9,8 @@
 
 .App {
   text-align: center;
-  height: 300vh;
+  height: fit-content;
+  padding-bottom: 2rem;
   background-color: #4a90e2;
 }
 
@@ -54,9 +55,8 @@
 /* -------------------------------------resources------------------------------- */
 
 .resourcesContainer {
-  display: grid;
-  grid-template-rows: 25vh 1fr 1fr;
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   margin-left: 15px;
   margin-right: 15px;
@@ -96,7 +96,10 @@
   margin: 10px;
   border: solid 10px #181e50;
 }
-
+.allCards {
+  overflow-y: scroll;
+  max-height: 58rem;
+}
 .title {
   align-self: center;
   justify-self: flex-start;

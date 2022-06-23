@@ -39,7 +39,7 @@ function Timer(props) {
   }
 
   return (
-    <div className="App">
+    <div className="timer">
       <section>Countdown: {configureTimer(counter)}</section>
       {btn && (
         <Box
