@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 function Timer(props) {
-  const [counter, setCounter] = useState(100);
+  const [counter, setCounter] = useState(15);
   const [btn, setbtn] = useState(false);
   const transitionBtn = useRef(false);
   useEffect(() => {
@@ -32,7 +32,15 @@ function Timer(props) {
   return (
     <div className="App">
       <div>Countdown: {configureTimer(counter)}</div>
-      {btn && <button>Lets move</button>}
+      {btn && (
+        <button
+          onClick={() => {
+            props.setVersion(props.version + 1);
+          }}
+        >
+          Lets move
+        </button>
+      )}
     </div>
   );
 }
