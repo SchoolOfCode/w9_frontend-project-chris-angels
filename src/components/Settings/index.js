@@ -20,7 +20,6 @@ function Settings(props) {
         `http://localhost:3001/users?email=${props.user.email}`
       );
       let json = await response.json();
-      console.log('hi', json);
       if (json.data.length === 0) {
         user.current = '';
       } else {
