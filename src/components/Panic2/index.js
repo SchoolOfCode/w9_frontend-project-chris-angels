@@ -2,8 +2,10 @@ import React from 'react'
 
 function handleSubmit(e) {
   e.preventDefault()
- 
-  console.log(e.target)
+  let topic = e.target.problemTopic.value
+  let problem = e.target.problemProblem.value
+  let tried = e.target.problemTried.value
+  console.log(topic, problem, tried)
 }
 
 function Panic2() {
@@ -11,16 +13,15 @@ function Panic2() {
     <main>
       <form className="problemForm" onSubmit={(e) => {
         handleSubmit(e);
-        console.log("submitted")
       }} >
       <div>
-          <input className='problemTopic' type="text" value="What topic are you working on?" ></input>
+          <input id='problemTopic' type="text" placeholder="What topic are you working on?"></input>
       </div>
       <div>
-          <input className="problemProblem" type="text" value="What is the problem?" placeholder="What is the problem?"></input>
+          <input id="problemProblem" type="text" placeholder="What is the problem?"></input>
       </div>
       <div>
-          <input className="problemTried" type="text" value="value" placeholder="What have you tried so far?"></input>
+          <input id="problemTried" type="text" placeholder="What have you tried so far?"></input>
         </div>
         <button ></button>
       </form>
