@@ -1,14 +1,10 @@
 import React from 'react';
 
-function Button({ onClick, src }) {
+//Props: src -> Image source given from Home component. Image source is found in Assets folder
+function Button({ src }) {
   return (
     <div className="Panic" aria-label="Button to trigger help timer">
-      <img
-        title="Panic Button"
-        alt="Panic Button"
-        onClick={onClick}
-        src={src}
-      ></img>
+      <img title="Panic Button" alt="Panic Button" src={src}></img>
     </div>
   );
 }
