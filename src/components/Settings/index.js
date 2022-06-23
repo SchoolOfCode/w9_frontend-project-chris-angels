@@ -21,8 +21,12 @@ function Settings(props) {
       );
       let json = await response.json();
       console.log('hi', json);
-      user.current = json.data[0];
-      setPlaceHolder(json.data[0].slackusername);
+      if (json.data.length === 0) {
+        user.current = '';
+      } else {
+        user.current = json.data[0];
+      }
+      setPlaceHolder('');
     }
     Fetch();
   }, [props.user.email]);
