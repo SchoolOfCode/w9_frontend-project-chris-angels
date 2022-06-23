@@ -9,7 +9,7 @@
 
 .App {
   text-align: center;
-  height: 300vh;
+  height: fit-content;
   background-color: #4a90e2;
 }
 
@@ -65,8 +65,8 @@
   color: var(--soclightblue);
 }
 .resourcesContainer {
-  display: grid;
-  grid-template-rows: 25vh 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   padding: 0;
   margin-left: 15px;
@@ -306,6 +306,7 @@ a:hover {
 
 #notes-input-field {
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 100%;
 }
