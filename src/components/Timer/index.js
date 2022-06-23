@@ -40,7 +40,9 @@ function Timer(props) {
 
   return (
     <div className="timer">
+
       <section>Countdown: {configureTimer(counter)}</section>
+
       {btn && (
         <Box
           sx={{
