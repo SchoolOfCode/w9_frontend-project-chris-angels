@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
  * @returns
  */
 function Timer(props) {
-  const [counter, setCounter] = useState(15);
+  const [counter, setCounter] = useState(1);
   const [btn, setbtn] = useState(false);
   const transitionBtn = useRef(false);
   useEffect(() => {
@@ -55,7 +55,7 @@ function Timer(props) {
           <Button
             variant="contained"
             onClick={() => {
-              
+
               props.setVersion(props.version + 1);
             }}
           >
