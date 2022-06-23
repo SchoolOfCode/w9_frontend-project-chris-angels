@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Hint from '../Hint';
+import Hints from '../Hints';
 import Timer from '../Timer';
 
 function PanicButton() {
@@ -14,6 +16,7 @@ function PanicButton() {
         <Link to="/">Home</Link>
         <div>
           version 1: <Timer version={version} setVersion={setVersion} />
+          <Hints></Hints>
         </div>
       </>
     );
