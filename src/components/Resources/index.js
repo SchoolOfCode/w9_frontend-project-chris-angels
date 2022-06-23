@@ -70,39 +70,43 @@ function Resources({ header }) {
       {header && <Header></Header>}
       <dl className="resourcesContainer">
         {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
-        <Box
-          id="dropdown-menu-cont"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="topic-label">Topic</InputLabel>
-            <Select
-              variant="standard"
-              value={topicChoice}
-              onChange={topicChangeHandler}
-            >
-              {topicOptions.map((item, index) => {
-                return (
-                  <MenuItem key={index} value={item.value}>
-                    {item.label}
-                  </MenuItem>
-                );
-              })}
-            </Select>
-          </FormControl>
-          <Button
-            variant="contained"
-            id="topic-filter-butt"
-            onClick={searchButtonHandler}
+        <div className="rectangleHeader">
+          <div style={{ alignSelf: 'center', marginRight: '4rem' }}>
+            Resources
+          </div>
+          <Box
+            id="dropdown-menu-cont"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            Search
-          </Button>
-        </Box>
-        <div className="rectangleHeader">Resources</div>{' '}
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+              <InputLabel id="topic-label">Topic</InputLabel>
+              <Select
+                variant="standard"
+                value={topicChoice}
+                onChange={topicChangeHandler}
+              >
+                {topicOptions.map((item, index) => {
+                  return (
+                    <MenuItem key={index} value={item.value}>
+                      {item.label}
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+            </FormControl>
+            <Button
+              variant="contained"
+              id="topic-filter-butt"
+              onClick={searchButtonHandler}
+            >
+              Search
+            </Button>
+          </Box>
+        </div>{' '}
         <section className="allCards">
           {data.map((item, index) => {
             return (

@@ -49,6 +49,7 @@ function Timer(props) {
             alignItems: 'center',
             justifyContent: 'center',
           }}
+          id="moveButton"
         >
           <DirectionsRunIcon fontSize="large"></DirectionsRunIcon>
           <Button

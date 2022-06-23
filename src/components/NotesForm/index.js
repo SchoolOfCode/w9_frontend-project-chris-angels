@@ -198,6 +198,7 @@ export default function NotesForm(props) {
               placeholder="https://example.com"
               pattern="https://.*"
               id="resources-input"
+              required
             ></input>
           </div>
           <div id="happy-to-help-field">

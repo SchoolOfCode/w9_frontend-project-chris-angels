@@ -23,7 +23,9 @@ function ResourceCard(props) {
           src={images}
           alt="resource type logo"
         ></img>{' '}
-        <div className="title">{props.link}Title</div>
+        <a target="_blank" rel="noreferrer" className="title" href={props.link}>
+          {props.link.slice(0, 30) + '...'}
+        </a>
       </div>
 
       <dl className="tags">
