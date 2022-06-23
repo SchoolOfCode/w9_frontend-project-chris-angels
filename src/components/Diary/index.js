@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '../Header';
 
+/*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary(props) {
   const [notes, setNotes] = useState([]);
 

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
+/*
+Props: Logged -> Keeps track of if a user is logged in to determine if New Entry should be disabled.
+*/
 function Header({ logged }) {
-  // console.log('logged is:', logged);
   return (
     <header>
       <nav className="navbar">

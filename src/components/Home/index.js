@@ -12,7 +12,6 @@ import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
 
 function Home(props) {
-  // console.log('home', props.user);
   const [newUser, setNewUser] = useState(false);
   const [slack, setSlackName] = useState('');
   useEffect(() => {
@@ -21,22 +20,16 @@ function Home(props) {
       let email = props.user.email;
       let response = await fetch(`http://localhost:3001/users?email=${email}`);
       let json = await response.json();
-      // console.log(json);
       let dataArr = json.data;
 
-      // slack.current = dataArr[0].slackusername;
-      if (slack !== dataArr[0].slackusername) {
-        setSlackName(dataArr[0].slackusername);
-      }
+      //If the length === 0, then the user has succesfully logged in and we need to add them to the database and prompt them to make a username
       if (dataArr.length === 0) {
-        // console.log('dataArr', dataArr[0].slackusername);
-        //If the length === 0, then the user has succesfully logged in and we need to add them to the database
         setNewUser(true);
-        // slack.current = dataArr[0].slackusername;
+      } else if (slack !== dataArr[0].slackusername) {
+        setSlackName(dataArr[0].slackusername);
+        setNewUser(false);
       }
-      //Check if slackUsername is empty or not, if it is, set a boolean state so a component can be rednered below like login/logout buttons are
     }
-    // console.log('fetch called in Home', props.user);
     if (Object.keys(props.user).length !== 0) {
       Fetch();
     }
@@ -46,7 +39,6 @@ function Home(props) {
   if (Object.keys(props.user).length !== 0) {
     islogged = true;
   }
-  console.log('before return', new Date(), slack.current);
 
   return (
     <div className="App">
