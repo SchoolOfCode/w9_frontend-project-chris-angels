@@ -18,18 +18,15 @@ function Resources({ header }) {
   const [confirmedTopic, setConfirmedTopic] = useState(0);
   // Need to figure out if we can use and where to place below variable
   // let resourceID = getTopicById(Math.floor(Math.random() * 5));
-
   useEffect(() => {
     // function to fetch the data from the database initially
     async function Fetch() {
-      console.log('random fetch');
-      let response = await fetch(
-        `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
-      );
+      let math = Math.floor(Math.random() * 2) + 1;
+      let response = await fetch(`http://localhost:3001/resource/${math}`);
       let json = await response.json();
       let dataArr = json.data;
 
-      setData([...dataArr]);
+      setData(dataArr);
     }
     Fetch();
   }, []);

@@ -13,6 +13,9 @@
   background-color: #4a90e2;
 }
 
+.entryBox {
+  color: black;
+}
 /* --------------------------------header------------------------------------ */
 
 .navbar {
@@ -52,7 +55,15 @@
   height: fit-content;
 }
 /* -------------------------------------resources------------------------------- */
-
+#usernameInput::placeholder {
+  color: var(--soclightblue);
+}
+#usernameInput > * {
+  color: var(--soclightblue);
+}
+.MuiOutlinedInput-root > * {
+  color: var(--soclightblue);
+}
 .resourcesContainer {
   display: grid;
   grid-template-rows: 25vh 1fr 1fr;

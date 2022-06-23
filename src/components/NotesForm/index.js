@@ -3,16 +3,16 @@
  * @param {*} Props: email of the current user.
  * @returns
  */
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import { useState } from "react";
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import { useState } from 'react';
 
 export default function NotesForm(props) {
   //Form submission function that reads each input type and adds it to the object to be sent to the server if needed.
   //state keeping track of topic dropdown values
-  const [topicValue, setTopicValue] = useState(0);
+  const [topicValue, setTopicValue] = useState('');
 
   //function changing topicValue when dropdown value changes
   function handleDropdownChange(e) {
@@ -21,101 +21,101 @@ export default function NotesForm(props) {
 
   async function handleSubmission(e) {
     e.preventDefault();
-    console.log(document.getElementById("topic").value);
-    document.querySelector(".modalcontainer2").classList.add("hidden");
+    console.log(document.getElementById('topic').value);
+    document.querySelector('.modalcontainer2').classList.add('hidden');
     let postObj = {
       tags: [],
-      week: document.getElementById("week-input").value,
-      day: document.getElementById("day-input").value,
-      note: document.getElementById("noteArea").value,
+      week: document.getElementById('week-input').value,
+      day: document.getElementById('day-input').value,
+      note: document.getElementById('noteArea').value,
     };
 
     let newResourceObj = {
       topicID: topicValue,
       tags: [],
-      link: document.getElementById("resources-input").value,
+      link: document.getElementById('resources-input').value,
       rating: 3,
     };
 
-    if (document.getElementById("video-tag").checked) {
+    if (document.getElementById('video-tag').checked) {
       postObj.tags = [
         ...postObj.tags,
-        document.getElementById("video-tag").name,
+        document.getElementById('video-tag').name,
       ];
       newResourceObj.tags = [
         ...newResourceObj.tags,
-        document.getElementById("video-tag").name,
+        document.getElementById('video-tag').name,
       ];
     }
-    if (document.getElementById("article-tag").checked) {
+    if (document.getElementById('article-tag').checked) {
       postObj.tags = [
         ...postObj.tags,
-        document.getElementById("article-tag").name,
+        document.getElementById('article-tag').name,
       ];
       newResourceObj.tags = [
         ...newResourceObj.tags,
-        document.getElementById("article-tag").name,
+        document.getElementById('article-tag').name,
       ];
     }
-    if (document.getElementById("image-tag").checked) {
+    if (document.getElementById('image-tag').checked) {
       postObj.tags = [
         ...postObj.tags,
-        document.getElementById("image-tag").name,
+        document.getElementById('image-tag').name,
       ];
       newResourceObj.tags = [
         ...newResourceObj.tags,
-        document.getElementById("image-tag").name,
+        document.getElementById('image-tag').name,
       ];
     }
-    if (document.getElementById("html-tag").checked) {
+    if (document.getElementById('html-tag').checked) {
       postObj.tags = [
         ...postObj.tags,
-        document.getElementById("html-tag").name,
+        document.getElementById('html-tag').name,
       ];
       newResourceObj.tags = [
         ...newResourceObj.tags,
-        document.getElementById("html-tag").name,
-      ];
-    }
-    if (document.getElementById("css-tag").checked) {
-      postObj.tags = [...postObj.tags, document.getElementById("css-tag").name];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById("css-tag").name,
+        document.getElementById('html-tag').name,
       ];
     }
-    if (document.getElementById("js-tag").checked) {
-      postObj.tags = [...postObj.tags, document.getElementById("js-tag").name];
+    if (document.getElementById('css-tag').checked) {
+      postObj.tags = [...postObj.tags, document.getElementById('css-tag').name];
       newResourceObj.tags = [
         ...newResourceObj.tags,
-        document.getElementById("js-tag").name,
+        document.getElementById('css-tag').name,
+      ];
+    }
+    if (document.getElementById('js-tag').checked) {
+      postObj.tags = [...postObj.tags, document.getElementById('js-tag').name];
+      newResourceObj.tags = [
+        ...newResourceObj.tags,
+        document.getElementById('js-tag').name,
       ];
     }
 
     //All elements have been searched, ready to post the data to the server and database.
     await fetch(`http://localhost:3001/notes?email=${props.email}`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(postObj),
     });
 
-    if (document.getElementById("resources-input").value !== "") {
+    if (document.getElementById('resources-input').value !== '') {
       await fetch(`http://localhost:3001/resource`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(newResourceObj),
       });
     }
     //Resets form and then reloads page
-    document.querySelector("#notes-input-field").reset();
+    document.querySelector('#notes-input-field').reset();
     window.location.reload();
   }
   function hideForm() {
-    document.querySelector(".modalcontainer2").classList.add("hidden");
+    document.querySelector('.modalcontainer2').classList.add('hidden');
   }
   return (
     <div className="modalcontainer2 hidden">
@@ -137,7 +137,7 @@ export default function NotesForm(props) {
               label="Week:"
               variant="outlined"
               size="small"
-              sx={{ width: "10%" }}
+              sx={{ width: '10%' }}
               type="number"
               id="week-input"
               min={1}
@@ -151,7 +151,7 @@ export default function NotesForm(props) {
               label="Day:"
               variant="outlined"
               size="small"
-              sx={{ width: "10%" }}
+              sx={{ width: '10%' }}
               id="day-input"
               type="number"
               min={1}
@@ -164,7 +164,7 @@ export default function NotesForm(props) {
             <InputLabel htmlFor="topic-input">Topic:</InputLabel>
             <Select
               id="topic"
-              sx={{ width: "20%" }}
+              sx={{ width: '20%' }}
               onChange={handleDropdownChange}
               value={topicValue}
             >
