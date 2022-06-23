@@ -2,6 +2,7 @@ export default function NotesForm(props) {
   console.log('notes', props);
   async function handleSubmission(e) {
     e.preventDefault();
+
     console.log('form submission', e.target.elements);
     document.querySelector('.modalcontainer2').classList.add('hidden');
     console.log(document.getElementById('article-tag').checked);
@@ -54,12 +55,13 @@ export default function NotesForm(props) {
     // user.current = json.data[0];
     // setPlaceHolder(json.data[0].slackusername);
     // console.log('ayo', user);
+    
     //Resets form
     document.querySelector('#notes-input-field').reset();
     window.location.reload();
   }
   function hideForm() {
-    document.querySelector('.modalcontainer2').classList.add('hidden');
+    document.querySelector(".modalcontainer2").classList.add("hidden");
   }
   return (
     <div className="modalcontainer2 hidden">

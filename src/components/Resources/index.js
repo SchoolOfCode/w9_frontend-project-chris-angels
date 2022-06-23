@@ -2,9 +2,16 @@
 
 //This will need a useEffect to fetch the API about the right type of data
 
-import ResourceCard from '../ResourceCard';
+
+import ResourceCard from "../ResourceCard";
+import { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 import Header from '../Header';
-import { useState, useEffect } from 'react';
+
 
 function Resources({ list, header }) {
   // Used to get a randomised resource from database (needs adding to)
@@ -86,22 +93,26 @@ function Resources({ list, header }) {
       <dl className="resourcesContainer">
         {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
         <div id="dropdown-menu-cont">
-          <label>
-            Topic:
-            <select value={topicChoice} onChange={topicChangeHandler}>
-              {topicOptions.map((item, index) => {
-                return (
-                  <option key={index} value={item.value}>
-                    {item.label}
-                  </option>
-                );
-              })}
-            </select>
-            <button id="topic-filter-butt" onClick={searchButtonHandler}>
-              Search
-            </button>
-          </label>
-        </div>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+          <InputLabel id="demo-select-small">Topic</InputLabel>
+          <Select value={topicChoice} onChange={topicChangeHandler}>
+            {topicOptions.map((item, index) => {
+              return (
+                <MenuItem key={index} value={item.value}>
+                  {item.label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <Button
+          variant="contained"
+          id="topic-filter-butt"
+          onClick={searchButtonHandler}
+        >
+          Search
+        </Button>
+      </div>
         <div className="rectangleHeader">Resources</div>{' '}
         {data.map((item, index) => {
           return (

@@ -1,42 +1,48 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 function Header({ logged }) {
   // console.log('logged is:', logged);
   return (
     <nav className="navbar">
       {logged && (
-        <button
+        <Button
+          variant="contained"
           onClick={() => {
             document
-              .querySelector('.modalcontainer2')
-              .classList.remove('hidden');
+              .querySelector(".modalcontainer2")
+              .classList.remove("hidden");
           }}
         >
           New Entry
-        </button>
+        </Button>
       )}
       {!logged && (
-        <button
+        <Button
           disabled
+          sx={{
+            backgroundColor: "#dcdde1",
+          }}
           onClick={() => {
             document
-              .querySelector('.modalcontainer2')
-              .classList.remove('hidden');
+              .querySelector(".modalcontainer2")
+              .classList.remove("hidden");
           }}
         >
           New Entry
-        </button>
+        </Button>
       )}
       <Link className="homeLink" to="/">
-        Home
+        <Button variant="contained">Home</Button>
       </Link>
       <Link className="resourcesLink" to="/resources">
-        Resources
+        <Button variant="contained">Resources</Button>
       </Link>
       <Link className="diaryLink" to="/diary">
-        Diary
+        <Button variant="contained">Diary</Button>
       </Link>
       <Link to="/settings">
-        <button>Settings</button>
+        <Button variant="contained">Settings</Button>
       </Link>
     </nav>
   );
