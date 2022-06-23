@@ -92,7 +92,7 @@
 }
 
 .allCardsContainer {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .resourceImage {
@@ -188,11 +188,11 @@ textarea {
   color: var(--socwhite);
 }
 
-#settingsForm>* {
+#settingsForm > * {
   font-size: 1.3rem;
 }
 
-#settingsForm>div>* {
+#settingsForm > div > * {
   font-size: 1.3rem;
 }
 

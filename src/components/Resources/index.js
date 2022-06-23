@@ -103,9 +103,10 @@ function Resources({ list, header }) {
           </label>
         </div>
         <div className="rectangleHeader">Resources</div>{' '}
-        {data.map((item, index) => {
-          return (
-            <div className='allCardsContainer'>
+        {console.log('HELP', data)}
+        <div className="allCardsContainer">
+          {data.map((item, index) => {
+            return (
               <ResourceCard
                 key={index}
                 logo={item.picture}
@@ -115,9 +116,9 @@ function Resources({ list, header }) {
                 tags={item.tags}
                 rating={item.rating}
               ></ResourceCard>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
         {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
       </dl>
     </>
