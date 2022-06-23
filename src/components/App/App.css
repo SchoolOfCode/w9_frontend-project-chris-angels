@@ -101,7 +101,17 @@
   align-self: center;
   justify-self: flex-start;
 }
-
+#usernameInput-label {
+  color: var(--soclightblue);
+}
+#usernameInput::placeholder {
+  color: #3e8ee9;
+  font-weight: bold;
+}
+#usernameInput {
+  color: #3e8ee9;
+  font-weight: bold;
+}
 .tags {
   display: flex;
   gap: 3rem;
