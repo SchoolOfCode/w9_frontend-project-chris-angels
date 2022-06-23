@@ -1,14 +1,14 @@
 import React from 'react'
 
-function handleSubmit() {
-  let topic = document.querySelector('problemTopic').event.target.value
+function handleSubmit(event) {
+  let topic = event.target.value
   console.log(topic)
 }
 
 function Panic2() {
   return (
-    <main1>
-      <form className="problemForm" onSubmit={() => handleSubmit()}>
+    <main>
+      <form className="problemForm" >
       <div>
           <input className='problemTopic' placeholder="What topic are you working on?"></input>
       </div>
@@ -18,16 +18,18 @@ function Panic2() {
       <div>
         <input className="problemTried" placeholder="What have you tried so far?"></input>
         </div>
+        <button type="button" onSubmit={(event) => handleSubmit(event)}></button>
       </form>
     
-
     <ol>
-        <li>Google</li>
-        <li>w3schools</li>
-        <li>Docs</li>
-        <li>FreecodeCamp</li>
+        <li><a rel="noreferrer" href={`http://www.google.com/`} target="_blank">Google</a></li>
+        <li><a rel="noreferrer" href={`http://www.freecodecamp.org/`} target="_blank">freeCodeCamp</a></li>
+        <li><a rel="noreferrer" href={`https://www.w3schools.com/`} target="_blank">w3Schools</a></li>
+        <li><a rel="noreferrer" href={`https://stackoverflow.com/`} target="_blank">Stack Overflow</a></li>
+        <li><a rel="noreferrer" href={`https://developer.mozilla.org/en-US/`} target="_blank">MDN docs</a></li>
+        <li><a rel="noreferrer" href={`https://beta.reactjs.org/`} target="_blank">Beta React</a></li>
       </ol>
-    </main1>
+    </main>
   )
 }
 
