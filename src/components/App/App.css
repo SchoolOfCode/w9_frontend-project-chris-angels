@@ -163,12 +163,17 @@ textarea {
 }
 #panicMain1 {
   height: 100vh;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #root > * {
   color: white;
   font-size: 2rem;
+}
+#profile-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hintCheckbox {
   /* Double-sized Checkboxes */
