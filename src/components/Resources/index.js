@@ -71,7 +71,13 @@ function Resources({ header }) {
       <dl className="resourcesContainer">
         {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
         <div className="rectangleHeader">
-          <div style={{ alignSelf: "center", marginRight: "4rem" }}>
+          <div
+            style={{
+              alignSelf: "center",
+              marginRight: "4rem",
+              marginLeft: "2rem",
+            }}
+          >
             <h1 id="resources-heading">Resources</h1>
           </div>
           <Box
@@ -82,10 +88,8 @@ function Resources({ header }) {
               justifyContent: "center",
             }}
           >
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-              <InputLabel id="topic-label" sx={{ color: "white" }}>
-                Topic
-              </InputLabel>
+            <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
+              <InputLabel id="topic-label">Topic</InputLabel>
               <Select
                 variant="standard"
                 sx={{ backgroundColor: "white" }}
