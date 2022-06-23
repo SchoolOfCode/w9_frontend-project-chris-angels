@@ -2,14 +2,15 @@
 
 //This will need a useEffect to fetch the API about the right type of data
 
-import ResourceCard from "../ResourceCard";
-import { useState, useEffect } from "react";
+import ResourceCard from '../ResourceCard';
+import Header from '../Header';
+import { useState, useEffect } from 'react';
 
-function Resources({ list }) {
+function Resources({ list, header }) {
   // Used to get a randomised resource from database (needs adding to)
 
   const [data, setData] = useState([
-    { resourceid: 0, userid: 0, topicid: 0, link: "", tags: [], rating: 0 },
+    { resourceid: 0, userid: 0, topicid: 0, link: '', tags: [], rating: 0 },
   ]);
   //state for the topic dropdown
   const [topicChoice, setTopicChoice] = useState(0);
@@ -36,7 +37,7 @@ function Resources({ list }) {
 
     // console.log(data, 'hi hi');
     Fetch();
-    console.log(data, "hello");
+    console.log(data, 'hello');
   }, []);
 
   //use effect that fetches a fresh batch of resources by topic when topic is selected and confirmed
@@ -50,11 +51,11 @@ function Resources({ list }) {
       // console.log(json);
       let dataArr = json.data;
 
-      console.log("hello", dataArr);
+      console.log('hello', dataArr);
       setData([...dataArr]);
     }
     Fetch();
-    console.log(confirmedTopic, "hello");
+    console.log(confirmedTopic, 'hello');
   }, [confirmedTopic]);
 
   //___________Functions and the list of options for dropdown Container! ADD OBJECT TO THE LIST TO ADD A NEW OPTION, DON'T MODIFY THE JSX____________
@@ -66,10 +67,10 @@ function Resources({ list }) {
 
   //list of topic options
   const topicOptions = [
-    { label: "HTML", value: 1 },
-    { label: "CSS", value: 2 },
-    { label: "JAVASCRIPT", value: 3 },
-    { label: "EXPRESS", value: 4 },
+    { label: 'HTML', value: 1 },
+    { label: 'CSS', value: 2 },
+    { label: 'JAVASCRIPT', value: 3 },
+    { label: 'EXPRESS', value: 4 },
   ];
 
   //___________Function serving the search button for topics__________
@@ -77,44 +78,47 @@ function Resources({ list }) {
     setConfirmedTopic(topicChoice);
   }
 
-  console.log(data, "hi hi");
+  console.log(data, 'hi hi');
 
   return (
-    <dl className="resourcesContainer">
-      {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
-      <div id="dropdown-menu-cont">
-        <label>
-          Topic:
-          <select value={topicChoice} onChange={topicChangeHandler}>
-            {topicOptions.map((item, index) => {
-              return (
-                <option key={index} value={item.value}>
-                  {item.label}
-                </option>
-              );
-            })}
-          </select>
-          <button id="topic-filter-butt" onClick={searchButtonHandler}>
-            Search
-          </button>
-        </label>
-      </div>
-      <div className="rectangleHeader">Resources</div>{" "}
-      {data.map((item, index) => {
-        return (
-          <ResourceCard
-            key={index}
-            logo={item.picture}
-            userid={item.userid}
-            topicid={item.topicid}
-            link={item.link}
-            tags={item.tags}
-            rating={item.rating}
-          ></ResourceCard>
-        );
-      })}
-      {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
-    </dl>
+    <>
+      {header && <Header></Header>}
+      <dl className="resourcesContainer">
+        {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
+        <div id="dropdown-menu-cont">
+          <label>
+            Topic:
+            <select value={topicChoice} onChange={topicChangeHandler}>
+              {topicOptions.map((item, index) => {
+                return (
+                  <option key={index} value={item.value}>
+                    {item.label}
+                  </option>
+                );
+              })}
+            </select>
+            <button id="topic-filter-butt" onClick={searchButtonHandler}>
+              Search
+            </button>
+          </label>
+        </div>
+        <div className="rectangleHeader">Resources</div>{' '}
+        {data.map((item, index) => {
+          return (
+            <ResourceCard
+              key={index}
+              logo={item.picture}
+              userid={item.userid}
+              topicid={item.topicid}
+              link={item.link}
+              tags={item.tags}
+              rating={item.rating}
+            ></ResourceCard>
+          );
+        })}
+        {/*(console.log(topicChoice), console.log(confirmedTopic))*/}
+      </dl>
+    </>
   );
 
   // ({ list.map((item, index) => { return <ResourceCard></ResourceCard> }) })

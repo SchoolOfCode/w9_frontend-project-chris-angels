@@ -32,7 +32,7 @@ function App() {
             <ProtectedRoute user={user} component={Diary}></ProtectedRoute>
           }
         ></Route>
-        <Route path="/resources" element={<Resources />}></Route>
+        <Route path="/resources" element={<Resources header={true} />}></Route>
         <Route path="/panic1" element={<PanicButton />}></Route>
       </Routes>
     </Router>
