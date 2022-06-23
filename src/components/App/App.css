@@ -160,7 +160,11 @@ textarea {
 }
 #root {
   height: 100vh;
+}
+#panicMain1 {
+  height: 100vh;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 #root > * {
   color: white;
@@ -182,15 +186,39 @@ textarea {
 .panicMain1 {
   display: flex;
   height: 100%;
+  background-position: -10% 40%;
 }
 .panic1left {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .panic1right {
-  flex: 2.1;
+  flex: 1.9;
 }
 .timer {
   display: flex;
+}
+.MuiBox-root.css-gmuwbf {
+  position: absolute;
+  bottom: 10%;
+  left: 60%;
+  transform: scale(2);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  filter: brightness(0.7);
+}
+#timerSection {
+  margin-left: 2rem;
+  color: var(--socgreen);
+  background-color: black;
+  font-size: 8rem;
 }
 #settingsForm {
   font-size: 1.5rem;

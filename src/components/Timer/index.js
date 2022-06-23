@@ -40,7 +40,7 @@ function Timer(props) {
 
   return (
     <div className="timer">
-      <section>{configureTimer(counter)}</section>
+      <section id="timerSection">{configureTimer(counter)}</section>
 
       {btn && (
         <Box

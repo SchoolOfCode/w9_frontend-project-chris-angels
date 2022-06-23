@@ -7,21 +7,21 @@ import pic from '../../Assets/dont-panic-stars.png';
 
 function PanicButton() {
   const [version, setVersion] = useState(1);
-  document.getElementById('root').style.backgroundImage = `url(${pic})`;
+  // document.getElementById('panicMain1').style.backgroundImage = `url(${pic})`;
   //example:
   // const answers = useRef({ id: 2 });
   //answers.current.id
   //answers.current.id = ...
   if (version === 1) {
     return (
-      <main class="panicMain1">
-        <div class="panic1left">
+      <main style={{ backgroundImage: `url(${pic})` }} className="panicMain1">
+        <div className="panic1left">
           <Link to="/">Home</Link>
-          <p id="timerP">
+          <div id="timerP">
             <Timer version={version} setVersion={setVersion} />
-          </p>
+          </div>
         </div>
-        <div class="panic1right">
+        <div className="panic1right">
           <Hints></Hints>
           {/* <img src={pic} alt="Don't Panic"></img> */}
         </div>

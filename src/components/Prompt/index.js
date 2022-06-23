@@ -14,7 +14,7 @@ function Prompt(props) {
       >
         Working
       </div>
-      <input id="username" type="text" placeholder="username"></input>
+      <input id="username" type="text" placeholder="Slack username"></input>
       <button
         onClick={async () => {
           //post to server/db with email and username and then hide the prompt form
