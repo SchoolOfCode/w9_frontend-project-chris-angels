@@ -22,6 +22,7 @@ function Resources({ header }) {
   useEffect(() => {
     // function to fetch the data from the database initially
     async function Fetch() {
+      console.log('random fetch');
       let response = await fetch(
         `http://localhost:3001/resource/${Math.floor(Math.random() * 2) + 1}`
       );

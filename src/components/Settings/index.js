@@ -42,7 +42,9 @@ function Settings(props) {
   }
   return (
     <div>
-      <Link to="/">Home</Link>
+      <Link to="/" className="blackText">
+        Home
+      </Link>
       <main id="settingsMain">
         <form
           id="settingsForm"
