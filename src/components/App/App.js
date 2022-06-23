@@ -18,7 +18,18 @@ import { useState } from 'react';
 */
 function App() {
   const [user, setUser] = useState({});
-
+  // console.log('hi', user);
+  // if (
+  //   Object.keys(user).length === 0 &&
+  //   document.getElementById('profile-container') !== null
+  // ) {
+  //   setUser({
+  //     email: document.getElementById('profile-email').textContent,
+  //     name: document.getElementById('profile-name'),
+  //     picture: document.getElementById('profile-picture'),
+  //     username: document.getElementById('profile-slackusername'),
+  //   });
+  // }
   return (
     <Router>
       <Routes>
