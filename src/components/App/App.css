@@ -54,6 +54,13 @@
   max-width: max-content;
   height: fit-content;
 }
+
+/* -------------------------------------Panic2------------------------------- */
+.main-panic2 {
+  background-color: var(--soclightblue);
+  display: flex;
+  justify-content: space-around;
+}
 /* -------------------------------------resources------------------------------- */
 #usernameInput::placeholder {
   color: var(--soclightblue);
@@ -230,6 +237,7 @@ textarea {
 }
 .timer {
   display: flex;
+  background-color: var(--soclightblue);
 }
 #moveButton {
   position: absolute;
@@ -240,6 +248,12 @@ textarea {
 #dropdown-menu-cont {
   transform: scale(2);
   margin-left: 5rem;
+}
+
+/*THE CLASS IS A MAIN CONTAINER IN FILE: PanicButton/index.js, need to figure out why Let's Move button is basolute?*/
+.basic-main {
+  background-color: var(--soclightblue);
+  height: 50.4vw;
 }
 a {
   text-decoration: none;
