@@ -1,22 +1,35 @@
+import React from 'react';
 
-import React from 'react'
-
-// function nextHint() {
-//   var checkBox = document.getElementById("checkBox");
-//   var list = document.getElementById("list");
-//   if (checkBox === true) {
-//     list.style.display = "block";
-//   } else {
-//     list.style.display = "none";
-//   }
-// }
-// onclick={nextHint()}
-
-function Hint({index, text}) {
-  
-  return (
-    <li id="list" key={index} >{text.hint}<input type="checkbox" id="checkBox" ></input></li>
-  )
+function nextHint(index) {
+  if (index === document.querySelector('.listofhints').childNodes.length - 1) {
+    return;
+  }
+  let checkBox = document.getElementById(`checkbox${index}`);
+  let list = document.getElementById(`checklist${index + 1}`);
+  if (checkBox.checked === true) {
+    list.classList.remove('hidden');
+  } else {
+    list.classList.add('hidden');
+  }
 }
 
-export default Hint
+function getClass(index) {
+  if (index === 0) {
+    return;
+  }
+  return 'hidden';
+}
+function Hint({ index, text }) {
+  return (
+    <li className={getClass(index)} id={`checklist${index}`} key={index}>
+      {text.hint}
+      <input
+        type="checkbox"
+        id={`checkbox${index}`}
+        onClick={() => nextHint(index)}
+      ></input>
+    </li>
+  );
+}
+
+export default Hint;
