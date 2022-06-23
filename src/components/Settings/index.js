@@ -20,11 +20,12 @@ function Settings(props) {
         `http://localhost:3001/users?email=${props.user.email}`
       );
       let json = await response.json();
+      console.log('hi', json);
       user.current = json.data[0];
       setPlaceHolder(json.data[0].slackusername);
     }
     Fetch();
-  });
+  }, [props.user.email]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -39,6 +40,7 @@ function Settings(props) {
     });
     user.current.slackusername = e.target.elements[0].value;
     setName(!currName);
+    window.location.reload();
   }
   return (
     <div>
@@ -77,7 +79,9 @@ function Settings(props) {
               ></TextField>
             </Box>
           </div>
-          <Button variant="outlined">Update username</Button>
+          <Button type="submit" variant="outlined">
+            Update username
+          </Button>
         </form>
       </main>
     </div>
