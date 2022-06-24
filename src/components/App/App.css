@@ -102,6 +102,7 @@
   border: solid var(--socblue);
   padding-bottom: 5vh;
   border-radius: 0.5%;
+  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
 }
 
 #resources-heading {
