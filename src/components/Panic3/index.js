@@ -7,11 +7,10 @@ import pic from '../../Assets/dont-panic-stars.png'
 
 function Panic3({ state }) {
 
-    const [helpers, setHelpers] = useState([{ name: "" }])
+    const [helpers, setHelpers] = useState([{ slackusername: "" }])
 
 useEffect(() => {
     async function fetchHelpers() {
-            console.log(state.topic)
             let response = await fetch(
                 `http://localhost:3001/help?topic=${state.topic}`
             );
@@ -22,7 +21,7 @@ useEffect(() => {
         }
         fetchHelpers()
     }, []);
-
+    console.log( helpers.slackusername )
     return (
         <main style={{ color: "white", backgroundImage: `url(${pic})`, backgroundSize: "cover" }} className="main-panic3">
             <div className='problem-request'>
@@ -32,7 +31,7 @@ useEffect(() => {
             </div>
 
             <div className='problem-helpers'>
-                <p>[helpers]</p>
+                <p>{helpers.slackusername}</p>
             </div>
         </main>
     )
