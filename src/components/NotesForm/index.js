@@ -8,11 +8,12 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 export default function NotesForm(props) {
   //Form submission function that reads each input type and adds it to the object to be sent to the server if needed.
   //state keeping track of topic dropdown values
-  const [topicValue, setTopicValue] = useState(0);
+  const [topicValue, setTopicValue] = useState('');
 
   //function changing topicValue when dropdown value changes
   function handleDropdownChange(e) {
@@ -122,12 +123,6 @@ export default function NotesForm(props) {
   return (
     <div className="modalcontainer2 hidden">
       <section className="formContainer">
-        <button
-          aria-label="Cancel and hide current notes submission form"
-          onClick={hideForm}
-        >
-          X
-        </button>
         <form
           id="notes-input-field"
           onSubmit={(e) => {
@@ -140,7 +135,7 @@ export default function NotesForm(props) {
                 label="Week:"
                 variant="outlined"
                 size="small"
-                sx={{ width: '15%' }}
+                sx={{ width: '15%', backgroundColor: 'white' }}
                 type="number"
                 id="week-input"
                 min={1}
@@ -154,7 +149,7 @@ export default function NotesForm(props) {
                 label="Day:"
                 variant="outlined"
                 size="small"
-                sx={{ width: '15%' }}
+                sx={{ width: '15%', backgroundColor: 'white' }}
                 id="day-input"
                 type="number"
                 min={1}
@@ -164,10 +159,12 @@ export default function NotesForm(props) {
               ></TextField>
             </div>
             <div id="topic-field">
-              <InputLabel htmlFor="topic-input">Topic:</InputLabel>
+              <label htmlFor="topic-input" className="generic-label-form">
+                Topic:
+              </label>
               <Select
                 id="topic"
-                sx={{ width: 150 }}
+                sx={{ width: 150, backgroundColor: 'white' }}
                 onChange={handleDropdownChange}
                 value={topicValue}
               >
@@ -180,11 +177,18 @@ export default function NotesForm(props) {
               </Select>
             </div>
             <div id="tags-field">
-              <InputLabel htmlFor="topic-input">Tags:</InputLabel>
+              <label htmlFor="topic-input" className="generic-label-form">
+                Tags:
+              </label>
               <div className="topic-tag-row">
                 <div className="topic-unit">
-                  <input type="checkbox" id="video-tag" name="video"></input>
-                  <label htmlFor="video-tag" class="check-label">
+                  <input
+                    type="checkbox"
+                    id="video-tag"
+                    className="tag-checkbox"
+                    name="video"
+                  ></input>
+                  <label htmlFor="video-tag" className="check-label">
                     Video
                   </label>
                 </div>
@@ -192,124 +196,106 @@ export default function NotesForm(props) {
                   <input
                     type="checkbox"
                     id="article-tag"
+                    className="tag-checkbox"
                     name="article"
                   ></input>
-                  <label htmlFor="article-tag" class="check-label">
+                  <label htmlFor="article-tag" className="check-label">
                     Article
                   </label>
                 </div>
                 <div className="topic-unit">
-                  <input type="checkbox" id="image-tag" name="image"></input>
-                  <label htmlFor="image-tag" class="check-label">
+                  <input
+                    type="checkbox"
+                    id="image-tag"
+                    className="tag-checkbox"
+                    name="image"
+                  ></input>
+                  <label htmlFor="image-tag" className="check-label">
                     Image
                   </label>
                 </div>
               </div>
               <div className="topic-tag-row">
                 <div className="topic-unit">
-                  <input type="checkbox" id="html-tag" name="html"></input>
-                  <label htmlFor="tag1-tag" class="check-label">
+                  <input
+                    type="checkbox"
+                    id="html-tag"
+                    className="tag-checkbox"
+                    name="html"
+                  ></input>
+                  <label htmlFor="tag1-tag" className="check-label">
                     HTML
                   </label>
                 </div>
                 <div className="topic-unit">
-                  <input type="checkbox" id="css-tag" name="css"></input>
-                  <label htmlFor="tag2-tag" class="check-label">
+                  <input
+                    type="checkbox"
+                    id="css-tag"
+                    className="tag-checkbox"
+                    name="css"
+                  ></input>
+                  <label htmlFor="tag2-tag" className="check-label">
                     CSS
                   </label>
                 </div>
                 <div className="topic-unit">
-                  <input type="checkbox" id="js-tag" name="javascript"></input>
-                  <label htmlFor="tag3-tag" class="check-label">
+                  <input
+                    type="checkbox"
+                    id="js-tag"
+                    className="tag-checkbox"
+                    name="javascript"
+                  ></input>
+                  <label htmlFor="tag3-tag" className="check-label">
                     Javascript
                   </label>
                 </div>
               </div>
             </div>
             <div id="resources-field">
-              <label htmlFor="resources-input">External resource URL:</label>
-              <input
+              <label htmlFor="resources-input" id="resources-label">
+                External resource URL:
+              </label>
+              <TextField
+                variant="standard"
+                sx={{ background: 'white' }}
                 type="url"
-                placeholder="https://example.com"
+                placeholder="  https://example.com"
                 pattern="https://.*"
                 id="resources-input"
-              ></input>
+              ></TextField>
             </div>
           </div>
-          <div id="day-field">
-            <TextField
-              label="Day:"
-              variant="outlined"
-              size="small"
-              sx={{ width: '10%' }}
-              id="day-input"
-              type="number"
-              min={1}
-              max={5}
-              step={1}
-              required
-            ></TextField>
-          </div>
-          <div id="topic-field">
-            <InputLabel htmlFor="topic-input">Topic:</InputLabel>
-            <Select
-              id="topic"
-              sx={{ width: '20%' }}
-              onChange={handleDropdownChange}
-              value={topicValue}
-            >
-              <MenuItem value={1}>HTML</MenuItem>
-              <MenuItem value={4}>Express</MenuItem>
-              <MenuItem value={5}>SQL</MenuItem>
-              <MenuItem value={2}>CSS</MenuItem>
-              <MenuItem value={3}>Javascript</MenuItem>
-              <MenuItem value={6}>Hackathon</MenuItem>
-            </Select>
-          </div>
-          <div id="tags-field">
-            <h3>Tags</h3>
-            <input type="checkbox" id="video-tag" name="video"></input>
-            <label htmlFor="video-tag">Video</label>
-            <input type="checkbox" id="article-tag" name="article"></input>
-            <label htmlFor="article-tag">Article</label>
-            <input type="checkbox" id="image-tag" name="image"></input>
-            <label htmlFor="image-tag">Image</label>
-            <input type="checkbox" id="html-tag" name="html"></input>
-            <label htmlFor="tag1-tag">HTML</label>
-            <input type="checkbox" id="css-tag" name="css"></input>
-            <label htmlFor="tag2-tag">CSS</label>
-            <input type="checkbox" id="js-tag" name="javascript"></input>
-            <label htmlFor="tag3-tag">Javascript</label>
-          </div>
-          <div id="resources-field">
-            <label htmlFor="resources-input">External resource URL:</label>
-            <input
-              type="url"
-              placeholder="https://example.com"
-              pattern="https://.*"
-              id="resources-input"
-              required
-            ></input>
-          </div>
-          <div id="happy-to-help-field">
-            <label htmlFor="happy-to-help-input">
-              Are you happy to be asked for help on this topic?
-            </label>
-            <input type="checkbox" id="happy-to-help-input"></input>
-          </div>
           <div id="right-col-NotesForm">
-            <label htmlFor="notes">
-              <textarea id="noteArea" required rows={10} cols={50}></textarea>
-            </label>
+            <TextField
+              sx={{ width: '90%', background: 'white' }}
+              label="Your Notes:"
+              multiline
+              rows={20}
+              cols={100}
+              defaultValue=""
+              id="noteArea"
+            />
             <div id="happy-to-help-field">
               <label htmlFor="happy-to-help-input">
                 Are you happy to be asked for help on this topic?
               </label>
-              <input type="checkbox" id="happy-to-help-input"></input>
+              <input
+                type="checkbox"
+                id="happy-to-help-input"
+                className="tag-checkbox"
+              ></input>
             </div>
-            <button>Submit</button>
+            <Button variant="contained">Submit</Button>
           </div>
         </form>
+        <Button
+          id="exit-button-form"
+          variant="contained"
+          aria-label="Cancel and hide current notes submission form"
+          onClick={hideForm}
+        >
+          X
+        </Button>
       </section>
     </div>
   );

@@ -2,10 +2,11 @@ import Tag from '../../Assets/Tag.png';
 import video from '../../Assets/video.png';
 import image from '../../Assets/image.png';
 import notes from '../../Assets/notes.png';
-
+import star from '../../Assets/star.svg';
 let images;
 
 function ResourceCard(props) {
+  console.log('card', props);
   if (props.tags.includes('video')) {
     images = video;
   } else if (props.tags.includes('image')) {
@@ -26,6 +27,12 @@ function ResourceCard(props) {
         <a target="_blank" rel="noreferrer" className="title" href={props.link}>
           {props.link.slice(0, 30) + '...'}
         </a>
+        <div
+          id="rating"
+          aria-label={`Rating for this resource is ${props.rating} stars out of 5`}
+        >
+          {props.rating} <img src={star} alt="star"></img>
+        </div>
       </div>
 
       <dl className="tags">

@@ -46,14 +46,15 @@ function Home(props) {
   return (
     <div className="App">
       <Header logged={islogged} />
-      {islogged && <p className="centerMe">Progress Bar</p>}
-      {islogged && <ProgressBar email={props.user.email} />}
       {!islogged && <LoginButton />}
+      {islogged && <p className="centerMe">Hero's Journey Progress</p>}
+      {islogged && <ProgressBar email={props.user.email} />}
+
+      <Profile slackusername={slack} addUser={props.setUser}></Profile>
+      {newUser && <Prompt email={props.user.email} />}
       {islogged && (
         <LogoutButton setNewUser={setNewUser} setUser={props.setUser} />
       )}
-      <Profile slackusername={slack} addUser={props.setUser}></Profile>
-      {newUser && <Prompt email={props.user.email} />}
       <Link className="panicBox" to="/panic1">
         <Button src={PanicPicture}> </Button>
       </Link>

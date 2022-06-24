@@ -14,7 +14,19 @@ function Prompt(props) {
       >
         Working
       </div>
-      <input id="username" type="text" placeholder="Slack username"></input>
+      <p id="welcomeText">
+        Welcome to our site. The big red button in the bottom right is the Panic
+        Button - press it if you want to ask for help!
+      </p>
+      <p style={{ height: '1rem' }}></p>
+      <label htmlFor="name_input"> Please enter your slack username:</label>
+      <input
+        name="name_input"
+        id="username"
+        type="text"
+        placeholder="Slack username"
+      ></input>
+
       <button
         onClick={async () => {
           //post to server/db with email and username and then hide the prompt form
