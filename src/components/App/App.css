@@ -99,7 +99,7 @@
   margin-left: 2.5vw;
   margin-right: 2.5vw;
   background: white;
-  border: solid #181e50;
+  border: solid var(--socblue);
   padding-bottom: 5vh;
   border-radius: 0.5%;
 }
@@ -149,8 +149,19 @@
   text-align: center;
   display: flex;
   width: fit-content;
+  margin-right: 3rem;
+}
+
+#rating-star {
+  height: auto;
+  width: 2rem;
+}
+
+#rating-text {
+  display: block;
   margin-right: 1rem;
 }
+
 .resourceImage {
   height: 5%;
   width: 5%;
@@ -259,6 +270,8 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .hintCheckbox {
   /* Double-sized Checkboxes */
@@ -344,10 +357,18 @@ a:hover {
   display: flex;
   justify-content: center;
 }
-
+/*___________________________________________________________Diary________________________________________________________________*/
 .entryBox {
-  border: 1px solid black;
+  border: solid var(--socblue);
   width: 70%;
+  padding: 5vh;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
+}
+
+#day-week-diary-h3 {
+  margin-top: 0;
 }
 
 .notescontainer {
@@ -357,6 +378,8 @@ a:hover {
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding-top: 5vh;
+  background-color: var(--soclightblue);
 }
 
 .tagList {
@@ -364,6 +387,13 @@ a:hover {
   display: flex;
   gap: 1rem;
   color: grey;
+}
+
+.diary-note {
+  padding: 0.5rem;
+  border: solid var(--socblue);
+  margin-bottom: 0;
+  border-radius: 1rem;
 }
 
 /* -------------------------------------NotesForm------------------------------- */

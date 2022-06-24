@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import Header from '../Header';
+import { useEffect, useState } from "react";
+import Header from "../Header";
+import Tag from "../../Assets/Tag.png";
 
 /*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary(props) {
@@ -30,15 +31,20 @@ function Diary(props) {
           {notes.map((item, index) => {
             return (
               <div className="entryBox" key={index}>
-                <h3>
+                <h3 id="day-week-diary-h3">
                   W{item.week}D{item.day}
                 </h3>
                 <ol className="tagList">
                   {item.tags.map((item, index) => {
-                    return <li key={index}>{item}</li>;
+                    return (
+                      <li key={index}>
+                        <img alt="tag" className="imageTag" src={Tag}></img>
+                        {item}
+                      </li>
+                    );
                   })}
                 </ol>
-                {item.note}
+                <p className="diary-note">{item.note}</p>
               </div>
             );
           })}

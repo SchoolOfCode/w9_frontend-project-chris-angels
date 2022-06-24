@@ -21,7 +21,11 @@ const Profile = (props) => {
         <h2 id="profile-name">
           {" "}
           <Avatar
-            sx={{ width: "auto", heigt: "1rem", marginRight: "1rem" }}
+            sx={{
+              width: "auto",
+              heigt: "1rem",
+              marginRight: "1rem",
+            }}
             alt="Me"
             src={user.picture}
           />
