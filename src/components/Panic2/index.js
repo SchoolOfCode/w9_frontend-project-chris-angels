@@ -1,18 +1,22 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import pic from '../../Assets/dont-panic-stars.png'
 
-function handleSubmit(e) {
-  e.preventDefault();
-  let topic = e.target.problemTopic.value;
-  let problem = e.target.problemProblem.value;
-  let tried = e.target.problemTried.value;
-  console.log(topic, problem, tried);
-}
 
-function Panic2() {
+function Panic2({ state }) {
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    let topic = e.target.problemTopic.value;
+    let problem = e.target.problemProblem.value;
+    let tried = e.target.problemTried.value;
+    console.log(topic, problem, tried);
+    state({ topic: topic, problem: problem, tried: tried })
+  }
+
   return (
-    <main className="main-panic2">
+    <main className="main-panic2" style={{ backgroundImage: `url(${pic})` }}>
       <form
         className="problemForm"
         onSubmit={(e) => {
@@ -43,10 +47,10 @@ function Panic2() {
             placeholder="What have you tried so far?"
           ></TextField>
         </div>
-        <Button variant="contained">Placeholder</Button>
+        <Button type="submit" variant="contained">Placeholder</Button>
       </form>
 
-      <ol>
+      <ol className="panic2-links">
         <li>
           <a rel="noreferrer" href={`http://www.google.com/`} target="_blank">
             Google
