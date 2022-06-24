@@ -5,7 +5,7 @@ import pic from '../../Assets/dont-panic-stars.png';
 
 function Panic3({ state }) {
   const [helpers, setHelpers] = useState([{ slackusername: '' }]);
-
+  //this is for lewis
   useEffect(() => {
     async function fetchHelpers() {
       let response = await fetch(
@@ -13,12 +13,12 @@ function Panic3({ state }) {
       );
       let json = await response.json();
       let dataArr = json.data;
-      console.log(dataArr);
-      setHelpers([dataArr]);
+      console.log('dataarr', dataArr);
+      setHelpers(dataArr);
     }
     fetchHelpers();
   }, []);
-  console.log('asdasd', helpers);
+  console.log('hi', helpers);
   return (
     <main
       style={{
@@ -35,8 +35,8 @@ function Panic3({ state }) {
       </div>
 
       <section className="problem-helpers">
-        {helpers[0].map((helper, index) => {
-          return <p key={index}>{helper.slackusername}</p>;
+        {helpers.map((item, index) => {
+          return <p key={index}>{item.slackusername}</p>;
         })}
       </section>
     </main>
