@@ -285,7 +285,9 @@ export default function NotesForm(props) {
                 className="tag-checkbox"
               ></input>
             </div>
-            <Button variant="contained">Submit</Button>
+            <Button variant="contained" type="submitnp">
+              Submit
+            </Button>
           </div>
         </form>
         <Button
