@@ -15,6 +15,7 @@ function LogoutButton(props) {
   }
   return (
     <Button
+      id="logoutBtn"
       variant="outlined"
       sx={{
         color: 'black',

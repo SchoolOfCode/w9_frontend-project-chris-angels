@@ -7,6 +7,7 @@ const LoginButton = () => {
 
   return (
     <Button
+      id="loginBtn"
       variant="outlined"
       sx={{
         color: 'black',

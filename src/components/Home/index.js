@@ -1,20 +1,20 @@
-import Header from "../Header";
-import LoginButton from "../Login/index.js";
-import LogoutButton from "../Logout/index.js";
-import Profile from "../Profile/index.js";
-import { Link } from "react-router-dom";
-import Resources from "../Resources";
-import PanicPicture from "../../Assets/PanicButton.png";
-import NotesForm from "../NotesForm/index.js";
-import ProgressBar from "../ProgressBar";
-import Button from "../Button";
-import { useEffect, useState } from "react";
-import Prompt from "../Prompt";
+import Header from '../Header';
+import LoginButton from '../Login/index.js';
+import LogoutButton from '../Logout/index.js';
+import Profile from '../Profile/index.js';
+import { Link } from 'react-router-dom';
+import Resources from '../Resources';
+import PanicPicture from '../../Assets/PanicButton.png';
+import NotesForm from '../NotesForm/index.js';
+import ProgressBar from '../ProgressBar';
+import Button from '../Button';
+import { useEffect, useState } from 'react';
+import Prompt from '../Prompt';
 
 /*Props: user-> state from App, setUser-> setState from App */
 function Home(props) {
   const [newUser, setNewUser] = useState(false);
-  const [slack, setSlackName] = useState("");
+  const [slack, setSlackName] = useState('');
 
   //UseEffect to determine if a user has a slackusername present in the database and if not starts the process of prompting them to do so.
   useEffect(() => {
