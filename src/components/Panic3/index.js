@@ -18,7 +18,7 @@ function Panic3({ state }) {
     }
     fetchHelpers();
   }, []);
-  console.log('asdasd', helpers);
+  console.log(helpers.slackusername);
   return (
     <main
       style={{
@@ -34,11 +34,9 @@ function Panic3({ state }) {
         <p>{`I've tried ${state.tried}`}</p>
       </div>
 
-      <section className="problem-helpers">
-        {helpers[0].map((helper, index) => {
-          return <p key={index}>{helper.slackusername}</p>;
-        })}
-      </section>
+      <div className="problem-helpers">
+        <p>{helpers.slackusername}</p>
+      </div>
     </main>
   );
 }
