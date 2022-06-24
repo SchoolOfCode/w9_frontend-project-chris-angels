@@ -12,7 +12,7 @@ function handleSubmit(e) {
 
 function Panic2() {
   return (
-    <main className="main-panic2">
+    <main className="main-panic2" >
       <form
         className="problemForm"
         onSubmit={(e) => {
