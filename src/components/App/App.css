@@ -75,12 +75,33 @@
   height: fit-content;
 }
 
-/* -------------------------------------Panic2------------------------------- */
+/* -------------------------------------Panicrooms------------------------------- */
 .main-panic2 {
   background-color: var(--soclightblue);
   display: flex;
   justify-content: space-around;
+  border: solid 20px var(--socblue)
 }
+
+.main-panic3{
+  background-color: var(--soclightblue);
+  display: flex;
+  justify-content: space-around;
+  border: solid 20px var(--socblue);
+  height: 100vh;
+}
+
+.problem-request{
+  padding-left: 30vw;
+  padding-top: 25vh;
+}
+
+.problem-helpers{
+    padding-left: 25vw;
+      padding-top: 25vh;
+}
+
+
 /* -------------------------------------resources------------------------------- */
 #usernameInput::placeholder {
   color: var(--soclightblue);
