@@ -6,8 +6,8 @@ import star from "../../Assets/star.svg";
 let images;
 
 function ResourceCard(props) {
-  console.log("card", props);
-  if (props.tags.includes("video")) {
+
+  if (props.tags.includes('video')) {
     images = video;
   } else if (props.tags.includes("image")) {
     images = image;
