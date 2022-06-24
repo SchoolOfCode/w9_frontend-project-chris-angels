@@ -47,7 +47,7 @@ function Home(props) {
     <div className="App">
       <Header logged={islogged} />
       {!islogged && <LoginButton />}
-      {islogged && <p className="centerMe">Progress Bar</p>}
+      {islogged && <p className="centerMe">Hero's Journey Progress</p>}
       {islogged && <ProgressBar email={props.user.email} />}
 
       <Profile slackusername={slack} addUser={props.setUser}></Profile>
