@@ -139,6 +139,16 @@
 }
 .topCard {
   display: flex;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+}
+#rating {
+  justify-self: center;
+  text-align: center;
+  display: flex;
+  width: fit-content;
+  margin-right: 1rem;
 }
 .resourceImage {
   height: 5%;
