@@ -80,10 +80,10 @@
   background-color: var(--soclightblue);
   display: flex;
   justify-content: space-around;
-  border: solid 20px var(--socblue)
+  border: solid 20px var(--socblue);
 }
 
-.main-panic3{
+.main-panic3 {
   background-color: var(--soclightblue);
   display: flex;
   justify-content: space-around;
@@ -91,16 +91,15 @@
   height: 100vh;
 }
 
-.problem-request{
+.problem-request {
   padding-left: 30vw;
   padding-top: 25vh;
 }
 
-.problem-helpers{
-    padding-left: 25vw;
-      padding-top: 25vh;
+.problem-helpers {
+  padding-left: 25vw;
+  padding-top: 25vh;
 }
-
 
 /* -------------------------------------resources------------------------------- */
 #usernameInput::placeholder {
@@ -123,6 +122,7 @@
   border: solid var(--socblue);
   padding-bottom: 5vh;
   border-radius: 0.5%;
+  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
 }
 
 #resources-heading {
@@ -245,6 +245,7 @@
   justify-content: center;
   place-items: center;
   background-color: var(--socgreen);
+  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
 }
 .hidden {
   display: none; /* making it hidden by default */
