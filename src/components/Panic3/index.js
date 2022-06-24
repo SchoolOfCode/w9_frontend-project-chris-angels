@@ -13,12 +13,12 @@ function Panic3({ state }) {
       );
       let json = await response.json();
       let dataArr = json.data;
-      console.log(dataArr);
-      setHelpers([dataArr]);
+      console.log('dataarr', dataArr);
+      setHelpers(dataArr);
     }
     fetchHelpers();
   }, []);
-  console.log(helpers.slackusername);
+  console.log('hi', helpers);
   return (
     <main
       style={{
@@ -34,9 +34,11 @@ function Panic3({ state }) {
         <p>{`I've tried ${state.tried}`}</p>
       </div>
 
-      <div className="problem-helpers">
-        <p>{helpers.slackusername}</p>
-      </div>
+      <section className="problem-helpers">
+        {helpers.map((item, index) => {
+          return <p key={index}>{item.slackusername}</p>;
+        })}
+      </section>
     </main>
   );
 }
