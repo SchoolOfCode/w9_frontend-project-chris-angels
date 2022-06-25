@@ -9,7 +9,6 @@ import Header from '../Header';
 import Box from '@mui/material/Box';
 
 function Resources({ header }) {
-  console.log('ayo');
   const [data, setData] = useState([
     { resourceid: 0, userid: 0, topicid: 0, link: '', tags: [], rating: 0 },
   ]);
