@@ -17,7 +17,6 @@ export default function NotesForm(props) {
 
   //function changing topicValue when dropdown value changes
   function handleDropdownChange(e) {
-    console.log('a', e.target.value);
     setTopicValue(e.target.value);
   }
 
