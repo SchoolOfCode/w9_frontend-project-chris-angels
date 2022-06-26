@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import Header from "../Header";
-import Tag from "../../Assets/Tag.png";
-
+import { useEffect, useState } from 'react';
+import Header from '../Header';
+import Tag from '../../Assets/Tag.png';
+import SimpleAccordion from '../Accordian';
 /*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary(props) {
   const [notes, setNotes] = useState([]);
@@ -26,7 +26,8 @@ function Diary(props) {
   return (
     <>
       <Header></Header>
-      <main>
+      <SimpleAccordion arr={notes}></SimpleAccordion>
+      {/* <main>
         <section className="notescontainer">
           {notes.map((item, index) => {
             return (
@@ -49,7 +50,7 @@ function Diary(props) {
             );
           })}
         </section>
-      </main>
+      </main> */}
     </>
   );
 }

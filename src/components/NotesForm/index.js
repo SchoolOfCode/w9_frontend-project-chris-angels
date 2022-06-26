@@ -122,7 +122,7 @@ export default function NotesForm(props) {
     }
     //Resets form and then reloads page
     document.querySelector('#notes-input-field').reset();
-    // window.location.reload();
+    window.location.reload();
   }
   function hideForm() {
     document.querySelector('.modalcontainer2').classList.add('hidden');
