@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 Props: Logged -> Keeps track of if a user is logged in to determine if New Entry should be disabled.
 */
 function Header({ logged }) {
+  console.log('wtf');
   return (
     <header>
       <nav className="navbar">
