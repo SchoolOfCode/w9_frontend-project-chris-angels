@@ -54,7 +54,8 @@ We decided to create a one-stop-shop app for bootcampers to take notes, share re
 The biggest challange while developing this project was the short timeframe of 5 days given to complete it, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable help to organise our workflow and complete the task on time. Trello was particularly useful for creation and distribution of tickets.
 
 What were some unexpected obstacles?
-What tools did you use to implement this project?
+
+## Tech stack used for this project:
 - React
 - React router
 - Javascript
@@ -66,7 +67,8 @@ What tools did you use to implement this project?
 - Auth0
 - Jest
 - Supertest
-- 
+
+
 This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.
 
 
