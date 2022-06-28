@@ -69,7 +69,7 @@ We decided to use React due to it's flexibility as well as becasue it was the fr
 
 _____________________________________________________________________________________________________________________________________________________
 
-Project Breif
+Project Brief
 
 National Bootcamp - Week Nine Project Brief
 For your project, you’ll be using what you’ve learned on the course so far to try and improve the lives of your users. In this case, the users will be close to home: bootcampers!
