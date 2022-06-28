@@ -5,19 +5,24 @@ A centralised database for bootcampers to take notes, share resources, and recei
 Project Status
 This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names of people that are happy to help with a given topic.
 
-Project Screen Shots
+## Project Screen Shots
 
-
+### Main Page:
 <img src="https://user-images.githubusercontent.com/104023970/176168071-6a5f5480-92b4-4222-9c7d-fed646917e1d.PNG" width="400" height="auto">
+### Resources feature:
 <img src="https://user-images.githubusercontent.com/104023970/176168091-b80685e6-4a20-41fc-a775-73e0fff66e1b.PNG" width="400" height="auto">
+### Diary feature:
 <img src="https://user-images.githubusercontent.com/104023970/176168120-92e3dd7f-788f-4a5f-9033-2bfeff86aecc.PNG" width="400" height="auto">
+### Diary form:
 <img src="https://user-images.githubusercontent.com/104023970/176168131-7b43e3ab-35f0-496c-9ba5-b22231766d69.PNG" width="400" height="auto">
 
-Installation and Setup Instructions
-Example:
+## Installation and Setup Instructions
+
+To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
+
 Clone down this repository. You will need node and npm installed globally on your machine.
 
-Installation:
+### Installation:
 
 npm install
 
@@ -25,13 +30,13 @@ To Run Test Suite:
 
 npm test
 
-To Start Server:
+To Start the App:
 
 npm start
 
 To Visit App:
 
-localhost:3000/ideas
+localhost:3000
 
 Reflection
 What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
