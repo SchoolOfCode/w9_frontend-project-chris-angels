@@ -26,15 +26,15 @@ Clone down this repository. You will need node and npm installed globally on you
 
 npm install
 
-To Run Test Suite:
+### To Run Test Suite:
 
 npm test
 
-To Start the App:
+### To Start the App:
 
 npm start
 
-To Visit App:
+### To Visit App:
 
 localhost:3000
 
