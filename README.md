@@ -2,9 +2,8 @@
 
 A centralised database for bootcampers to take notes, share resources, and receive help with a built in debugging tool. Built with React, JavaScript, Material UI, Auth0 and Css. Tested with jest, supertest and cypress.
 
-## Project Status
-
-This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names, of people, that are happy to help with a given topic.
+Project Status
+This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names of people that are happy to help with a given topic.
 
 ## Project Screen Shots
 
@@ -26,7 +25,7 @@ Diary form:
 
 ## Installation and Setup Instructions
 
-To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow the installation instructions there to set up your server and database.
+To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
 
 Clone down this repository. You will need node and npm installed globally on your machine.
 
@@ -42,35 +41,35 @@ npm test
 
 npm start
 
-### To Visit the App:
+### To Visit App:
 
 localhost:3000
 
-## Reflections
-We identified two major problems for School of Code bootcampers: a lack of long term note storage kept in a centralised database, and a lack of a concrete system for debugging and then asking for help. 
+## Reflection
+We identified two major problems for bootcampers of School of Code: a lack of long term note storage kept in a centralised database, and a lack of a concrete system for debugging and then asking for help. 
 
 We decided to create a one-stop-shop app for bootcampers to take notes, share resources, and receive help with a built in debugging tool.
 
-The biggest challange while developing this project was the short timeframe of 5 days given to complete it from scratch, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable tools to organise our workflow and complete the task on time. Trello was particularly useful for the creation and distribution of tickets.
+The biggest challange while developing this project was the short timeframe of 5 days given to complete it, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable help to organise our workflow and complete the task on time. Trello was particularly useful for creation and distribution of tickets.
 
 ## Tech stack used for this project:
 - React
-- React router
+- [React router](https://reactrouter.com/)
 - Javascript
 - Heroku
 - Postgress
-- Css
-- MUI
-- Express
-- Auth0
-- Jest
-- Supertest
+- CSS
+- [Material UI](https://mui.com/)
+- [Express](https://expressjs.com/)
+- [Auth0](https://auth0.com/)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 
-We decided to use React due to it's flexibility as well as because it was the framework most familiar to all team members. We wrapped it with Auth0 API to allow people to log-in and track thier personal journeys and to keep the user authentication process secure. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used postgress in tandem with heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's and user's needs.
+We decided to use React due to it's flexibility as well as becasue it was the framework most familiar to all the team members. We supported it with Auth0 API to allow users to log-in securely. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used PostgreSQL in tandem with Heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's needs.
 
 _____________________________________________________________________________________________________________________________________________________
 
-## Project Brief
+Project Breif
 
 National Bootcamp - Week Nine Project Brief
 For your project, you’ll be using what you’ve learned on the course so far to try and improve the lives of your users. In this case, the users will be close to home: bootcampers!
