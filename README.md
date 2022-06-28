@@ -1,45 +1,77 @@
-#BOOTCAMP ADIUTOR
+# BOOTCAMP ADIUTOR
 
 A centralised database for bootcampers to take notes, share resources, and receive help with a built in debugging tool. Built with React, JavaScript, Material UI, Auth0 and Css. Tested with jest, supertest and cypress.
 
 Project Status
 This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names of people that are happy to help with a given topic.
 
-Project Screen Shots
+## Project Screen Shots
 
+Main Page:
 
 <img src="https://user-images.githubusercontent.com/104023970/176168071-6a5f5480-92b4-4222-9c7d-fed646917e1d.PNG" width="400" height="auto">
+
+Resources feature:
+
 <img src="https://user-images.githubusercontent.com/104023970/176168091-b80685e6-4a20-41fc-a775-73e0fff66e1b.PNG" width="400" height="auto">
+
+Diary feature:
+
 <img src="https://user-images.githubusercontent.com/104023970/176168120-92e3dd7f-788f-4a5f-9033-2bfeff86aecc.PNG" width="400" height="auto">
+
+Diary form:
+
 <img src="https://user-images.githubusercontent.com/104023970/176168131-7b43e3ab-35f0-496c-9ba5-b22231766d69.PNG" width="400" height="auto">
 
-Installation and Setup Instructions
-Example:
+## Installation and Setup Instructions
+
+To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
+
 Clone down this repository. You will need node and npm installed globally on your machine.
 
-Installation:
+### Installation:
 
 npm install
 
-To Run Test Suite:
+### To Run Test Suite:
 
 npm test
 
-To Start Server:
+### To Start the App:
 
 npm start
 
-To Visit App:
+### To Visit App:
 
-localhost:3000/ideas
+localhost:3000
 
-Reflection
+## Reflection
 What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-What did you set out to build?
-Why was this project challenging and therefore a really good learning experience?
+We identified two major problems for bootcampers of School of Code: a lack of long term note storage kept in a centralised database, and a lack of a concrete system for debugging and then asking for help. 
+
+We decided to create a one-stop-shop app for bootcampers to take notes, share resources, and receive help with a built in debugging tool.
+
+The biggest challange while developing this project was the short timeframe of 5 days given to complete it, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable help to organise our workflow and complete the task on time. Trello was particularly useful for creation and distribution of tickets.
+
 What were some unexpected obstacles?
-What tools did you use to implement this project?
+
+## Tech stack used for this project:
+- React
+- React router
+- Javascript
+- Heroku
+- Postgress
+- Css
+- MUI
+- Express
+- Auth0
+- Jest
+- Supertest
+
+
 This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.
+
+
 Example:
 This was a 3 week long project built during my third module at Turing School of Software and Design. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.
 
