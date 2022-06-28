@@ -46,14 +46,11 @@ npm start
 localhost:3000
 
 ## Reflection
-What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
 We identified two major problems for bootcampers of School of Code: a lack of long term note storage kept in a centralised database, and a lack of a concrete system for debugging and then asking for help. 
 
 We decided to create a one-stop-shop app for bootcampers to take notes, share resources, and receive help with a built in debugging tool.
 
 The biggest challange while developing this project was the short timeframe of 5 days given to complete it, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable help to organise our workflow and complete the task on time. Trello was particularly useful for creation and distribution of tickets.
-
-What were some unexpected obstacles?
 
 ## Tech stack used for this project:
 - React
