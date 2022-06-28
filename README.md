@@ -54,7 +54,7 @@ The biggest challange while developing this project was the short timeframe of 5
 
 ## Tech stack used for this project:
 - React
-- React router
+- [React router](https://reactrouter.com/)
 - Javascript
 - Heroku
 - Postgress
