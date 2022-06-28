@@ -1,14 +1,9 @@
-Project Name & Pitch
-Example:
-TweetWorld
+#BOOTCAMP ADIUTOR
 
-An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
+A centralised database for bootcampers to take notes, share resources, and receive help with a built in debugging tool. Built with React, JavaScript, Material UI, Auth0 and Css. Tested with jest, supertest and cypress.
 
 Project Status
-(only necessary if incomplete)
-
-Example:
-This project is currently in development. Users can filter tweets by username and keyword and see visual data representation. Functionality to sort by additional parameters is in progress.
+This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names of people that are happy to help with a given topic.
 
 Project Screen Shots
 
