@@ -68,7 +68,7 @@ What were some unexpected obstacles?
 - Jest
 - Supertest
 
-We decided to use React due to it's flexibility as well as becasue it was the framework most familiar to all our team members. We supported it with Auth0 API to allow people to log-in due to the time constraint but also to keep the user authentication process secure. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used postgress in tandem with heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's needs.
+We decided to use React due to it's flexibility as well as becasue it was the framework most familiar to all the team members. We supported it with Auth0 API to allow people to log-in due to the time constraint but also to keep the user authentication process secure. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used postgress in tandem with heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's needs.
 
 _____________________________________________________________________________________________________________________________________________________
 
