@@ -17,6 +17,7 @@
     height: fit-content;
 }
 
+
 /* -------------------------------------Panicrooms------------------------------- */
 .main-panic2 {
     background-color: var(--soclightblue);
@@ -65,6 +66,12 @@
 .timer {
     display: flex;
     background-color: var(--soclightblue);
+}
+
+/*THE CLASS IS A MAIN CONTAINER IN FILE: PanicButton/index.js, need to figure out why Let's Move button is absolute?*/
+.basic-main {
+    background-color: var(--soclightblue);
+    height: 50.4vw;
 }
 
 #moveButton {

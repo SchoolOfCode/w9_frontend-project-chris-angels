@@ -10,6 +10,16 @@
     color: var(--socwhite);
 }
 
+#settingsMain {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    background-color: var(--soclightblue);
+}
+
 #settingsForm>* {
     font-size: 1.3rem;
 }
