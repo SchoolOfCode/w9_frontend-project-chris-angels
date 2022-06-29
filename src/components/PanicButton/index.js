@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Hints from '../Hints';
-import Timer from '../Timer';
-import Panic2 from '../Panic2';
-import pic from '../../Assets/dont-panic-stars.png';
-import Panic3 from '../Panic3';
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Hints from "../Hints";
+import Timer from "../Timer";
+import Panic2 from "../Panic2";
+import pic from "../../Assets/dont-panic-stars.png";
+import Panic3 from "../Panic3";
+import './PanicButton.css'
+
 
 function PanicButton() {
   const [version, setVersion] = useState(1);
@@ -13,6 +16,7 @@ function PanicButton() {
     problem: '',
     tried: '',
   });
+
 
   if (version === 1) {
     return (
@@ -30,7 +34,7 @@ function PanicButton() {
     );
   } else if (version === 2) {
     return (
-      <div className="basic-main">
+      <div className="panicMain2">
         <Link to="/">Home</Link>
         <div>
           <Panic2 state={setInputValues}></Panic2>

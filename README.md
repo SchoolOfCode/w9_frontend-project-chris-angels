@@ -7,27 +7,17 @@ This project is currently in development. Users can view and add entries to thei
 
 ## Project Screen Shots
 
-Main Page:
+App folder structure:
 
-<img src="https://user-images.githubusercontent.com/104023970/176168071-6a5f5480-92b4-4222-9c7d-fed646917e1d.PNG" width="400" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176419879-4891cd7a-f5ee-4103-98e7-bae4d857340e.png" width="150" height="auto">
 
-Resources feature:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168091-b80685e6-4a20-41fc-a775-73e0fff66e1b.PNG" width="400" height="auto">
-
-Diary feature:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168120-92e3dd7f-788f-4a5f-9033-2bfeff86aecc.PNG" width="400" height="auto">
-
-Diary form:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168131-7b43e3ab-35f0-496c-9ba5-b22231766d69.PNG" width="400" height="auto">
+Database structure:
+     
+<img src="https://user-images.githubusercontent.com/104023970/176419918-50cba160-103b-48cd-b33a-ae0ba15b9867.png" width="300" height="auto">
 
 ## Installation and Setup Instructions
 
-To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
-
-Clone down this repository. You will need node and npm installed globally on your machine.
+Clone down this repository. You will need node and npm installed globally on your machine. You will also need a free heroku account and a running heroku database app (instructions for setting it up at the bottom of the document).
 
 ### Installation:
 
@@ -67,26 +57,52 @@ The biggest challange while developing this project was the short timeframe of 5
 
 We decided to use React due to it's flexibility as well as becasue it was the framework most familiar to all the team members. We supported it with Auth0 API to allow users to log-in securely. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used PostgreSQL in tandem with Heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's needs.
 
-_____________________________________________________________________________________________________________________________________________________
+## Guidlines for setting up a heroku database:
+1. After creating your Heroku profile, go to the upper right corner and click "New". 
 
-Project Brief
+<img src="https://user-images.githubusercontent.com/104023970/176413067-04db2da7-1340-4abc-9482-1204f638df25.png" width="800" height="auto">
+______________________________________________________________________________________________________________________________________________
 
-National Bootcamp - Week Nine Project Brief
-For your project, you’ll be using what you’ve learned on the course so far to try and improve the lives of your users. In this case, the users will be close to home: bootcampers!
+2. From the dropdown list select "Create New App".
 
-To do this, you’ll need to take the time to understand your user (a bootcamper), their experiences, and their problems. Specifically, it might be good to focus on how to enhance the remote experience of a bootcamper, or what can help them with the vast amount of learning there is to do as a new developer. What do they need? What problem might they have that your application could solve for them? How can you get into the mindset of your user and keep them at the centre of your problem-solving?
+<img src="https://user-images.githubusercontent.com/104023970/176413076-d7e2b0d3-bc72-4796-80fc-54b65cf281f8.png" width="300" height="auto">
+______________________________________________________________________________________________________________________________________________
 
-The high level outcomes from this project should be:
+3. Type in a name for your databse (1) and select the region you're based in and then click "Create App".
 
-A minimum viable product (MVP) showcasing an innovative full stack application which meets the user need you’ve identified
-A presentation, complete with how you worked as a team and a demonstration of the project
-Your project application might include the following:
+<img src="https://user-images.githubusercontent.com/104023970/176413080-62b3fa1a-6f25-4e34-b7d4-69b9fb22583a.png" width="500" height="auto">
+______________________________________________________________________________________________________________________________________________
 
-Include a user experience created in React
-Build a REST API which is used by your front-end
-Be supported by a Postgresql database with multiple tables
-Be built and managed in an agile way
-Utilise testing for ensuring robust code
-Remember, you only have a few days to code a solution, so being agile is key. That means brainstorming what you want to build, and working in sprints to deliver value each time. After each sprint, you can reassess and either continue on course or iterate towards a better solution. Have a plan which is incremental steps, rather than all or nothing.
+4. Now go to the "Resources" tab (1) and in the "Add ons" section search for Heroku Postgress (2), then click "Submit Order Form" in the pop-up window. 
 
-Click the link to see the Project Guidelines
+<img src="https://user-images.githubusercontent.com/104023970/176416317-f53451bd-c2b6-4ad8-9aeb-50b1fc78166c.png" width="700" height="auto">
+______________________________________________________________________________________________________________________________________________
+
+5. This should set up your database, now you can go to settings of the app and click "view credentials" (Host, database, user, port and password).
+
+<img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="800" height="auto">
+______________________________________________________________________________________________________________________________________________
+
+6. In the cloned repository create a .env file in the main folder.
+______________________________________________________________________________________________________________________________________________
+
+7. In the file prepare variables as follows and fill them with coresponding credentials from the app: 
+  
+PGUSER=xxxxxxxxxxxxxx
+
+PGHOST=xxx-xx-xxx-xx-xxx.xx-xxxxt-x.xxxxx.xxxxx.xxx
+
+PGPORT=xxxx
+
+PGPASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+PGDATABASE=xxxxxxxxxxx
+______________________________________________________________________________________________________________________________________________
+
+8.You're all set up to use the server and the databse! To load mock data to your databse use following commands in the console in the folder of the app:
+
+db:createTable  - to create the necessary tables.
+
+db:populateTable - to populate them
+
+db:deleteAllTables - to discard them
