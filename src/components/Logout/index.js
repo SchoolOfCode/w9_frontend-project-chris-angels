@@ -3,8 +3,9 @@ import React from 'react';
 import Button from '@mui/material/Button';
 
 /*
-Logout button component from auth0, used alongside the login button component and the profile component
-Props: user -> state given from App, setState -> setState given from App. Used to keep track of if there is a current user. 
+  Logout button component from auth0, used alongside the login button component and the profile component
+  Props: user -> state given from App, setState -> setState given from App. 
+  Used to keep track of if there is a current user. 
 */
 function LogoutButton() {
   const { logout } = useAuth0();

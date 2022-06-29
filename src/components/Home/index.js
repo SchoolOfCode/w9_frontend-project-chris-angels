@@ -1,17 +1,16 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import Header from '../Header';
 import LoginButton from '../Login/index.js';
 import LogoutButton from '../Logout/index.js';
 import Profile from '../Profile/index.js';
-// import Menu from '../Menu';
-import { Link } from 'react-router-dom';
 import Resources from '../Resources';
 import PanicPicture from '../../Assets/PanicButton.png';
 import NotesForm from '../NotesForm/index.js';
 import ProgressBar from '../ProgressBar';
 import Button from '../Button';
-import { useEffect, useState } from 'react';
 import Prompt from '../Prompt';
-import { useAuth0 } from '@auth0/auth0-react';
 
 /*Props: user-> state from App, setUser-> setState from App */
 function Home() {
