@@ -43,14 +43,14 @@
   padding-top: 25vh;
 }
 
-.panicMain1 {
+.panic-main1 {
   display: flex;
   background-repeat: no-repeat;
   height: 100%;
   background-size: cover;
 }
 
-.panic1left {
+.panic1-left {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
   align-items: center;
 }
 
-.panic1right {
+.panic1-right {
   flex: 1.9;
 }
 
@@ -78,12 +78,6 @@
   bottom: 10%;
   left: 60%;
   transform: scale(2);
-}
-
-#panicMain1 {
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 #timerSection {

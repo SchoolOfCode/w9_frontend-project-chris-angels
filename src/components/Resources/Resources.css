@@ -41,24 +41,9 @@ label {
   margin-top: 0.8rem;
 }
 
-/* .linkparent {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto 0;
-} */
 #topic-label {
   padding-top: 0.3rem;
   color: var(--soclightblue);
-}
-
-.linkgrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .rectangleHeader {
@@ -177,17 +162,6 @@ label {
   justify-content: center;
 }
 
-.formContainer {
-  margin-top: 20vh;
-  width: clamp(40%, 70%, 85%);
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  background-color: var(--socgreen);
-  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
-}
-
 .hidden {
   display: none;
   /* making it hidden by default */
@@ -234,4 +208,9 @@ a {
 
 a:hover {
   filter: brightness(0.7);
+}
+
+#dropdown-menu-cont {
+  transform: scale(2);
+  margin-left: 5rem;
 }

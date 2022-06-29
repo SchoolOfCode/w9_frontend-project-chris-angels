@@ -1,20 +1,15 @@
-
-
-import './NotesForm.css'
-
-
-import { useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-
-import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
+import "./NotesForm.css";
+import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import TextField from "@mui/material/TextField";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
 
 export default function NotesForm() {
   //Form submission function that reads each input type and adds it to the object to be sent to the server if needed.
-  //state keeping track of topic dropdown values
-  const [topicValue, setTopicValue] = useState('');
+
+  const [topicValue, setTopicValue] = useState("");
   const { user } = useAuth0();
 
   //function changing topicValue when dropdown value changes
@@ -24,77 +19,73 @@ export default function NotesForm() {
 
   async function handleSubmission(e) {
     e.preventDefault();
-    console.log(
-      'heya',
-      e.target,
-      e.target[0],
-      document.getElementsByClassName('tag-checkbox')
-    );
-    document.querySelector('.modalcontainer2').classList.add('hidden');
-    let postObj = {
+
+    document.querySelector(".modalcontainer2").classList.add("hidden");
+    let noteObj = {
       tags: [],
-      week: document.getElementById('week-input').value,
-      day: document.getElementById('day-input').value,
-      note: document.getElementById('noteArea').value,
+      week: document.getElementById("week-input").value,
+      day: document.getElementById("day-input").value,
+      note: document.getElementById("noteArea").value,
     };
 
     let newResourceObj = {
       topicID: topicValue,
       tags: [],
-      link: document.getElementById('resources-input').value,
+      link: document.getElementById("resources-input").value,
       rating: 3,
     };
 
     //Grabs the 6 current tags to idenitfy checked status. happy to help checkbox is also included but
     //is ignored as is handled later.
-    let tagArr = document.getElementsByClassName('tag-checkbox');
+    let tagArr = document.getElementsByClassName("tag-checkbox");
 
     for (let i = 0; i < tagArr.length - 1; i++) {
       if (tagArr[i].checked) {
-        postObj.tags = [...postObj.tags, tagArr[i].name];
+        noteObj.tags = [...noteObj.tags, tagArr[i].name];
         newResourceObj.tags = [...newResourceObj.tags, tagArr[i].name];
       }
     }
 
     //All elements have been searched, ready to post the data to the server and database.
     await fetch(`http://localhost:3001/notes?email=${user.email}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(postObj),
+      body: JSON.stringify(noteObj),
     });
 
-    if (document.getElementById('resources-input').value !== '') {
+    if (document.getElementById("resources-input").value !== "") {
       await fetch(`http://localhost:3001/resource`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(newResourceObj),
       });
     }
-    if (document.getElementById('happy-to-help-input').checked) {
+    if (document.getElementById("happy-to-help-input").checked) {
       await fetch(`http://localhost:3001/help?email=${user.email}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(newResourceObj),
       });
     }
     //Resets form and then reloads page
-    document.querySelector('#notes-input-field').reset();
+    document.querySelector("#notes-input-field").reset();
     window.location.reload();
   }
   function hideForm() {
-    document.querySelector('.modalcontainer2').classList.add('hidden');
+    document.querySelector(".modalcontainer2").classList.add("hidden");
   }
 
+  /*The sx prop in the elements below allows styling of the MUI elements directly in JSX */
   //__________________________________________________JSX_______________________________________________
   return (
     <div className="modalcontainer2 hidden">
-      <section className="formContainer">
+      <section className="form-container">
         <form
           id="notes-input-field"
           onSubmit={(e) => {
@@ -106,21 +97,22 @@ export default function NotesForm() {
               <TextField
                 label="Week:"
                 variant="outlined"
-                inputProps={{ min: '1', max: '16', step: '1' }}
+                inputProps={{ min: "1", max: "16", step: "1" }}
                 size="small"
-                sx={{ width: '20%', backgroundColor: 'white' }}
+                sx={{ width: "20%", backgroundColor: "white" }}
                 type="number"
                 id="week-input"
                 required
               ></TextField>
             </div>
+
             <div id="day-field">
               <TextField
                 label="Day:"
                 variant="outlined"
                 size="small"
-                inputProps={{ min: '1', max: '5', step: '1' }}
-                sx={{ width: '20%', backgroundColor: 'white' }}
+                inputProps={{ min: "1", max: "5", step: "1" }}
+                sx={{ width: "20%", backgroundColor: "white" }}
                 id="day-input"
                 type="number"
                 min={1}
@@ -129,13 +121,14 @@ export default function NotesForm() {
                 required
               ></TextField>
             </div>
+
             <div id="topic-field">
               <label htmlFor="topic-input" className="generic-label-form">
                 Topic:
               </label>
               <Select
                 id="topic"
-                sx={{ width: 150, backgroundColor: 'white' }}
+                sx={{ width: 150, backgroundColor: "white" }}
                 onChange={handleDropdownChange}
                 value={topicValue}
               >
@@ -147,12 +140,13 @@ export default function NotesForm() {
                 <MenuItem value={6}>Hackathon</MenuItem>
               </Select>
             </div>
+
             <div id="tags-field">
               <label htmlFor="topic-input" className="generic-label-form">
                 Tags:
               </label>
-              <div className="topic-tag-row">
-                <div className="topic-unit">
+              <div className="tag-row">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="video-tag"
@@ -163,7 +157,7 @@ export default function NotesForm() {
                     Video
                   </label>
                 </div>
-                <div className="topic-unit">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="article-tag"
@@ -174,7 +168,7 @@ export default function NotesForm() {
                     Article
                   </label>
                 </div>
-                <div className="topic-unit">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="image-tag"
@@ -186,8 +180,8 @@ export default function NotesForm() {
                   </label>
                 </div>
               </div>
-              <div className="topic-tag-row">
-                <div className="topic-unit">
+              <div className="tag-row">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="html-tag"
@@ -198,7 +192,7 @@ export default function NotesForm() {
                     HTML
                   </label>
                 </div>
-                <div className="topic-unit">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="css-tag"
@@ -209,7 +203,7 @@ export default function NotesForm() {
                     CSS
                   </label>
                 </div>
-                <div className="topic-unit">
+                <div className="tag-unit">
                   <input
                     type="checkbox"
                     id="js-tag"
@@ -222,13 +216,14 @@ export default function NotesForm() {
                 </div>
               </div>
             </div>
+
             <div id="resources-field">
               <label htmlFor="resources-input" id="resources-label">
                 External resource URL:
               </label>
               <TextField
                 variant="standard"
-                sx={{ background: 'white' }}
+                sx={{ background: "white" }}
                 type="url"
                 placeholder="  https://example.com"
                 pattern="https://.*"
@@ -236,9 +231,10 @@ export default function NotesForm() {
               ></TextField>
             </div>
           </div>
+
           <div id="right-col-NotesForm">
             <TextField
-              sx={{ width: '90%', background: 'white' }}
+              sx={{ width: "90%", background: "white" }}
               label="Your Notes:"
               multiline
               rows={20}
@@ -246,6 +242,7 @@ export default function NotesForm() {
               defaultValue=""
               id="noteArea"
             />
+
             <div id="happy-to-help-field">
               <label htmlFor="happy-to-help-input">
                 Are you happy to be asked for help on this topic?
@@ -256,6 +253,7 @@ export default function NotesForm() {
                 className="tag-checkbox"
               ></input>
             </div>
+
             <Button variant="contained" type="submit">
               Submit
             </Button>

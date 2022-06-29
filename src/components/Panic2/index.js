@@ -1,7 +1,7 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import pic from '../../Assets/dont-panic-stars.png';
+import React from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import pic from "../../Assets/dont-panic-stars.png";
 
 function Panic2({ state }) {
   function handleSubmit(e) {
@@ -12,17 +12,18 @@ function Panic2({ state }) {
     state({ topic: topic, problem: problem, tried: tried });
   }
 
+  /*The sx prop in some of the elements below allows styling of the MUI elements directly in JSX */
   return (
     <main className="main-panic2" style={{ backgroundImage: `url(${pic})` }}>
       <form
-        className="problemForm"
+        className="problem-form"
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
         <div>
           <TextField
-            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
+            sx={{ backgroundColor: "white", minWidth: "20rem" }}
             id="problemTopic"
             type="text"
             placeholder="What topic are you working on?"
@@ -30,7 +31,7 @@ function Panic2({ state }) {
         </div>
         <div>
           <TextField
-            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
+            sx={{ backgroundColor: "white", minWidth: "20rem" }}
             id="problemProblem"
             type="text"
             placeholder="What is the problem?"
@@ -38,7 +39,7 @@ function Panic2({ state }) {
         </div>
         <div>
           <TextField
-            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
+            sx={{ backgroundColor: "white", minWidth: "20rem" }}
             id="problemTried"
             type="text"
             placeholder="What have you tried so far?"

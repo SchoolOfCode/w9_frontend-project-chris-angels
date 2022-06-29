@@ -1,123 +1,123 @@
-.formContainer {
-    height: 70vh;
-    width: 80vw;
+.form-container {
+  height: 70vh;
+  width: 80vw;
+  margin-top: 20vh;
+  width: clamp(40%, 70%, 85%);
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  background-color: var(--socgreen);
+  box-shadow: 15px 15px 40px #141a44, -15px -15px 40px #1c235c;
 }
 
 #notes-input-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
 }
 
 #left-col-NoteForm {
-    height: 80%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
+  height: 80%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 #right-col-NotesForm {
-    height: 80%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
+  height: 80%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .allCards {
-    max-height: 60rem;
-    overflow-y: scroll;
+  max-height: 60rem;
+  overflow-y: scroll;
 }
 
 #topic-field {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #day-field {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #week-field {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.circleMenu {
-    /* margin: 0 auto; */
-    margin-left: 3.5rem;
-    margin-top: 3.5rem;
-    transform: scale(1.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #tags-field {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-width: 0.005rem;
-    border-radius: 0.3rem;
-    border-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.005rem;
+  border-radius: 0.3rem;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
-.topic-tag-row {
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-bottom: 0.5rem;
+.tag-row {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
 }
 
 .check-label {
-    font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.6);
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .generic-label-form {
-    font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
 }
 
 #resources-label {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #resources-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 #exit-button-form {
-    align-self: flex-start;
-    margin-top: 1rem;
+  align-self: flex-start;
+  margin-top: 1rem;
 }
 
 #happy-to-help-field {
-    width: 90%;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 90%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tag-checkbox {
-    width: 1.2rem;
-    height: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }

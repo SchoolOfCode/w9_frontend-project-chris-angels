@@ -49,7 +49,7 @@ function Home() {
     return <div>Loading ...</div>;
   }
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       {!user && <LoginButton />}
       {islogged && (
