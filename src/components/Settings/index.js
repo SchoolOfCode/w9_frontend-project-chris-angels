@@ -8,8 +8,6 @@ import Header from '../Header';
 import './Settings.css'
 
 /**
- *
- * @param {*} props: user given from App.
  * @returns A page that gives the functionality for the user to update the slackusername they provided to the database
  */
 

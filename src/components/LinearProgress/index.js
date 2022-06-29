@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-// import { sizing } from "@mui/system";
 /* 
-  MUI component used to give a visual represnetaion of the current user's progress through to the last day of the bootcamp (80 total days)
+  MUI component used to give a visual represnetaion of the current user's progress
+   through to the last day of the bootcamp (80 total days)
 */
 function LinearProgressWithLabel(props) {
   return (
@@ -42,19 +42,6 @@ LinearProgressWithLabel.propTypes = {
 };
 
 export default function LinearWithValueLabel(props) {
-  // const [progress, setProgress] = React.useState(10);
-
-  // React.useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setProgress((prevProgress) =>
-  //       prevProgress >= 100 ? 10 : prevProgress + 10
-  //     );
-  //   }, 800);
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // }, []);
-
   return (
     <Box sx={{ width: '80%' }}>
       <LinearProgressWithLabel value={props.progress} />

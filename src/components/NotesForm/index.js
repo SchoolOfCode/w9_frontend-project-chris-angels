@@ -1,17 +1,15 @@
-/**
- *
- * @param {*} Props: email of the current user.
- * @returns
- */
+
+
 import './NotesForm.css'
+
+
+import { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-// import InputLabel from '@mui/material/InputLabel';
-import { useState } from 'react';
 import Button from '@mui/material/Button';
-import { useAuth0 } from '@auth0/auth0-react';
 
 export default function NotesForm() {
   //Form submission function that reads each input type and adds it to the object to be sent to the server if needed.
@@ -26,6 +24,12 @@ export default function NotesForm() {
 
   async function handleSubmission(e) {
     e.preventDefault();
+    console.log(
+      'heya',
+      e.target,
+      e.target[0],
+      document.getElementsByClassName('tag-checkbox')
+    );
     document.querySelector('.modalcontainer2').classList.add('hidden');
     let postObj = {
       tags: [],
@@ -41,59 +45,15 @@ export default function NotesForm() {
       rating: 3,
     };
 
-    if (document.getElementById('video-tag').checked) {
-      postObj.tags = [
-        ...postObj.tags,
-        document.getElementById('video-tag').name,
-      ];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('video-tag').name,
-      ];
-    }
-    if (document.getElementById('article-tag').checked) {
-      postObj.tags = [
-        ...postObj.tags,
-        document.getElementById('article-tag').name,
-      ];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('article-tag').name,
-      ];
-    }
-    if (document.getElementById('image-tag').checked) {
-      postObj.tags = [
-        ...postObj.tags,
-        document.getElementById('image-tag').name,
-      ];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('image-tag').name,
-      ];
-    }
-    if (document.getElementById('html-tag').checked) {
-      postObj.tags = [
-        ...postObj.tags,
-        document.getElementById('html-tag').name,
-      ];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('html-tag').name,
-      ];
-    }
-    if (document.getElementById('css-tag').checked) {
-      postObj.tags = [...postObj.tags, document.getElementById('css-tag').name];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('css-tag').name,
-      ];
-    }
-    if (document.getElementById('js-tag').checked) {
-      postObj.tags = [...postObj.tags, document.getElementById('js-tag').name];
-      newResourceObj.tags = [
-        ...newResourceObj.tags,
-        document.getElementById('js-tag').name,
-      ];
+    //Grabs the 6 current tags to idenitfy checked status. happy to help checkbox is also included but
+    //is ignored as is handled later.
+    let tagArr = document.getElementsByClassName('tag-checkbox');
+
+    for (let i = 0; i < tagArr.length - 1; i++) {
+      if (tagArr[i].checked) {
+        postObj.tags = [...postObj.tags, tagArr[i].name];
+        newResourceObj.tags = [...newResourceObj.tags, tagArr[i].name];
+      }
     }
 
     //All elements have been searched, ready to post the data to the server and database.

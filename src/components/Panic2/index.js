@@ -1,18 +1,15 @@
-import React from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import pic from '../../Assets/dont-panic-stars.png'
-
+import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import pic from '../../Assets/dont-panic-stars.png';
 
 function Panic2({ state }) {
-
   function handleSubmit(e) {
     e.preventDefault();
     let topic = e.target.problemTopic.value;
     let problem = e.target.problemProblem.value;
     let tried = e.target.problemTried.value;
-    console.log(topic, problem, tried);
-    state({ topic: topic, problem: problem, tried: tried })
+    state({ topic: topic, problem: problem, tried: tried });
   }
 
   return (
@@ -25,7 +22,7 @@ function Panic2({ state }) {
       >
         <div>
           <TextField
-            sx={{ backgroundColor: "white", minWidth: "20rem" }}
+            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
             id="problemTopic"
             type="text"
             placeholder="What topic are you working on?"
@@ -33,7 +30,7 @@ function Panic2({ state }) {
         </div>
         <div>
           <TextField
-            sx={{ backgroundColor: "white", minWidth: "20rem" }}
+            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
             id="problemProblem"
             type="text"
             placeholder="What is the problem?"
@@ -41,13 +38,15 @@ function Panic2({ state }) {
         </div>
         <div>
           <TextField
-            sx={{ backgroundColor: "white", minWidth: "20rem" }}
+            sx={{ backgroundColor: 'white', minWidth: '20rem' }}
             id="problemTried"
             type="text"
             placeholder="What have you tried so far?"
           ></TextField>
         </div>
-        <Button type="submit" variant="contained">Placeholder</Button>
+        <Button type="submit" variant="contained">
+          Placeholder
+        </Button>
       </form>
 
       <ol className="panic2-links">

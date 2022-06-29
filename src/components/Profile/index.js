@@ -4,7 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import './Profile.css'
 /**
  *
- * @param {*} props: setUser state as addUser from App
+ * @param {*} props: Slackusername given from Home.
  * @returns
  */
 const Profile = (props) => {
