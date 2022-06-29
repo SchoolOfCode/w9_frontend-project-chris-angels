@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Tag from '../../Assets/Tag.png';
+import * as React from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Tag from "../../Assets/Tag.png";
 
 export default function SimpleAccordion(props) {
   let filteredArr = [];
@@ -18,29 +18,34 @@ export default function SimpleAccordion(props) {
         if (itemArr.length === 0) {
           return <div key={index}> </div>;
         }
+
+        /*The sx prop in the Accordion (and other) element allows styling of the MUI elements directly in JSX */
+
         return (
-          <Accordion key={index} sx={{ border: '1px solid #181e50' }}>
+          <Accordion key={index} sx={{ border: "1px solid #181e50" }}>
             <AccordionSummary
-              sx={{ borderBottom: '1px solid #181e50' }}
+              sx={{ borderBottom: "1px solid #181e50" }}
               expandIcon={<ExpandMoreIcon />}
               aria-controls={`panel${index}a-content`}
               id={`panel${index}a-header`}
             >
               <Typography>Week: {index + 1}</Typography>
             </AccordionSummary>
+
             <AccordionDetails className="accordNoteWeek">
               <Typography>
                 {itemArr.map((item, index) => {
                   return (
-                    <Accordion key={index} sx={{ border: '1px solid #181e50' }}>
+                    <Accordion key={index} sx={{ border: "1px solid #181e50" }}>
                       <AccordionSummary
-                        sx={{ borderBottom: '1px solid #181e50' }}
+                        sx={{ borderBottom: "1px solid #181e50" }}
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls={`panel${index}a-content`}
                         id={`panel${index}a-header`}
                       >
                         <Typography>Day: {item.day}</Typography>
                       </AccordionSummary>
+
                       <AccordionDetails className="accordNote">
                         <Typography>{item.note}</Typography>
                         <ol className="tagList">
