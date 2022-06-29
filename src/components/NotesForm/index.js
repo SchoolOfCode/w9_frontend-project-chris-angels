@@ -20,7 +20,7 @@ export default function NotesForm() {
   async function handleSubmission(e) {
     e.preventDefault();
 
-    document.querySelector(".modalcontainer2").classList.add("hidden");
+    document.querySelector(".notes-form-container").classList.add("hidden");
     let noteObj = {
       tags: [],
       week: document.getElementById("week-input").value,
@@ -78,13 +78,13 @@ export default function NotesForm() {
     window.location.reload();
   }
   function hideForm() {
-    document.querySelector(".modalcontainer2").classList.add("hidden");
+    document.querySelector(".notes-form-container").classList.add("hidden");
   }
 
   /*The sx prop in the elements below allows styling of the MUI elements directly in JSX */
   //__________________________________________________JSX_______________________________________________
   return (
-    <div className="modalcontainer2 hidden">
+    <div className="notes-form-container hidden">
       <section className="form-container">
         <form
           id="notes-input-field"

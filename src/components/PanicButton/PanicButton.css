@@ -73,14 +73,14 @@
   height: 50.4vw;
 }
 
-#moveButton {
+#move-button {
   position: absolute;
   bottom: 10%;
   left: 60%;
   transform: scale(2);
 }
 
-#timerSection {
+#timer-section {
   margin-left: 2rem;
   color: var(--socgreen);
   background-color: black;

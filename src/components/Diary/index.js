@@ -33,14 +33,14 @@ function Diary() {
   return (
     <>
       <Header></Header>
-      <div id="entryButtonContainer">
+      <div id="entry-button-container">
         {isAuthenticated && (
           <Button
-            className="newEntryButton"
+            className="new-entry-button"
             variant="contained"
             onClick={() => {
               document
-                .querySelector(".modalcontainer2")
+                .querySelector(".notes-form-container")
                 .classList.remove("hidden");
             }}
           >
@@ -50,14 +50,14 @@ function Diary() {
         {!isAuthenticated && (
           /*The sx prop in the Button element allows styling of the MUI elements directly in JSX */
           <Button
-            className="newEntryButton"
+            className="new-entry-button"
             disabled
             sx={{
               backgroundColor: "#dcdde1",
             }}
             onClick={() => {
               document
-                .querySelector(".modalcontainer2")
+                .querySelector(".notes-form-container")
                 .classList.remove("hidden");
             }}
           >
