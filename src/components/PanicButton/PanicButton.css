@@ -86,3 +86,10 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+#timerSection {
+    margin-left: 2rem;
+    color: var(--socgreen);
+    background-color: black;
+    font-size: 8rem;
+}
