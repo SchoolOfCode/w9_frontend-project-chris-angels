@@ -26,7 +26,6 @@ function ResourceCard(props) {
         <a target="_blank" rel="noreferrer" className="title" href={props.link}>
           {props.link.slice(0, 30) + '...'}
         </a>
-        <iframe title={props.link} src={props.link}></iframe>
         <div
           id="rating"
           aria-label={`Rating for this resource is ${props.rating} stars out of 5`}
