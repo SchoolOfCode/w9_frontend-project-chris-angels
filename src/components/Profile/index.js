@@ -3,7 +3,7 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 /**
  *
- * @param {*} props: setUser state as addUser from App
+ * @param {*} props: Slackusername given from Home.
  * @returns
  */
 const Profile = (props) => {
