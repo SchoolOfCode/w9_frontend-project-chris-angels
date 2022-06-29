@@ -86,7 +86,8 @@ ________________________________________________________________________________
 6. In the cloned repository create a .env file in the main folder.
 ______________________________________________________________________________________________________________________________________________
 
-7. In the file prepare variables as follows and fill them with coresponding credentials from the app:   
+7. In the file prepare variables as follows and fill them with coresponding credentials from the app: 
+  
 PGUSER=xxxxxxxxxxxxxx
 
 PGHOST=xxx-xx-xxx-xx-xxx.xx-xxxxt-x.xxxxx.xxxxx.xxx
@@ -96,6 +97,7 @@ PGPORT=xxxx
 PGPASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 PGDATABASE=xxxxxxxxxxx
+______________________________________________________________________________________________________________________________________________
 
 8.You're all set up to use the server and the databse! To load mock data to your databse use following commands in the console in the folder of the app:
 
