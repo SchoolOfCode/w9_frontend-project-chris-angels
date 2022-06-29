@@ -1,59 +1,75 @@
-Project Name & Pitch
-Example:
-TweetWorld
+# BOOTCAMP ADIUTOR
 
-An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
+A centralised database for bootcampers to take notes, share resources, and receive help with a built in debugging tool. Built with React, JavaScript, Material UI, Auth0 and Css. Tested with jest, supertest and cypress.
 
-Project Status
-(only necessary if incomplete)
+## Project Status
+This project is currently in development. Users can view and add entries to their diary, look for resources on specific topics, use the panic button to debug their code step by step and be given a list of names of people that are happy to help with a given topic.
 
-Example:
-This project is currently in development. Users can filter tweets by username and keyword and see visual data representation. Functionality to sort by additional parameters is in progress.
+## Project Screen Shots
 
-Project Screen Shot(s)
-Example:
-[ PRETEND SCREEN SHOT IS HERE ]
+Main Page:
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
+<img src="https://user-images.githubusercontent.com/104023970/176168071-6a5f5480-92b4-4222-9c7d-fed646917e1d.PNG" width="400" height="auto">
 
-Installation and Setup Instructions
-Example:
+Resources feature:
+
+<img src="https://user-images.githubusercontent.com/104023970/176168091-b80685e6-4a20-41fc-a775-73e0fff66e1b.PNG" width="400" height="auto">
+
+Diary feature:
+
+<img src="https://user-images.githubusercontent.com/104023970/176168120-92e3dd7f-788f-4a5f-9033-2bfeff86aecc.PNG" width="400" height="auto">
+
+Diary form:
+
+<img src="https://user-images.githubusercontent.com/104023970/176168131-7b43e3ab-35f0-496c-9ba5-b22231766d69.PNG" width="400" height="auto">
+
+## Installation and Setup Instructions
+
+To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
+
 Clone down this repository. You will need node and npm installed globally on your machine.
 
-Installation:
+### Installation:
 
 npm install
 
-To Run Test Suite:
+### To Run Test Suite:
 
 npm test
 
-To Start Server:
+### To Start the App:
 
 npm start
 
-To Visit App:
+### To Visit App:
 
-localhost:3000/ideas
+localhost:3000
 
-Reflection
-What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-What did you set out to build?
-Why was this project challenging and therefore a really good learning experience?
-What were some unexpected obstacles?
-What tools did you use to implement this project?
-This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.
-Example:
-This was a 3 week long project built during my third module at Turing School of Software and Design. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.
+## Reflection
+We identified two major problems for bootcampers of School of Code: a lack of long term note storage kept in a centralised database, and a lack of a concrete system for debugging and then asking for help. 
 
-Originally I wanted to build an application that allowed users to pull data from the Twitter API based on what they were interested in, such as 'most tagged users'. I started this process by using the create-react-app boilerplate, then adding react-router-4.0 and redux.
+We decided to create a one-stop-shop app for bootcampers to take notes, share resources, and receive help with a built in debugging tool.
 
-One of the main challenges I ran into was Authentication. This lead me to spend a few days on a research spike into OAuth, Auth0, and two-factor authentication using Firebase or other third parties. Due to project time constraints, I had to table authentication and focus more on data visualization from parts of the API that weren't restricted to authenticated users.
+The biggest challange while developing this project was the short timeframe of 5 days given to complete it, as well as independent project management that turned out to be more challanging than expected. Trello, Miro and Jamboard proved to be invaluable help to organise our workflow and complete the task on time. Trello was particularly useful for creation and distribution of tickets.
 
-At the end of the day, the technologies implemented in this project are React, React-Router 4.0, Redux, LoDash, D3, and a significant amount of VanillaJS, JSX, and CSS. I chose to use the create-react-app boilerplate to minimize initial setup and invest more time in diving into weird technological rabbit holes. In the next iteration I plan on handrolling a webpack.config.js file to more fully understand the build process.
+## Tech stack used for this project:
+- React
+- [React router](https://reactrouter.com/)
+- Javascript
+- Heroku
+- Postgress
+- CSS
+- [Material UI](https://mui.com/)
+- [Express](https://expressjs.com/)
+- [Auth0](https://auth0.com/)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 
+We decided to use React due to it's flexibility as well as becasue it was the framework most familiar to all the team members. We supported it with Auth0 API to allow users to log-in securely. Material UI allowed us to implement well designed elements quickly which was a big factor in finishing the project on time. As with react, our choice of testing tools like Jest and Supertest relied on their flexibility and familiarity. On the backend we used PostgreSQL in tandem with Heroku because of their simplicity and cost-free implementation, it allowed us to deploy the server and databases for free with enough database storage capacity for our app's needs.
 
-Project Breif
+_____________________________________________________________________________________________________________________________________________________
+
+Project Brief
 
 National Bootcamp - Week Nine Project Brief
 For your project, you’ll be using what you’ve learned on the course so far to try and improve the lives of your users. In this case, the users will be close to home: bootcampers!
