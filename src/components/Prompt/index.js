@@ -6,7 +6,6 @@
 function Prompt(props) {
   return (
     <div className="modalcontainer">
-      {/* The div below needs to be deleted at some point when styling is complete */}
       <div
         onClick={() => {
           document.querySelector('.modalcontainer').classList.add('hidden');
@@ -29,7 +28,6 @@ function Prompt(props) {
 
       <button
         onClick={async () => {
-          //post to server/db with email and username and then hide the prompt form
           let username = document.getElementById('username').value;
           document.getElementById('username').value = '';
           document.querySelector('.modalcontainer').classList.add('hidden');

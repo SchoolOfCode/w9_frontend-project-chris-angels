@@ -69,7 +69,6 @@ function Resources({ header }) {
     <>
       {header && <Header></Header>}
       <dl className="resourcesContainer">
-        {/*create a form for input box of topics (dropdown) and a submit (search) button. DIV CONTAINER FOR CSS PURPOSES*/}
         <div className="rectangleHeader">
           <div
             style={{

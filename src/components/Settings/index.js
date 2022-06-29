@@ -7,8 +7,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Header from '../Header';
 
 /**
- *
- * @param {*} props: user given from App.
  * @returns A page that gives the functionality for the user to update the slackusername they provided to the database
  */
 
