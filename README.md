@@ -7,27 +7,17 @@ This project is currently in development. Users can view and add entries to thei
 
 ## Project Screen Shots
 
-Main Page:
+App folder structure:
 
-<img src="https://user-images.githubusercontent.com/104023970/176168071-6a5f5480-92b4-4222-9c7d-fed646917e1d.PNG" width="400" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176419879-4891cd7a-f5ee-4103-98e7-bae4d857340e.png" width="150" height="auto"
 
-Resources feature:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168091-b80685e6-4a20-41fc-a775-73e0fff66e1b.PNG" width="400" height="auto">
-
-Diary feature:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168120-92e3dd7f-788f-4a5f-9033-2bfeff86aecc.PNG" width="400" height="auto">
-
-Diary form:
-
-<img src="https://user-images.githubusercontent.com/104023970/176168131-7b43e3ab-35f0-496c-9ba5-b22231766d69.PNG" width="400" height="auto">
+Database structure:
+     
+<img src="https://user-images.githubusercontent.com/104023970/176419918-50cba160-103b-48cd-b33a-ae0ba15b9867.png" width="300" height="auto">
 
 ## Installation and Setup Instructions
 
-To get the full experience of the app on your computer, first go to [w9_backend-project-chris-angels](https://github.com/SchoolOfCode/w9_backend-project-chris-angels) and follow installation instructions there to set up your server and database.
-
-Clone down this repository. You will need node and npm installed globally on your machine.
+Clone down this repository. You will need node and npm installed globally on your machine. You will also need a free heroku account and a running heroku database app (instructions for setting it up at the bottom of the document).
 
 ### Installation:
 
@@ -69,15 +59,15 @@ We decided to use React due to it's flexibility as well as becasue it was the fr
 
 ## Guidlines for setting up a heroku database:
 1. After creating your Heroku profile, go to the upper right corner and click "New". 
-<img src="https://user-images.githubusercontent.com/104023970/176413067-04db2da7-1340-4abc-9482-1204f638df25.png" width="300" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176413067-04db2da7-1340-4abc-9482-1204f638df25.png" width="500" height="auto">
 2. From the dropdown list select "Create New App".
 <img src="https://user-images.githubusercontent.com/104023970/176413076-d7e2b0d3-bc72-4796-80fc-54b65cf281f8.png" width="300" height="auto">
 3. Type in a name for your databse (1) and select the region you're based in and then click "Create App".
 <img src="https://user-images.githubusercontent.com/104023970/176413080-62b3fa1a-6f25-4e34-b7d4-69b9fb22583a.png" width="300" height="auto">
 4. Now go to the "Resources" tab (1) and in the "Add ons" section search for Heroku Postgress (2), then click "Submit Order Form" in the pop-up window. 
-<img src="https://user-images.githubusercontent.com/104023970/176416317-f53451bd-c2b6-4ad8-9aeb-50b1fc78166c.png" width="300" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176416317-f53451bd-c2b6-4ad8-9aeb-50b1fc78166c.png" width="500" height="auto">
 5. This should set up your database, now you can go to settings of the app and click "view credentials" (Host, database, user, port and password).
-<img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="300" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="500" height="auto">
 6. In the cloned repository create a .env file in the main folder.
 7. In the file prepare variables as follows and fill them with coresponding credentials from the app:  
 PGUSER=xxxxxxxxxxxxxx
