@@ -5,6 +5,7 @@ import Timer from "../Timer";
 import Panic2 from "../Panic2";
 import pic from "../../Assets/dont-panic-stars.png";
 import Panic3 from "../Panic3";
+import './PanicButton.css'
 
 function PanicButton() {
   const [version, setVersion] = useState(1);

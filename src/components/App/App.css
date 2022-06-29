@@ -50,87 +50,6 @@
 /*----------------------------------Profile--------------------------------------*/
 
 /* ---------------------------------PanicButton--------------------------------- */
-.Panic {
-  position: sticky;
-  bottom: 25vh;
-  /* margin-left: 70%; */
-  width: fit-content;
-  height: fit-content;
-  right: 100%;
-}
-
-.panicBox {
-  position: fixed;
-  z-index: 10;
-  right: 0%;
-  bottom: 0;
-  display: block;
-  max-width: max-content;
-  height: fit-content;
-}
-
-/* -------------------------------------Panicrooms------------------------------- */
-.main-panic2 {
-  background-color: var(--soclightblue);
-  display: flex;
-  justify-content: space-around;
-  border: solid 20px var(--socblue);
-}
-
-.main-panic3 {
-  background-color: var(--soclightblue);
-  display: flex;
-  justify-content: space-around;
-  border: solid 20px var(--socblue);
-  height: 100vh;
-}
-
-.problem-request {
-  padding-left: 30vw;
-  padding-top: 25vh;
-}
-
-.problem-helpers {
-  padding-left: 25vw;
-  padding-top: 25vh;
-}
-
-.panicMain1 {
-  display: flex;
-  background-repeat: no-repeat;
-  height: 100%;
-  background-size: cover;
-}
-
-.panic1left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.panic1right {
-  flex: 1.9;
-}
-
-.timer {
-  display: flex;
-  background-color: var(--soclightblue);
-}
-
-#moveButton {
-  position: absolute;
-  bottom: 10%;
-  left: 60%;
-  transform: scale(2);
-}
-
-#panicMain1 {
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
 
 /* -------------------------------------resources------------------------------- */
 label {
@@ -423,7 +342,7 @@ a:hover {
 
 
 
-/* ----------------------------------settings---------------------------------------- */
+
 
 .progressBox {
   display: flex;
