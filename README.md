@@ -9,7 +9,7 @@ This project is currently in development. Users can view and add entries to thei
 
 App folder structure:
 
-<img src="https://user-images.githubusercontent.com/104023970/176419879-4891cd7a-f5ee-4103-98e7-bae4d857340e.png" width="150" height="auto"
+<img src="https://user-images.githubusercontent.com/104023970/176419879-4891cd7a-f5ee-4103-98e7-bae4d857340e.png" width="150" height="auto">
 
 Database structure:
      
@@ -60,7 +60,7 @@ We decided to use React due to it's flexibility as well as becasue it was the fr
 ## Guidlines for setting up a heroku database:
 1. After creating your Heroku profile, go to the upper right corner and click "New". 
 
-<img src="https://user-images.githubusercontent.com/104023970/176413067-04db2da7-1340-4abc-9482-1204f638df25.png" width="700" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176413067-04db2da7-1340-4abc-9482-1204f638df25.png" width="800" height="auto">
 ______________________________________________________________________________________________________________________________________________
 
 2. From the dropdown list select "Create New App".
@@ -80,10 +80,11 @@ ________________________________________________________________________________
 
 5. This should set up your database, now you can go to settings of the app and click "view credentials" (Host, database, user, port and password).
 
-<img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="700" height="auto">
+<img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="800" height="auto">
 ______________________________________________________________________________________________________________________________________________
 
 6. In the cloned repository create a .env file in the main folder.
+______________________________________________________________________________________________________________________________________________
 
 7. In the file prepare variables as follows and fill them with coresponding credentials from the app:   
 PGUSER=xxxxxxxxxxxxxx
