@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import Header from '../Header';
-import SimpleAccordion from '../Accordian';
-import { useAuth0 } from '@auth0/auth0-react';
-import NotesForm from '../NotesForm/index.js';
-import Button from '@mui/material/Button';
-import './Diary.css'
+import { useEffect, useState } from "react";
+import Header from "../Header";
+import SimpleAccordion from "../Accordian";
+import { useAuth0 } from "@auth0/auth0-react";
+import NotesForm from "../NotesForm/index.js";
+import Button from "@mui/material/Button";
+import "./Diary.css";
 
 /*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary() {
@@ -40,30 +40,32 @@ function Diary() {
             variant="contained"
             onClick={() => {
               document
-                .querySelector('.modalcontainer2')
-                .classList.remove('hidden');
+                .querySelector(".modalcontainer2")
+                .classList.remove("hidden");
             }}
           >
             New Entry
           </Button>
         )}
         {!isAuthenticated && (
+          /*The sx prop in the Button element allows styling of the MUI elements directly in JSX */
           <Button
             className="newEntryButton"
             disabled
             sx={{
-              backgroundColor: '#dcdde1',
+              backgroundColor: "#dcdde1",
             }}
             onClick={() => {
               document
-                .querySelector('.modalcontainer2')
-                .classList.remove('hidden');
+                .querySelector(".modalcontainer2")
+                .classList.remove("hidden");
             }}
           >
             New Entry
           </Button>
         )}
       </div>
+      {/*arr is an in-built prop of SimpleAccordion element from Material UI framework, takes in an array*/}
       <SimpleAccordion arr={notes}></SimpleAccordion>
       <NotesForm></NotesForm>
     </>
