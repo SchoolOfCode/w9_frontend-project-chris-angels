@@ -68,13 +68,16 @@ We decided to use React due to it's flexibility as well as becasue it was the fr
 <img src="https://user-images.githubusercontent.com/104023970/176416317-f53451bd-c2b6-4ad8-9aeb-50b1fc78166c.png" width="500" height="auto">
 5. This should set up your database, now you can go to settings of the app and click "view credentials" (Host, database, user, port and password).
 <img src="https://user-images.githubusercontent.com/104023970/176417608-5d89cd9a-abe9-4d71-ad70-b607452a64e8.png" width="500" height="auto">
+
 6. In the cloned repository create a .env file in the main folder.
-7. In the file prepare variables as follows and fill them with coresponding credentials from the app:  
+
+7. In the file prepare variables as follows and fill them with coresponding credentials from the app:   
 PGUSER=xxxxxxxxxxxxxx
 PGHOST=xxx-xx-xxx-xx-xxx.xx-xxxxt-x.xxxxx.xxxxx.xxx
 PGPORT=xxxx
 PGPASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 PGDATABASE=xxxxxxxxxxx
+
 8.You're all set up to use the server and the databse! To load mock data to your databse use following commands in the console in the folder of the app:
 db:createTable  - to create the necessary tables.
 db:populateTable - to populate them
