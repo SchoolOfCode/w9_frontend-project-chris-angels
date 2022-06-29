@@ -1,7 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import Button from '@mui/material/Button';
-/*Login button component from auth0, used alongside the logout button component and the profile component*/
+
+/* Login button component from auth0, used alongside the logout button 
+   component and the profile component
+*/
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
