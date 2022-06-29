@@ -10,7 +10,7 @@ function PanicButton() {
   const [version, setVersion] = useState(1);
 
   const [inputValues, setInputValues] = useState({ topic: "", problem: "", tried: "" })
-  
+
   // document.getElementById('panicMain1').style.backgroundImage = `url(${pic})`;
   //example:
   // const answers = useRef({ id: 2 });
@@ -33,7 +33,7 @@ function PanicButton() {
     );
   } else if (version === 2) {
     return (
-      <div className="basic-main">
+      <div className="panicMain2">
         <Link to="/">Home</Link>
         <div>
           <Panic2 state={setInputValues}></Panic2>

@@ -19,21 +19,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 */
 function App() {
-  console.log('hi');
+
   return (
     <Router>
       <Routes>
+
         <Route path="/" element={<Home />}></Route>
         <Route
           path="/settings"
           element={<ProtectedRoute component={Settings}></ProtectedRoute>}
         ></Route>
+
+
         <Route
           path="/diary"
           element={<ProtectedRoute component={Diary}></ProtectedRoute>}
         ></Route>
+
         <Route path="/resources" element={<Resources header={true} />}></Route>
+
         <Route path="/panic1" element={<PanicButton />}></Route>
+
       </Routes>
     </Router>
   );
