@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import LinearWithValueLabel from '../LinearProgress';
-import { useAuth0 } from '@auth0/auth0-react';
+import { useEffect, useState } from "react";
+import LinearWithValueLabel from "../LinearProgress";
+import { useAuth0 } from "@auth0/auth0-react";
+import "./ProgressBar.css";
 
 function ProgressBar() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -22,7 +23,7 @@ function ProgressBar() {
     isAuthenticated && (
       <>
         <figure
-          className="progressBox"
+          className="progress-box"
           title={`Progress bar of School of Code completion percentage. You are ${progress}% done with the bootcamp`}
         >
           <LinearWithValueLabel progress={progress}></LinearWithValueLabel>
