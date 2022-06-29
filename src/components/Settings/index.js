@@ -5,6 +5,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import Box from '@mui/material/Box';
 import { useAuth0 } from '@auth0/auth0-react';
 import Header from '../Header';
+import './Settings.css'
 
 /**
  *

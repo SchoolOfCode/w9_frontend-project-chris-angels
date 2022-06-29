@@ -421,25 +421,9 @@ a:hover {
   font-size: 8rem;
 }
 
-#settingsForm {
-  font-size: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  padding: 10%;
-  border-radius: 50px;
-  background: var(--socgreen);
-  box-shadow: 20px 20px 60px #141a44, -20px -20px 60px #1c235c;
-  color: var(--socwhite);
-}
 
-#settingsForm>* {
-  font-size: 1.3rem;
-}
 
-#settingsForm>div>* {
-  font-size: 1.3rem;
-}
+/* ----------------------------------settings---------------------------------------- */
 
 .progressBox {
   display: flex;
@@ -485,5 +469,3 @@ a:hover {
   margin-bottom: 0;
   border-radius: 1rem;
 }
-
-/* -------------------------------------NotesForm------------------------------- */
