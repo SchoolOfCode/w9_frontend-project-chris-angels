@@ -228,3 +228,12 @@ textarea {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    filter: brightness(0.7);
+}
