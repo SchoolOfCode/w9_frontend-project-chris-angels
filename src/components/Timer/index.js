@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
  * @returns
  */
 function Timer(props) {
-  const [counter, setCounter] = useState(15);
+  const [counter, setCounter] = useState(4);
   const [btn, setbtn] = useState(false);
   const transitionBtn = useRef(false);
   useEffect(() => {
