@@ -4,6 +4,7 @@ import SimpleAccordion from '../Accordian';
 import { useAuth0 } from '@auth0/auth0-react';
 import NotesForm from '../NotesForm/index.js';
 import Button from '@mui/material/Button';
+import './Diary.css'
 
 /*Props: user{email} -> Email used to locate the users notes in the server */
 function Diary() {

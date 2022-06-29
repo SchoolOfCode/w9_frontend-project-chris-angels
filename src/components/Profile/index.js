@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import Avatar from '@mui/material/Avatar';
+import './Profile.css'
 /**
  *
  * @param {*} props: Slackusername given from Home.

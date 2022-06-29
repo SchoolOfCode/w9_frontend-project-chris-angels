@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import Button from '@mui/material/Button';
+import './Logout.css'
 
 /*
   Logout button component from auth0, used alongside the login button component and the profile component
