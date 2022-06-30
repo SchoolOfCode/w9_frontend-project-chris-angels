@@ -12,7 +12,7 @@
 
 /* -----------------------------------App--------------------------------------- */
 
-.App {
+.app {
   text-align: center;
   height: fit-content;
   padding-bottom: 1.5rem;
@@ -37,18 +37,4 @@
 } */
 .MuiButtonBase-root {
   background-color: var(--socblue);
-}
-
-.entryBox {
-  color: black;
-}
-
-.progressBox {
-  display: flex;
-  justify-content: center;
-}
-
-#dropdown-menu-cont {
-  transform: scale(2);
-  margin-left: 5rem;
 }
